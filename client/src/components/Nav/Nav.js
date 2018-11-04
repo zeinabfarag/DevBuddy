@@ -12,7 +12,7 @@ const Nav = () => (
       Articles
     </a>
     <a className="navbar-brand" href="/">
-      Groups
+      Meet Ups
     </a>
     <a className="navbar-brand" href="/">
       Login
