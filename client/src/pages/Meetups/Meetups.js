@@ -1,8 +1,43 @@
 import React, { Component } from 'react';
 
+
+//Api key
+const API_KEY = process.env.REACT_APP_WEATHER_API_KEY
+
+
+
 class Meetups extends Component {
+  constructor() {
+    super()
+    this.state = {
+      title: [],
+    }
+  }
+
+  //Pulling current events 
+  componentDidMount() {
+    fetch('https://api.meetup.com/find/events?photo-host=public&sig_id=255600544&sig=0b1810a39b3fa52e67d05a8da45babe0f49b7eb0',
+      {
+        headers: {
+          'X-Access-Token': API_KEY,
+          'Content-Type': 'application/json'
+        },
+      }).then(response => {
+        return response.json(); //Json format
+
+      }).then(response => console.log(response))
+      .then(data => {
+        // Specifiy data later
+      })
+  }
+
   render() {
-    return <h1>This is the Meetups page</h1>;
+    return (
+      //render to div
+      <div className="container">
+        <p>  {this.state.response}</p>
+      </div>
+    )
   }
 }
 
