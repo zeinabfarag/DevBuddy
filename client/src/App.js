@@ -12,6 +12,7 @@ import NoMatch from './pages/NoMatch';
 import Resources from './pages/Resources';
 import Login from './pages/Login';
 import Nav from './components/Nav';
+import Signup from './pages/SignUp';
 
 class App extends Component {
   constructor() {
@@ -69,6 +70,7 @@ class App extends Component {
           <Route exact path="/meetups" component={Meetups} />
           <Route exact path="/resources" component={Resources} />
           <Route exact path="/login" component={Login} />
+          <Route exact path="/signup" component={Signup} />
           <Route component={NoMatch} />
         </Switch>
       </div>
