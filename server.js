@@ -6,6 +6,10 @@ const dbConnection = require('./database');
 const MongoStore = require('connect-mongo')(session);
 const passport = require('./passport');
 
+// Route requires
+
+const user = require('./routes/index');
+
 //const routes = require("./routes");
 const app = express();
 const PORT = process.env.PORT || 3001;
@@ -41,7 +45,7 @@ app.use(passport.initialize());
 app.use(passport.session()); // calls the deserializeUser
 
 // Routes
-//app.use('/user', user);
+app.use('/user', user);
 
 // Start the API server
 app.listen(PORT, function() {
