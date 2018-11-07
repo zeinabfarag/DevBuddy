@@ -20,7 +20,9 @@ class Meetups extends Component {
   getMeetUps() {
     axios.get('https://api.meetup.com/find/events?photo-host=public&sig_id=255600544&sig=0b1810a39b3fa52e67d05a8da45babe0f49b7eb0')
       .then(response => {
-        console.log(response.data)
+        this.setState({ meetups: response.data }, () => {
+          console.log(this.state)
+        })
       })
   }
   //   //Pulling current events 
