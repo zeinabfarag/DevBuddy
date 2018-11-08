@@ -23,7 +23,7 @@ class Meetups extends Component {
 
   getMeetUps() {
     //meetup api
-    axios.get('https://api.meetup.com/find/upcoming_events?topic_category=34&photo-host=public&sig_id=255600544&sig=0b1810a39b3fa52e67d05a8da45babe0f49b7eb0&key=' + API_KEY)
+    axios.get('https://api.meetup.com/find/upcoming_events?topic_category=34&sign=true&photo-host=public&sig_id=255600544&sig=0b1810a39b3fa52e67d05a8da45babe0f49b7eb0&key=' + API_KEY)
       .then(response => {
         //pull event data
         this.setState({ meetups: response.data.events }, () => {
@@ -39,13 +39,20 @@ class Meetups extends Component {
     const meetupItems = this.state.meetups.map((meetup, i) => {
       return (
         //display...
-        <div>
-          <h1>{meetup.name}</h1>
-          <li>Date: {meetup.local_date}</li>
-          <li>Location: {meetup.group.localized_location}</li>
-          <li>Link: {meetup.link}</li>
-          <li>Id: {meetup.id}</li>
-          <hr></hr>
+        <div class="container">
+          <div class="eventcard">
+            <div class="card">
+              <h1 class="card-title eventtitle">{meetup.name}</h1>
+              <div class="card-body">
+                <ul>
+                  <p class="card-text">Date: {meetup.local_date}</p>
+                  <p class="card-text">Location: {meetup.group.localized_location}</p>
+                  <a href={meetup.link} class="card-link">Link</a>
+                </ul>
+                <hr></hr>
+              </div>
+            </div>
+          </div>
         </div>
       )
     })

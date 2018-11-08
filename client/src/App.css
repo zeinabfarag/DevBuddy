@@ -30,3 +30,15 @@
     transform: rotate(360deg);
   }
 }
+
+.eventcard{
+  font-size: 20px;
+  float: left;
+  width: 500px;
+  margin: 2%;
+  height: 300px;
+}
+.eventtitle{
+  font-size: 30px;
+  padding: 3%;
+}
