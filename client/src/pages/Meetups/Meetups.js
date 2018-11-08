@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 
 //Api key
-// const API_KEY = process.env.REACT_APP_WEATHER_API_KEY
+const API_KEY = process.env.REACT_APP_API_KEY
 
 
 
@@ -18,7 +18,7 @@ class Meetups extends Component {
   }
 
   getMeetUps() {
-    axios.get('https://api.meetup.com/find/events?photo-host=public&sig_id=255600544&sig=0b1810a39b3fa52e67d05a8da45babe0f49b7eb0')
+    axios.get('https://api.meetup.com/find/upcoming_events?topic_category=34&photo-host=public&sig_id=255600544&sig=0b1810a39b3fa52e67d05a8da45babe0f49b7eb0&key=' + API_KEY)
       .then(response => {
         this.setState({ meetups: response.data }, () => {
           console.log(this.state)
