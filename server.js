@@ -1,6 +1,12 @@
 const express = require('express');
+const bodyParser = require('body-parser');
+const morgan = require('morgan');
+const session = require('express-session');
+
+const MongoStore = require('connect-mongo')(session);
 const path = require('path');
 const mongoose = require('mongoose');
+mongoose.Promise = global.Promise;
 const PORT = process.env.PORT || 3001;
 const app = express();
 
@@ -20,7 +26,18 @@ app.get('*', function(req, res) {
 });
 
 // Connect to the Mongo DB
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/devbuddy');
+mongoose
+  .connect(process.env.MONGODB_URI || 'mongodb://localhost/devbuddy')
+  .then(
+    () => {
+      /* ready to use*/
+      console.log('Connected to Mongo');
+    },
+    err => {
+      /* handle initial error */
+      console.log('Error connected to mongo' + err);
+    }
+  );
 
 app.listen(PORT, function() {
   console.log(`🌎 ==> Server now on port ${PORT}!`);
