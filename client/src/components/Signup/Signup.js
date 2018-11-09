@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import API from '../../utils/API';
 import axios from 'axios';
 
 class Signup extends Component {
@@ -23,11 +24,10 @@ class Signup extends Component {
     event.preventDefault();
 
     //request to server to add a new username/password
-    axios
-      .post('/user/', {
-        username: this.state.username,
-        password: this.state.password
-      })
+    API.postUser({
+      username: this.state.username,
+      password: this.state.password
+    })
       .then(response => {
         console.log(response);
         if (!response.data.errmsg) {

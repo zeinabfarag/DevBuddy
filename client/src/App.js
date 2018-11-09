@@ -70,7 +70,7 @@ class App extends Component {
           <Route exact path="/meetups" component={Meetups} />
           <Route exact path="/resources" component={Resources} />
           <Route exact path="/login" component={Login} />
-          <Route exact path="/signup" component={Signup} />
+          <Route path="/signup" component={Signup} />
           <Route component={NoMatch} />
         </Switch>
       </div>
