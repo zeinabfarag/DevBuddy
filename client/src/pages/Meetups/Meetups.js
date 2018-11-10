@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 
-//Api key
+//the api key
 const API_KEY = process.env.REACT_APP_API_KEY
 
 class Meetups extends Component {
