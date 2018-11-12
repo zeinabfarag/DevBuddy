@@ -11,6 +11,8 @@ mongoose.Promise = global.Promise;
 const PORT = process.env.PORT || 3001;
 const app = express();
 
+// Routes requires
+const user = require('./routes/api/user');
 // MIDDLEWARE
 app.use(morgan('dev'));
 app.use(
@@ -38,6 +40,9 @@ app.use(passport.session()); // calls the deserializeUser
 if (process.env.NODE_ENV === 'production') {
   app.use(express.static('client/build'));
 }
+
+// Routes
+app.use('/user', user);
 
 // Send every request to the React app
 // Define any API routes before this runs

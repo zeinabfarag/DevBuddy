@@ -11,6 +11,21 @@ class Nav extends Component {
   logout(event) {
     event.preventDefault();
     console.log('logging out');
+
+    axios
+      .post('/user/logout')
+      .then(response => {
+        console.log(response.data);
+        if (response.status === 200) {
+          this.props.updateUser({
+            loggedIn: false,
+            username: null
+          });
+        }
+      })
+      .catch(error => {
+        console.log('Logout error');
+      });
   }
 
   render() {
