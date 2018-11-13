@@ -1,10 +1,16 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import './eventstyle.css';
 
 //the api key
 const API_KEY = process.env.REACT_APP_API_KEY
 
 class Meetups extends Component {
+
+  saveEvent() {
+    alert("Saved");
+  }
+
   constructor() {
     super()
     //state
@@ -17,8 +23,10 @@ class Meetups extends Component {
 
   componentWillMount() {
     this.getMeetUps();
-
   }
+
+  //Save Button
+
 
   getMeetUps() {
     //meetup api
@@ -45,6 +53,7 @@ class Meetups extends Component {
     })
   }
 
+
   render() {
 
     //iterate through the array
@@ -52,17 +61,18 @@ class Meetups extends Component {
 
       return (
         //display...
-        <div className="container">
+        <div key={i} className="eventcontainer">
           <div className="eventcard">
             <div className="card">
-              <h1 className="card-title eventtitle">{group.name}</h1>
+              <h1 className="card-title eventtitle" >{group.name}</h1>
               <div className="card-body">
                 <ul>
                   <p className="card-text">Members: {group.members}</p>
                   <p className="card-text">Location: {group.localized_location}</p>
                   <a href={group.link} className="card-link">Link</a>
-                  {/* <img href={group.key_photo.photo_link} alt="nothing"> */}
                 </ul>
+
+                <button onClick={this.saveEvent}>Save</button>
                 <hr></hr>
               </div>
             </div>
@@ -75,9 +85,9 @@ class Meetups extends Component {
       //form for query text
       <h1>
 
-        <form>
-          <input
-            placeholder="Search for..."
+        <form className="eventsearch">
+          <input className="eventsearchbar"
+            placeholder="Search For Group Events..."
             ref={input => this.search = input}
             onChange={this.handleInputChange}
           />
