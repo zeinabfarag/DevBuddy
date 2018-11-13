@@ -81,7 +81,6 @@ class Meetups extends Component {
       )
     })
     return (
-      // render to div
       //form for query text
       <h1>
 
