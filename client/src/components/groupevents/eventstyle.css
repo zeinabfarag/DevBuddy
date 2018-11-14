@@ -1,26 +1,27 @@
 .eventsearch{
    margin-top: 5%;
-   margin-left: 10%;
-   margin-bottom: 2%;
+   margin: 2%;
 }
 
 .eventsearchbar{
     width: 80%;
+    font-size: 50px;
 }
 
+.eventcontainer{
+    height:1000px;
+    overflow:scroll;
+    overflow-x:hidden;
+}
 .eventcard{
-    float: left;
     padding: 2%;
     margin: 2%;
     font-size: 25px;
     border: skyblue 2px solid;
-    width: 500px;
+    width: 80%;
 }
 
 .eventtitle{
     font-size: 30px;
 }
 
-.eventcontainer{
-    margin: 5%;
-}
