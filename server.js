@@ -6,7 +6,7 @@ const dbConnection = require('./database');
 const MongoStore = require('connect-mongo')(session);
 const passport = require('./passport');
 const path = require('path');
-require('dotenv').config()
+//require('dotenv').config()
 const mongoose = require('mongoose');
 mongoose.Promise = global.Promise;
 const PORT = process.env.PORT || 3001;
@@ -47,7 +47,7 @@ app.use('/user', user);
 
 // Send every request to the React app
 // Define any API routes before this runs
-app.get('*', function (req, res) {
+app.get('*', function(req, res) {
   res.sendFile(path.join(__dirname, './client/build/index.html'));
 });
 
