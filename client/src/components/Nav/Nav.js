@@ -59,7 +59,7 @@ class Nav extends Component {
               <Link
                 to="/"
                 className="btn btn-link text-secondary"
-                onclick={this.logout}
+                onClick={this.logout}
               >
                 <span className="badge badge-info">Logout</span>
               </Link>

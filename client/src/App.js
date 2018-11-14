@@ -20,6 +20,37 @@ class App extends Component {
       loggedIn: false,
       username: null
     };
+    this.getUser = this.getUser.bind(this);
+    this.componentDidMount = this.componentDidMount.bind(this);
+    this.updateUser = this.updateUser.bind(this);
+  }
+  componentDidMount() {
+    this.getUser();
+  }
+
+  updateUser(userObject) {
+    this.setState(userObject);
+  }
+
+  getUser() {
+    axios.get('/user/').then(response => {
+      console.log('Get user response: ');
+      console.log(response.data);
+      if (response.data.user) {
+        console.log('Get User: There is a user saved in the server session: ');
+
+        this.setState({
+          loggedIn: true,
+          username: response.data.user.username
+        });
+      } else {
+        console.log('Get user: no user');
+        this.setState({
+          loggedIn: false,
+          username: null
+        });
+      }
+    });
   }
 
   render() {
@@ -36,7 +67,11 @@ class App extends Component {
           <Route exact path="/jobposting" component={JobPosting} />
           <Route exact path="/meetups" component={Meetups} />
           <Route exact path="/resources" component={Resources} />
-          <Route exact path="/login" component={Login} />
+          <Route
+            exact
+            path="/login"
+            render={props => <Login {...props} loginUser={this.updateUser} />}
+          />
           <Route exact path="/signup" component={Signup} />
           <Route component={NoMatch} />
         </Switch>
