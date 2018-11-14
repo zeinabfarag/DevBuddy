@@ -11,6 +11,7 @@ import Resources from './pages/Resources';
 import Login from './pages/Login';
 
 import Nav from './components/Nav';
+import Footer from './components/Footer';
 
 const App = () => (
   <Router>
@@ -26,6 +27,7 @@ const App = () => (
         <Route exact path="/login" component={Login} />
         <Route component={NoMatch} />
       </Switch>
+      <Footer />
     </div>
   </Router>
 );
