@@ -6,6 +6,7 @@ const dbConnection = require('./database');
 const MongoStore = require('connect-mongo')(session);
 const passport = require('./passport');
 const path = require('path');
+require('dotenv').config()
 const mongoose = require('mongoose');
 mongoose.Promise = global.Promise;
 const PORT = process.env.PORT || 3001;

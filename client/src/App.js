@@ -12,6 +12,8 @@ import Resources from './pages/Resources';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
 import Nav from './components/Nav';
+import Footer from './components/Footer';
+
 
 class App extends Component {
   constructor() {
@@ -79,5 +81,6 @@ class App extends Component {
     );
   }
 }
+
 
 export default App;
