@@ -13,7 +13,7 @@ import Login from './pages/Login';
 import Signup from './pages/Signup';
 import Nav from './components/Nav';
 import Footer from './components/Footer';
-
+import Favourite from './pages/Favourite';
 
 class App extends Component {
   constructor() {
@@ -75,12 +75,12 @@ class App extends Component {
             render={props => <Login {...props} loginUser={this.updateUser} />}
           />
           <Route exact path="/signup" component={Signup} />
+          <Route exact path="/favourite" component={Favourite} />
           <Route component={NoMatch} />
         </Switch>
       </div>
     );
   }
 }
-
 
 export default App;

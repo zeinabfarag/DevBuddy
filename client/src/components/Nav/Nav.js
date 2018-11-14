@@ -56,6 +56,9 @@ class Nav extends Component {
               <Link to="/meetups" className="btn btn-link text-secondary">
                 <span className="badge badge-info">Meetups</span>
               </Link>
+              <Link to="/favourite" className="btn btn-link text-secondary">
+                <span className="badge badge-info">Favourite</span>
+              </Link>
               <Link
                 to="/"
                 className="btn btn-link text-secondary"
