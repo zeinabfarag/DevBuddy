@@ -33,7 +33,7 @@ app.use(
     saveUninitialized: false //required
   })
 );
-
+//cors issue
 // app.use(function (req, res) {
 //   res.header('Access-Control-Allow-Origin', 'https://*');
 //   res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
