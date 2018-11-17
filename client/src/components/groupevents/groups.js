@@ -15,6 +15,7 @@ class Groups extends Component {
     }
     //save button
     saveEvent() {
+
         // const eventData = {};
         const eventDataContainer = document.getElementsByClassName('eventtitle', [0])
         alert("Saved");

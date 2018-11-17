@@ -33,6 +33,13 @@ app.use(
   })
 );
 
+// app.use(function allowCrossDomain(req, res) {
+//   res.header("Access-Control-Allow-Origin", "*");
+//   res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
+//   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+// })
+
+
 // Passport
 app.use(passport.initialize());
 app.use(passport.session()); // calls the deserializeUser
@@ -47,10 +54,10 @@ app.use('/user', user);
 
 // Send every request to the React app
 // Define any API routes before this runs
-app.get('*', function(req, res) {
+app.get('*', function (req, res) {
   res.sendFile(path.join(__dirname, './client/build/index.html'));
 });
 
-app.listen(PORT, function() {
+app.listen(PORT, function () {
   console.log(`🌎 ==> Server now on port ${PORT}!`);
 });
