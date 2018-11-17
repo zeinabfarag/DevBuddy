@@ -78,6 +78,7 @@ class App extends Component {
           <Route exact path="/favourite" component={Favourite} />
           <Route component={NoMatch} />
         </Switch>
+        <Footer />
       </div>
     );
   }
