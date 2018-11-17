@@ -5,6 +5,7 @@ const session = require('express-session');
 const dbConnection = require('./database');
 const MongoStore = require('connect-mongo')(session);
 const passport = require('./passport');
+const config = require('./oauth');
 const path = require('path');
 //require('dotenv').config()
 const mongoose = require('mongoose');
@@ -44,6 +45,14 @@ if (process.env.NODE_ENV === 'production') {
 
 // Routes
 app.use('/user', user);
+app.get('/auth/github', passport.authenticate('github'), function(req, res) {});
+app.get(
+  '/auth/github/callback',
+  passport.authenticate('github', { failureRedirect: '/' }),
+  function(req, res) {
+    res.redirect('/account');
+  }
+);
 
 // Send every request to the React app
 // Define any API routes before this runs

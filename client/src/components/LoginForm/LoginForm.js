@@ -102,6 +102,8 @@ class LoginForm extends Component {
               >
                 Login
               </button>
+              <a href="/auth/github"> Login with Github </a>
+              <a href="/auth/google"> Login with Google </a>
             </div>
           </form>
         </div>
