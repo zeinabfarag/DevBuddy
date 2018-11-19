@@ -15,7 +15,7 @@ const cors = require('cors');
 // Routes requires
 const user = require('./routes/api/user');
 // MIDDLEWARE
-// app.use(cors())
+app.use(cors())
 app.use(morgan('dev'));
 app.use(
   bodyParser.urlencoded({

@@ -1,36 +1,65 @@
+
+import axios from "axios";
 import React, { Component } from 'react';
-import axios from 'axios';
 import './eventstyle.css';
+
 
 //the api key
 const API_KEY = process.env.REACT_APP_API_KEY
-
-
 
 class Groups extends Component {
 
     state = {
         query: 'tech',
-        groups: []
+        groups: [],
+        savedEvents: [{
+            title: "",
+            id: "",
+            location: "",
+            link: "",
+        }]
+
     }
-    //save button
-    saveEvent() {
-
-        // const eventData = {};
-        const eventDataContainer = document.getElementsByClassName('eventtitle', [0])
-        alert("Saved");
-        console.log(eventDataContainer)
-    }
-
-
 
     componentWillMount() {
         this.getMeetUps();
+        console.log(this.state.isToggleOn)
     }
 
-    //Save Button
+
+    //SAVE GROUP EVENT
+    //---------------------------
+    onClick(eventId, eventTitle, eventLocation, eventLink) {
+
+        // if (this.isToggleOn === true) {
+        //     alert('hello')
+        // }
+
+        let saveEvent = ({
+            savedEvents: [{
+                title: eventTitle,
+                id: eventId,
+                location: eventLocation,
+                link: eventLink,
+            }]
+        })
+        console.log(saveEvent)
+        let savedObj = this.savedEvents;
+        savedObj.push({ title: eventTitle, id: eventId, location: eventLocation, link: eventLink })
+        console.log(savedObj)
 
 
+        // let saveState = this.saved;
+        // console.log(saveState)
+        // saveState.updateState({ canSave: 'hidden' })
+        // console.log(saveState)
+    }
+
+
+
+
+    //DISPLAY GROUP EVENTS
+    //---------------------------
     getMeetUps() {
         //meetup api
         axios.get('https://api.meetup.com/find/groups?text=' + this.state.query + '&sign=true&photo-host=public&sig_id=255600544&sig=0b1810a39b3fa52e67d05a8da45babe0f49b7eb0&key=' + API_KEY)
@@ -38,7 +67,7 @@ class Groups extends Component {
             .then(response => {
                 //pull event data
                 this.setState({ groups: response.data }, () => {
-                    console.log(this.state)
+                    // console.log(this.state)
                 })
 
             })
@@ -65,31 +94,35 @@ class Groups extends Component {
             return (
                 //display...
                 <div key={i} className="event">
-                    <div className="eventcard">
-                        <div className="card">
-                            <h1 id={group.name} className="card-title eventtitle" >{group.name}</h1>
+                    <img id="logoimage" src="https://files.slack.com/files-pri/TA2JAF9B8-FE0THTC1Z/debuddy.png" width="180px"></img>
+                    <div id={group.id} >
+                        <div className="card eventcard" >
+                            <a href={group.link} target="_blank">
+                                <h1 id={group.id} className="card-title eventtitle" >{group.name}</h1>
+                            </a>
                             <div className="card-body">
                                 <ul>
-                                    <p id={group.members} className="card-text">Members: {group.members}</p>
+                                    {/* <p id={group.members} className="card-text">Members: {group.members}</p> */}
                                     <p className="card-text">Location: {group.localized_location}</p>
-                                    <a href={group.link} className="card-link">Link</a>
+                                    {/* <a href={group.link} className="card-link">Link</a> */}
                                 </ul>
 
-                                <button id={group.id} onClick={this.saveEvent}>Save</button>
+                                <button id={group.id} class="save-eventbtn" onClick={this.onClick.bind(this.state, group.id, group.name, group.localized_location, group.link)}>
+                                    Save</button>
                                 <hr></hr>
                             </div>
                         </div>
                     </div>
-                </div>
+                </div >
             )
         })
         return (
             //form for query text
-            <div className="container">
+            <div className="container" >
 
                 <form className="eventsearch">
                     <input className="eventsearchbar"
-                        placeholder="Search For Group Events..."
+                        placeholder="Search Groups..."
                         ref={input => this.search = input}
                         onChange={this.handleInputChange}
                     />
@@ -97,6 +130,10 @@ class Groups extends Component {
                 </form>
                 <div className="eventcontainer">
                     {groupItems}
+                </div>
+
+                <div className="savedcontainer">
+
                 </div>
             </div>
         )
