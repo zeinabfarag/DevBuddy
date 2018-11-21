@@ -8,7 +8,7 @@ const ArticlePage = () => {
   return (
     <div>
       <Articles />
-      <p className="text-left linebr">Powered by API News</p>
+      <p>Powered by API News</p>
     </div>
   );
 };

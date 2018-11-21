@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { List, ListItem } from '../List';
 import { Col, Row, Container } from '../Grid';
-
 import axios from 'axios';
 
 class Articles extends Component {
@@ -13,8 +12,6 @@ class Articles extends Component {
   };
 
   componentDidMount() {
-    // this.loadArticle();
-    // this.loadArticlejs();
     this.callAxios();
   }
 
@@ -52,17 +49,17 @@ class Articles extends Component {
       );
   };
 
-  //loadArticlejs = () => {
-  //  axios
-  //    .get(
-  //       'https://newsapi.org/v2/everything?q=javascript&totalResults=15&apiKey=5a7b3ff72dcb4898b5c6ee2013105946'
-  //     )
-  //     .then(res => {
-  //       console.log('res', res.data.articles);
-  //      this.setState({ articlesjs: res.data.articles });
-  //     })
-  //    .catch(err => console.log(err));
-  // };
+  // function to save aricle on favourites
+
+  clickedToSave = () => {
+    console.log('btn clicked url =', this.article);
+    //if (LoggedIn) {
+    // console.log('please log in before saving');
+    // }
+    // API.saveFav(id)
+    //   .then(res => this.loadArticles())
+    //   .catch(err => console.log(err));
+  };
 
   render() {
     return (
@@ -77,7 +74,8 @@ class Articles extends Component {
                     <a href={article.url}>
                       <strong>{article.title} </strong>
                     </a>
-                    <p>by {article.source.name}</p>
+                    <span> by {article.source.name}</span>
+                    <button onClick={this.clickedToSave}>save</button>
                   </ListItem>
                 ))}
               </List>
@@ -94,7 +92,8 @@ class Articles extends Component {
                     <a href={article.url}>
                       <strong>{article.title} </strong>
                     </a>
-                    <p>by {article.source.name}</p>
+                    <span> by {article.source.name}</span>
+                    <button onClick={this.clickedToSave}>save</button>
                   </ListItem>
                 ))}
               </List>
@@ -113,7 +112,8 @@ class Articles extends Component {
                     <a href={article.url}>
                       <strong>{article.title} </strong>
                     </a>
-                    <p>by {article.source.name}</p>
+                    <span> by {article.source.name}</span>
+                    <button onClick={this.clickedToSave}>save</button>
                   </ListItem>
                 ))}
               </List>
@@ -130,7 +130,8 @@ class Articles extends Component {
                     <a href={article.url}>
                       <strong>{article.title} </strong>
                     </a>
-                    <p>by {article.source.name}</p>
+                    <span> by {article.source.name}</span>
+                    <button onClick={this.clickedToSave}>save</button>
                   </ListItem>
                 ))}
               </List>
