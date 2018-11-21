@@ -63,6 +63,7 @@ class Groups extends Component {
     getMeetUps() {
         //meetup api
         axios.get('https://api.meetup.com/find/groups?text=' + this.state.query + '&sign=true&photo-host=public&sig_id=255600544&sig=0b1810a39b3fa52e67d05a8da45babe0f49b7eb0&key=' + API_KEY)
+
             //https://api.meetup.com/find/upcoming_events?topic_category=34&sign=true&photo-host=public&sig_id=255600544&sig=0b1810a39b3fa52e67d05a8da45babe0f49b7eb0&key=
             .then(response => {
                 //pull event data
@@ -109,6 +110,7 @@ class Groups extends Component {
 
                                 <button id={group.id} class="save-eventbtn" onClick={this.onClick.bind(this.state, group.id, group.name, group.localized_location, group.link)}>
                                     Save</button>
+
                                 <hr></hr>
                             </div>
                         </div>

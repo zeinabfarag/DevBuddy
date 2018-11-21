@@ -9,6 +9,7 @@ body{
 .eventsearchbar{
     width: 80%;
     font-size: 50px;
+    padding-left: 10%;
     border: solid 10px #1a4f6e;
     box-shadow: 10px 5px 5px grey;
 }
