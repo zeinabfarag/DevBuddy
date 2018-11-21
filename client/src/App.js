@@ -65,10 +65,34 @@ class App extends Component {
         <Switch>
           <Route exact path="/" component={FrontPage} />
           <Route exact path="/about" component={About} />
-          <Route exact path="/articles" component={Articles} />
-          <Route exact path="/jobposting" component={JobPosting} />
-          <Route exact path="/meetups" component={Meetups} />
-          <Route exact path="/resources" component={Resources} />
+          <Route
+            exact
+            path="/articles"
+            render={props => (
+              <Articles {...props} username={this.state.username} />
+            )}
+          />
+          <Route
+            exact
+            path="/jobposting"
+            render={props => (
+              <JobPosting {...props} username={this.state.username} />
+            )}
+          />
+          <Route
+            exact
+            path="/meetups"
+            render={props => (
+              <Meetups {...props} username={this.state.username} />
+            )}
+          />
+          <Route
+            exact
+            path="/resources"
+            render={props => (
+              <Resources {...props} username={this.state.username} />
+            )}
+          />
           <Route
             exact
             path="/login"

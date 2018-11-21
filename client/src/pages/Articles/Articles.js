@@ -4,10 +4,10 @@ import Articles from '../../components/Articles';
 //import API from "../utils/API";
 //import Footer from './src/components/Footer';
 
-const ArticlePage = () => {
+const ArticlePage = props => {
   return (
     <div>
-      <Articles />
+      <Articles username={props.username} />
       <p>Powered by API News</p>
     </div>
   );
