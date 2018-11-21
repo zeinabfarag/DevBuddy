@@ -57,10 +57,7 @@ class LoginForm extends Component {
     } else {
       return (
         <div className="loginBox">
-          <img
-            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRlNQ2yyZICBI_pcqc_KxT55FYvlpE8TtOKTlVuNuVyjbr1BSwLhw"
-            className="user"
-          />
+          <img src="/asset/images/debuddy.png" className="user" />
           <h2>Log In Here</h2>
           <form>
             <p>Email</p>
