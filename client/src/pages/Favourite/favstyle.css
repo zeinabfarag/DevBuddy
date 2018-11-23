@@ -1,0 +1,37 @@
+div.scrollmenu {
+    background-color: #ffffff;
+    overflow: auto;
+    white-space: nowrap;
+    width: 100%;
+    /* margin-left: 10%;  */
+    margin-bottom: 5%;
+    margin-top: 5%;
+    border: solid 5px #1a4f6e;
+    /* box-shadow: 10px 10px 5px grey; */
+    box-shadow: 10px 10px grey;
+}
+
+div.scrollmenu a {
+    display: inline-block;
+    color: white;
+    text-align: center;
+    padding: 14px;
+    text-decoration: none;
+   
+}
+
+div.scrollmenu a:hover {
+    background-color: #1a4f6e;
+}
+
+.saveditem{
+    margin: 5%;
+    background: gray;
+    width: 300px;
+    height: 100px;
+     border: solid 10px #1a4f6e;
+    font-size: 20px;
+    font: black;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    text-align: center;
+}
