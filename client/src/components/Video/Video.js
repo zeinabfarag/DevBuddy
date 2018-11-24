@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import axios from "axios";
 
+import "./Video.css";
+
 class Video extends Component {
   state = {
     result: []
@@ -14,7 +16,7 @@ class Video extends Component {
   searchYoutube = () => {
     axios
       .get(
-        " https://www.googleapis.com/youtube/v3/search?q=web%20development&maxResults=5&part=snippet&key=AIzaSyBhnZV06WMyj1rsGqLrtgG5EuXDr4SIvu4 "
+        " https://www.googleapis.com/youtube/v3/search?q=web%20development&maxResults=8&part=snippet&key=AIzaSyBhnZV06WMyj1rsGqLrtgG5EuXDr4SIvu4 "
       )
       .then(res => {
         const result = res.data.items.map(
@@ -25,10 +27,6 @@ class Video extends Component {
       .catch(err => console.log(err));
   };
 
-  handleClick = () => {
-    console.log(this.state.vidLink);
-  };
-
   render() {
     return (
       <div>
@@ -36,6 +34,7 @@ class Video extends Component {
           let frame = (
             <div>
               <iframe
+                class="video"
                 title="youtube"
                 key={link}
                 width="200"
@@ -45,13 +44,6 @@ class Video extends Component {
                 allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
               />
-              <button
-                onClick={this.handleClick}
-                type="button"
-                className="btn btn-primary"
-              >
-                Save
-              </button>
             </div>
           );
           return frame;

@@ -1,2 +1,116 @@
-body{margin:0;padding:0;font-family:sans-serif}.App{text-align:center}.App-logo{-webkit-animation:App-logo-spin infinite 20s linear;animation:App-logo-spin infinite 20s linear;height:80px}.App-header{background-color:#222;height:150px;padding:20px;color:#fff}.App-intro{font-size:large}@-webkit-keyframes App-logo-spin{0%{-webkit-transform:rotate(0deg);transform:rotate(0deg)}to{-webkit-transform:rotate(1turn);transform:rotate(1turn)}}@keyframes App-logo-spin{0%{-webkit-transform:rotate(0deg);transform:rotate(0deg)}to{-webkit-transform:rotate(1turn);transform:rotate(1turn)}}.list-overflow-container{max-height:450px;width:90%;border:1px;border-radius:4px;padding-left:60px;padding-right:20px;overflow-y:scroll;overflow-x:hidden}.list-overflow-container ul{margin-left:10px}.list-overflow-container li{border-radius:0;border-left:0;border-right:0}.list-overflow-container li *{cursor:pointer}.list-overflow-container li a{color:#2a878c}.list-overflow-container li:first-child{border-top:none}.list-overflow-container li:last-child{border-bottom:none}.list-group-item{position:relative;display:block;padding:.75rem .25rem;margin-bottom:-1px;border:1px solid rgba(0,0,0,.125)}p{margin-bottom:0}.eventsearch{margin-top:5%;margin:2%}.eventsearchbar{width:80%;font-size:50px}.eventcontainer{height:1000px;overflow:scroll;overflow-x:hidden}.eventcard{padding:2%;margin:2%;font-size:25px;border:2px solid skyblue;width:80%}.eventtitle{font-size:30px}.footer{min-height:60px;background:#e5e5e5;position:relative;text-align:center;-webkit-text-decoration-color:#b8b8b8;text-decoration-color:#b8b8b8;padding-top:20px;font-size:13px}
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+.App {
+  text-align: center;
+}
+.App-logo {
+  -webkit-animation: App-logo-spin infinite 20s linear;
+  animation: App-logo-spin infinite 20s linear;
+  height: 80px;
+}
+.App-header {
+  background-color: #222;
+  height: 150px;
+  padding: 20px;
+  color: #fff;
+}
+.App-intro {
+  font-size: large;
+}
+@-webkit-keyframes App-logo-spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(1turn);
+    transform: rotate(1turn);
+  }
+}
+@keyframes App-logo-spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(1turn);
+    transform: rotate(1turn);
+  }
+}
+.list-overflow-container {
+  max-height: 450px;
+  width: 90%;
+  border: 1px;
+  border-radius: 4px;
+  padding-left: 60px;
+  padding-right: 20px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+.list-overflow-container ul {
+  margin-left: 10px;
+}
+.list-overflow-container li {
+  border-radius: 0;
+  border-left: 0;
+  border-right: 0;
+}
+.list-overflow-container li * {
+  cursor: pointer;
+}
+.list-overflow-container li a {
+  color: #2a878c;
+}
+.list-overflow-container li:first-child {
+  border-top: none;
+}
+.list-overflow-container li:last-child {
+  border-bottom: none;
+}
+.list-group-item {
+  position: relative;
+  display: block;
+  padding: 0.75rem 0.25rem;
+  margin-bottom: -1px;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+}
+p {
+  margin-bottom: 0;
+}
+.eventsearch {
+  margin-top: 5%;
+  margin: 2%;
+}
+.eventsearchbar {
+  width: 80%;
+  font-size: 50px;
+}
+.eventcontainer {
+  height: 1000px;
+  overflow: scroll;
+  overflow-x: hidden;
+}
+.eventcard {
+  padding: 2%;
+  margin: 2%;
+  font-size: 25px;
+  border: 2px solid skyblue;
+  width: 80%;
+}
+.eventtitle {
+  font-size: 30px;
+}
+.footer {
+  min-height: 60px;
+  background: #e5e5e5;
+  position: relative;
+  text-align: center;
+  -webkit-text-decoration-color: #b8b8b8;
+  text-decoration-color: #b8b8b8;
+  padding-top: 20px;
+  font-size: 13px;
+}
 /*# sourceMappingURL=main.3d3d2a78.css.map*/

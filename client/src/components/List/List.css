@@ -16,7 +16,20 @@ h3 {
 }
 
 .list-overflow-container {
-  margin-top: 2%;
+  padding: 2%;
+  margin: 2%;
+  font-size: 25px;
+  border: black 10px solid;
+  border-radius: 20%;
+  height: 220px;
+  float: left;
+  box-shadow: 10px 5px 5px grey;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  text-align: left;
+  width: 100%;
+
+  /* margin-top: 2%;
   max-height: 200px;
   text-align: left;
   width: 100%;
@@ -24,16 +37,13 @@ h3 {
   border-radius: 4px;
   overflow-y: scroll;
   overflow-x: hidden;
-  font-size: 0.95rem;
+  font-size: 0.95rem; */
 }
 
 .list-overflow-container li {
   border-radius: 0px;
   border-left: none;
   border-right: none;
-}
-
-.list-overflow-container li * {
   cursor: pointer;
 }
 

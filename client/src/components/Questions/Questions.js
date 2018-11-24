@@ -40,13 +40,11 @@ class Questions extends Component {
         </form>
         {this.state.result.map((result, i) => {
           let title = (
-            <ul>
-              <li>
-                <a key={result.title} href={result.link}>
-                  {result.title}
-                </a>
-              </li>
-            </ul>
+            <p>
+              <a key={result.title} href={result.link}>
+                {result.title}
+              </a>
+            </p>
           );
           return title;
         })}

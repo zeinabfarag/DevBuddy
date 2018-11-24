@@ -82,11 +82,11 @@ class Articles extends Component {
       <Container fluid>
         <Row>
           <Col size="md-6">
-            <h4 className="linebr">Articles from Web Development</h4>
+            <h4 className="linebr">Web Development</h4>
             {this.state.articleswdev.length ? (
               <List>
                 {this.state.articleswdev.map(article => (
-                  <ListItem>
+                  <ListItem className="idk">
                     <a href={article.url}>
                       <strong>{article.title} </strong>
                     </a>
@@ -108,7 +108,7 @@ class Articles extends Component {
             )}
           </Col>
           <Col size="md-6 sm-12">
-            <h4 className="linebr">Articles from Javascript</h4>
+            <h4 className="linebr">Javascript</h4>
             {this.state.articlesjs.length ? (
               <List>
                 {this.state.articlesjs.map(article => (
@@ -136,7 +136,7 @@ class Articles extends Component {
         </Row>
         <Row>
           <Col size="md-6">
-            <h4 className="linebr">Articles from Web Design</h4>
+            <h4 className="linebr">Web Design</h4>
             {this.state.articleswdes.length ? (
               <List>
                 {this.state.articleswdes.map(article => (
@@ -162,7 +162,7 @@ class Articles extends Component {
             )}
           </Col>
           <Col size="md-6 sm-12">
-            <h4 className="linebr">Articles from Tech</h4>
+            <h4 className="linebr">Tech</h4>
             {this.state.articlestech.length ? (
               <List>
                 {this.state.articlestech.map(article => (
