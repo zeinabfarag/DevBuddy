@@ -1,13 +1,18 @@
 body {
   margin: 0;
   padding: 0;
+  /* background-color: white; */
+  background: url('https://www.bebizzy.com/wp-content/uploads/2014/01/Dark-Grey-Background-High-Resolution-Photo-isk6e-Free.png');
+  /* height:1000px; */
   /* background: url('/asset/images/logo.jpg'); */
   height: 100%;
   width: 100%;
   margin-bottom: 200px;
+  /* background-repeat: no-repeat; */
   background-size: cover;
   font-family: sans-serif;
   overflow-x: hidden;
+  color:black;
 }
 
 .loginBox {

@@ -3,6 +3,11 @@
    margin: 2%;
 }
 
+.navbar-section {
+    background: #1a4f6e;
+}
+
+
 body{
     background: lightgray;
 }
