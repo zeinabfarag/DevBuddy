@@ -33,7 +33,11 @@ class SignupForm extends Component {
       })
       .then(response => {
         console.log(response);
-        if (!response.data.errmsg) {
+        if (!this.state.username || !this.state.password) {
+          alert('Please fill out Username and Password');
+        } else if (this.state.password.length < 6) {
+          alert(`Choose a password with more than 6 letters`);
+        } else if (!response.data.errmsg) {
           console.log('successful signup');
           alert("You've Successfully signed up.");
           // update App.js state
@@ -86,7 +90,7 @@ class SignupForm extends Component {
             <input
               type="submit"
               name=""
-              value="Sign In"
+              value="Sign Up"
               onClick={this.handleSubmit}
             />
           </form>
