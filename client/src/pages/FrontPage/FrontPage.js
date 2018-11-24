@@ -1,5 +1,9 @@
 import React, { Component } from 'react';
 import './FrontPage.css';
+import Articles from '../../components/Articles';
+import Groups from '../../components/groupevents';
+import JobPosting from '../JobPosting';
+import Resources from '../Resources';
 
 class FrontPage extends Component {
   render() {
@@ -11,7 +15,7 @@ class FrontPage extends Component {
           </div>
         </div>
 
-        <section className="section section-light">
+        <section className="section section-dark">
           <h2>About</h2>
           <p>
             Group of students trying to make it easy to learn coding and
@@ -26,8 +30,7 @@ class FrontPage extends Component {
         </div>
 
         <section className="section section-dark">
-          <h2>Resources</h2>
-          <p>some more talking</p>
+          <Resources />
         </section>
 
         <div className="pimg3">
@@ -37,8 +40,7 @@ class FrontPage extends Component {
         </div>
 
         <section className="section section-dark">
-          <h2>Articles</h2>
-          <p>some more talking</p>
+          <Articles />
         </section>
 
         <div className="pimg4">
@@ -48,8 +50,7 @@ class FrontPage extends Component {
         </div>
 
         <section className="section section-dark">
-          <h2>Some section</h2>
-          <p>some more talking</p>
+          <JobPosting />
         </section>
 
         <div className="pimg5">
@@ -59,8 +60,7 @@ class FrontPage extends Component {
         </div>
 
         <section className="section section-dark">
-          <h2>Some section</h2>
-          <p>some more talking</p>
+          <Groups />
         </section>
 
         <div className="pimg1">
