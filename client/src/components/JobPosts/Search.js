@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import './Search.css'
+import '../JobPosts/Search.css'
 
 
 class Search extends Component {
@@ -43,7 +43,7 @@ class Search extends Component {
               />
             </div>
             <div className="col-auto">
-              <label className="sr-only">Username</label>
+              <label className="sr-only">Location</label>
               <input
                 type="text"
                 placeholder="Location"

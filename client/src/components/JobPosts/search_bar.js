@@ -1,4 +1,9 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+
+
+//search bar logic
+
+
 
 class SearchBar extends Component {
   constructor(props) {
