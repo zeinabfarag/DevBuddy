@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { Component } from "react";
 import "./eventstyle.css";
+import { Redirect } from "react-router";
 
 //the api key
 const API_KEY = process.env.REACT_APP_API_KEY;
@@ -8,15 +9,7 @@ const API_KEY = process.env.REACT_APP_API_KEY;
 class Groups extends Component {
   state = {
     query: "tech",
-    groups: [],
-    savedEvents: [
-      {
-        title: "",
-        id: "",
-        location: "",
-        link: ""
-      }
-    ]
+    groups: []
   };
 
   componentWillMount() {
@@ -26,36 +19,25 @@ class Groups extends Component {
 
   //SAVE GROUP EVENT
   //---------------------------
-  onClick(eventId, eventTitle, eventLocation, eventLink) {
-    // if (this.isToggleOn === true) {
-    //     alert('hello')
-    // }
+  onClick = (title, link) => {
+    if (this.props.username == null) {
+      this.setState({ redirect: true });
+    } else {
+      let saveGroup = {
+        title: title,
+        link: link
+      };
 
-    let saveEvent = {
-      savedEvents: [
-        {
-          title: eventTitle,
-          id: eventId,
-          location: eventLocation,
-          link: eventLink
-        }
-      ]
-    };
-    console.log(saveEvent);
-    let savedObj = this.savedEvents;
-    savedObj.push({
-      title: eventTitle,
-      id: eventId,
-      location: eventLocation,
-      link: eventLink
-    });
-    console.log(savedObj);
-
-    // let saveState = this.saved;
-    // console.log(saveState)
-    // saveState.updateState({ canSave: 'hidden' })
-    // console.log(saveState)
-  }
+      axios
+        .post(`/user/meetup/${this.props.username}`, saveGroup)
+        .then(function(response) {
+          console.log("success", response);
+        })
+        .catch(function(error) {
+          console.log("error", error);
+        });
+    }
+  };
 
   //DISPLAY GROUP EVENTS
   //---------------------------
@@ -94,6 +76,9 @@ class Groups extends Component {
   };
 
   render() {
+    if (this.state.redirect) {
+      return <Redirect to="/login" />;
+    }
     //iterate through the array
     const groupItems = this.state.groups.map((group, i) => {
       return (
@@ -125,9 +110,7 @@ class Groups extends Component {
                   class="save-eventbtn"
                   onClick={this.onClick.bind(
                     this.state,
-                    group.id,
                     group.name,
-                    group.localized_location,
                     group.link
                   )}
                 >

@@ -3,11 +3,8 @@ const router = express.Router();
 const User = require("../../database/models/user");
 const passport = require("../../passport");
 
-router.post("/sample/:username", (req, res) => {
-  User.update(
-    { username: req.params.username },
-    { $push: { sample: req.body } }
-  )
+router.post("/job/:username", (req, res) => {
+  User.update({ username: req.params.username }, { $push: { jobs: req.body } })
     .then(function(response) {
       console.log(response);
       res.send("successfully created sample");
@@ -17,7 +14,8 @@ router.post("/sample/:username", (req, res) => {
       res.send("failed");
     });
 });
-router.post("/meetups/:username", (req, res) => {
+
+router.post("/meetup/:username", (req, res) => {
   User.update(
     { username: req.params.username },
     { $push: { meetups: req.body } }
