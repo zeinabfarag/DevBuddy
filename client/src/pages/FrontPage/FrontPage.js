@@ -19,7 +19,7 @@ class FrontPage extends Component {
           </p>
         </section>
 
-        <div className="pimg3">
+        <div className="pimg2">
           <div className="ptext">
             <span className="border trans">Resources</span>
           </div>
@@ -41,7 +41,7 @@ class FrontPage extends Component {
           <p>some more talking</p>
         </section>
 
-        <div className="pimg3">
+        <div className="pimg4">
           <div className="ptext">
             <span className="border trans">Job Posting</span>
           </div>
@@ -52,7 +52,7 @@ class FrontPage extends Component {
           <p>some more talking</p>
         </section>
 
-        <div className="pimg3">
+        <div className="pimg5">
           <div className="ptext">
             <span className="border trans">Meetups</span>
           </div>
