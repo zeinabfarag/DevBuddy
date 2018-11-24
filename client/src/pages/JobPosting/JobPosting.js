@@ -1,69 +1,55 @@
 import React, { Component } from 'react';
-import fetchJsonp from 'fetch-jsonp';
-import JobsList from './JobsList';
-import SearchBar from '../../components/JobPosts/search_bar';
-
-
-const API_END_POINT = 'https://jobs.github.com/positions.json';
-
-require('es6-promise').polyfill();
-
+import Search from '../../components/JobPosts/Search';
+import JobList from '../../components/JobPosts/JobList';
+import JobDesc from '../../components/JobPosts/JobDes';
 class JobPosting extends Component {
   constructor(props) {
-    super(props)
+    super(props);
     this.state = {
-      jobs: {},
-      loading: true,
-      intervalBeforeRequest: 2000,
-      lockRequest: false
-    }
+      Jobs: [],
+      selectedJob: null,
+
+    };
   }
 
-  componentDidMount() {
-    this.fetchData()
-  }
 
-  fetchData() {
-    fetchJsonp(`${API_END_POINT}`, this.config)
-      .then((response) => response.json())
-      .then(function (findResponse) {
-        this.setState({ jobs: findResponse.slice(0, 10), loading: false });
-      }.bind(this))
-      .catch(function (error) {
-        console.log('Request failed', error)
+  jobSearch(keyword, location) {
+    fetch(`https://jobs.github.com/positions.json?description=${keyword}&location=${location}`)
+      .then(res => res.json())
+      .then(json => {
+        this.setState({
+          Jobs: json,
+          selectedJob: json[1]
+        })
       });
-  }
-
-  search(searchText) {
-    this.setState({ loading: true })
-    if (searchText) {
-      fetchJsonp(`${API_END_POINT}?search=${searchText}`, this.config)
-        .then((response) => response.json())
-        .then(function (findResponse) {
-          if (findResponse) {
-
-            this.setState({ jobs: findResponse.slice(0, 10), loading: false });
-          }
-        }.bind(this))
-    }
+    console.log(this.state.Jobs);
   }
 
   render() {
-    let content;
-
-
-    if (this.state.loading)
-      content = <h2 className="text-center alert alert-primary">Loading ...</h2>;
-    else if (this.state.jobs.length >= 1)
-      content = <JobsList jobs={this.state.jobs} />;
-    else
-      content = <h2 className="text-center alert alert-danger">No jobs matching that criteria have been found. Try a different search.</h2>;
-
     return (
-      <div>
-        <div>
-          <SearchBar callback={this.search.bind(this)} />
-          {content}
+      <div className="App">
+        <div className="container">
+          <div className="row">
+            <div className="col">
+              <div className={this.state.FullSearch}>
+                <Search onJobSubmit={(keyword, location) => this.jobSearch(keyword, location)} />
+              </div>
+            </div>
+          </div>
+
+          <div className="row data">
+            <div className="col-sm-5">
+              <JobList
+                onJobSelect={selectedJob => this.setState({ selectedJob })}
+                jobs={this.state.Jobs}
+              />
+            </div>
+            <div className="col-sm-6" >
+              <div className="sticky-top">
+                <JobDesc job={this.state.selectedJob} />
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     );
