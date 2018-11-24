@@ -86,7 +86,7 @@ class Articles extends Component {
             {this.state.articleswdev.length ? (
               <List>
                 {this.state.articleswdev.map(article => (
-                  <ListItem className="idk">
+                  <ListItem>
                     <a href={article.url}>
                       <strong>{article.title} </strong>
                     </a>
