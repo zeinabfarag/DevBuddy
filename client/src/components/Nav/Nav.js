@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
-import { Route, Link } from 'react-router-dom';
-import axios from 'axios';
+import React, { Component } from "react";
+import { Link } from "react-router-dom";
+import axios from "axios";
 
 class Nav extends Component {
   constructor() {
@@ -10,10 +10,10 @@ class Nav extends Component {
 
   logout(event) {
     event.preventDefault();
-    console.log('logging out');
+    console.log("logging out");
 
     axios
-      .post('/user/logout')
+      .post("/user/logout")
       .then(response => {
         console.log(response.data);
         if (response.status === 200) {
@@ -24,13 +24,13 @@ class Nav extends Component {
         }
       })
       .catch(error => {
-        console.log('Logout error');
+        console.log("Logout error");
       });
   }
 
   render() {
     const loggedIn = this.props.loggedIn;
-    console.log('navbar render, props: ');
+    console.log("navbar render, props: ");
     console.log(this.props);
 
     return (
@@ -59,6 +59,7 @@ class Nav extends Component {
               <Link to="/favourite" className="btn btn-link text-secondary">
                 <span className="badge badge-info">Favourite</span>
               </Link>
+
               <Link
                 to="/"
                 className="btn btn-link text-secondary"

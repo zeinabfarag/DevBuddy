@@ -1,5 +1,5 @@
-import React from 'react';
-import Articles from '../../components/Articles';
+import React from "react";
+import Articles from "../../components/Articles";
 
 //import API from "../utils/API";
 //import Footer from './src/components/Footer';
@@ -7,7 +7,7 @@ import Articles from '../../components/Articles';
 const ArticlePage = props => {
   return (
     <div>
-      <Articles username={props.username} />
+      <Articles {...props} username={props.username} />
       <p>Powered by API News</p>
     </div>
   );

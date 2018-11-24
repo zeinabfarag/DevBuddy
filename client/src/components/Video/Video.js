@@ -1,10 +1,11 @@
 import React, { Component } from "react";
 import axios from "axios";
 
+import "./Video.css";
+
 class Video extends Component {
   state = {
-    result: [],
-    search: ""
+    result: []
   };
 
   // When this component mounts, search for the movie "The Matrix"
@@ -15,7 +16,7 @@ class Video extends Component {
   searchYoutube = () => {
     axios
       .get(
-        " https://www.googleapis.com/youtube/v3/search?q=web%20development&maxResults=5&part=snippet&key=AIzaSyBhnZV06WMyj1rsGqLrtgG5EuXDr4SIvu4 "
+        " https://www.googleapis.com/youtube/v3/search?q=web%20development&maxResults=8&part=snippet&key=AIzaSyBhnZV06WMyj1rsGqLrtgG5EuXDr4SIvu4 "
       )
       .then(res => {
         const result = res.data.items.map(
@@ -31,16 +32,19 @@ class Video extends Component {
       <div>
         {this.state.result.map((link, i) => {
           let frame = (
-            <iframe
-              title="youtube"
-              key={i}
-              width="200"
-              height="200"
-              src={link}
-              frameBorder="0"
-              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-            />
+            <div>
+              <iframe
+                class="video"
+                title="youtube"
+                key={link}
+                width="200"
+                height="200"
+                src={link}
+                frameBorder="0"
+                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              />
+            </div>
           );
           return frame;
         })}
