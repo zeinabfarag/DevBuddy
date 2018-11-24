@@ -102,7 +102,13 @@ class App extends Component {
             path="/signup"
             render={props => <Signup {...props} loginUser={this.updateUser} />}
           />
-          <Route exact path="/favourite" component={Favourite} />
+          <Route
+            exact
+            path="/favourite"
+            render={props => (
+              <Favourite {...props} username={this.state.username} />
+            )}
+          />
           <Route component={NoMatch} />
         </Switch>
       </div>
