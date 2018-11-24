@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import Search from '../../components/JobPosts/Search';
 import JobList from '../../components/JobPosts/JobList';
 import JobDesc from '../../components/JobPosts/JobDes';
+
+
+
 class JobPosting extends Component {
   constructor(props) {
     super(props);
@@ -12,8 +15,10 @@ class JobPosting extends Component {
     };
   }
 
+  //search funtion logic 
 
   jobSearch(keyword, location) {
+    {/* use of fetch method to utilize github API, the parameters set are Keyword (the job the user will be searching) and Location*/ }
     fetch(`https://jobs.github.com/positions.json?description=${keyword}&location=${location}`)
       .then(res => res.json())
       .then(json => {
