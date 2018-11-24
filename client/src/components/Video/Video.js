@@ -3,8 +3,7 @@ import axios from "axios";
 
 class Video extends Component {
   state = {
-    result: [],
-    vidLink: React.createRef()
+    result: []
   };
 
   // When this component mounts, search for the movie "The Matrix"
@@ -37,7 +36,6 @@ class Video extends Component {
           let frame = (
             <div>
               <iframe
-                ref={this.vidlink}
                 title="youtube"
                 key={link}
                 width="200"

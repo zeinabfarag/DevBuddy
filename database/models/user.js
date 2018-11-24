@@ -1,25 +1,21 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 const bcrypt = require("bcryptjs");
+const sampleSchema = require("./sample");
+const articlesSchema = require("./articles");
+const jobsSchema = require("./jobs");
+const meetupsSchema = require("./meetups");
+
 mongoose.promise = Promise;
-
-const Articles = new Schema({
-  link: { type: String, unique: false, required: false },
-  title: { type: String, unique: false, required: false }
-});
-
-const Meetups = new Schema({
-  link: { type: String, unique: false, required: false },
-  title: { type: String, unique: false, required: false },
-  location: { type: String, unique: false, required: false }
-});
 
 // Define userSchema
 const userSchema = new Schema({
-  username: { type: String, unique: false, required: false },
-  password: { type: String, unique: false, required: false },
-  articles: [Articles],
-  meetups: [Meetups]
+  username: { type: String, unique: true, required: true },
+  password: { type: String, unique: false, required: true },
+  sample: [sampleSchema],
+  articles: [articlesSchema],
+  jobs: [jobsSchema],
+  meetups: [meetupsSchema]
 });
 
 // Define schema methods

@@ -1,10 +1,13 @@
-import React, { Component } from 'react';
-import { List, ListItem } from '../List';
-import { Col, Row, Container } from '../Grid';
-import axios from 'axios';
+import React, { Component } from "react";
+import { List, ListItem } from "../List";
+import { Col, Row, Container } from "../Grid";
+import { Redirect } from "react-router";
+
+import axios from "axios";
 
 class Articles extends Component {
   state = {
+    redirect: false,
     articleswdev: [],
     articlesjs: [],
     articlestech: [],
@@ -19,24 +22,24 @@ class Articles extends Component {
     axios
       .all([
         axios.get(
-          'https://newsapi.org/v2/everything?q=web%20development&totalResults=15&apiKey=5a7b3ff72dcb4898b5c6ee2013105946'
+          "https://newsapi.org/v2/everything?q=web%20development&totalResults=15&apiKey=5a7b3ff72dcb4898b5c6ee2013105946"
         ),
         axios.get(
-          'https://newsapi.org/v2/everything?q=javascript&totalResults=15&apiKey=5a7b3ff72dcb4898b5c6ee2013105946'
+          "https://newsapi.org/v2/everything?q=javascript&totalResults=15&apiKey=5a7b3ff72dcb4898b5c6ee2013105946"
         ),
         axios.get(
-          'https://newsapi.org/v2/everything?q=tech&totalResults=15&apiKey=5a7b3ff72dcb4898b5c6ee2013105946'
+          "https://newsapi.org/v2/everything?q=tech&totalResults=15&apiKey=5a7b3ff72dcb4898b5c6ee2013105946"
         ),
         axios.get(
-          'https://newsapi.org/v2/everything?q=web%20design&totalResults=15&apiKey=5a7b3ff72dcb4898b5c6ee2013105946'
+          "https://newsapi.org/v2/everything?q=web%20design&totalResults=15&apiKey=5a7b3ff72dcb4898b5c6ee2013105946"
         )
       ])
       .then(
         axios.spread((resdev, resjs, restech, resdes) => {
-          console.log('reswdev =', resdev.data.articles);
-          console.log('resjs =', resjs.data.articles);
-          console.log('reswtech =', restech.data.articles);
-          console.log('reswdes =', resdes.data.articles);
+          console.log("reswdev =", resdev.data.articles);
+          console.log("resjs =", resjs.data.articles);
+          console.log("reswtech =", restech.data.articles);
+          console.log("reswdes =", resdes.data.articles);
           this.setState({
             articleswdev: resdev.data.articles,
             articlesjs: resjs.data.articles,
@@ -51,17 +54,30 @@ class Articles extends Component {
 
   // function to save aricle on favourites
 
-  clickedToSave = () => {
-    console.log('btn clicked url =', this.article);
-    //if (LoggedIn) {
-    // console.log('please log in before saving');
-    // }
-    // API.saveFav(id)
-    //   .then(res => this.loadArticles())
-    //   .catch(err => console.log(err));
+  clickedToSave = (title, link) => {
+    if (this.props.username == null) {
+      this.setState({ redirect: true });
+    } else {
+      let saveArticle = {
+        title: title,
+        link: link
+      };
+
+      axios
+        .post(`/user/article/${this.props.username}`, saveArticle)
+        .then(function(response) {
+          console.log("success", response);
+        })
+        .catch(function(error) {
+          console.log("error", error);
+        });
+    }
   };
 
   render() {
+    if (this.state.redirect) {
+      return <Redirect to="/login" />;
+    }
     return (
       <Container fluid>
         <Row>
@@ -75,7 +91,15 @@ class Articles extends Component {
                       <strong>{article.title} </strong>
                     </a>
                     <span> by {article.source.name}</span>
-                    <button onClick={this.clickedToSave}>save</button>
+                    <button
+                      onClick={this.clickedToSave.bind(
+                        this.state,
+                        article.title,
+                        article.url
+                      )}
+                    >
+                      save
+                    </button>
                   </ListItem>
                 ))}
               </List>
@@ -93,7 +117,15 @@ class Articles extends Component {
                       <strong>{article.title} </strong>
                     </a>
                     <span> by {article.source.name}</span>
-                    <button onClick={this.clickedToSave}>save</button>
+                    <button
+                      onClick={this.clickedToSave.bind(
+                        this.state,
+                        article.title,
+                        article.url
+                      )}
+                    >
+                      save
+                    </button>
                   </ListItem>
                 ))}
               </List>
@@ -113,7 +145,15 @@ class Articles extends Component {
                       <strong>{article.title} </strong>
                     </a>
                     <span> by {article.source.name}</span>
-                    <button onClick={this.clickedToSave}>save</button>
+                    <button
+                      onClick={this.clickedToSave.bind(
+                        this.state,
+                        article.title,
+                        article.url
+                      )}
+                    >
+                      save
+                    </button>
                   </ListItem>
                 ))}
               </List>
@@ -131,7 +171,15 @@ class Articles extends Component {
                       <strong>{article.title} </strong>
                     </a>
                     <span> by {article.source.name}</span>
-                    <button onClick={this.clickedToSave}>save</button>
+                    <button
+                      onClick={this.clickedToSave.bind(
+                        this.state,
+                        article.title,
+                        article.url
+                      )}
+                    >
+                      save
+                    </button>
                   </ListItem>
                 ))}
               </List>

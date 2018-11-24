@@ -14,6 +14,8 @@ import Signup from "./pages/Signup";
 import Nav from "./components/Nav";
 import Favourite from "./pages/Favourite";
 
+import Sample from "./components/DatabaseSample";
+
 class App extends Component {
   constructor() {
     super();
@@ -73,6 +75,13 @@ class App extends Component {
           />
           <Route
             exact
+            path="/sample"
+            render={props => (
+              <Sample {...props} username={this.state.username} />
+            )}
+          />
+          <Route
+            exact
             path="/jobposting"
             render={props => (
               <JobPosting {...props} username={this.state.username} />
@@ -105,7 +114,6 @@ class App extends Component {
           <Route exact path="/favourite" component={Favourite} />
           <Route component={NoMatch} />
         </Switch>
-        <Footer />
       </div>
     );
   }
