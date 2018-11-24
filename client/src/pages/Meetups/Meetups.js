@@ -1,6 +1,5 @@
-import React from 'react';
+import React from "react";
 import Groups from "../../components/groupevents";
-
 
 const Meetups = () => {
   return (
@@ -9,8 +8,6 @@ const Meetups = () => {
       <Groups />
     </div>
   );
-}
-
+};
 
 export default Meetups;
-

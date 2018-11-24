@@ -41,9 +41,6 @@ class Nav extends Component {
               <Link to="/" className="btn btn-link text-secondary">
                 <span className="badge badge-info">Home</span>
               </Link>
-              <Link to="/sample" className="btn btn-link text-secondary">
-                <span className="badge badge-info">Sample</span>
-              </Link>
               <Link to="/about" className="btn btn-link text-secondary">
                 <span className="badge badge-info">About</span>
               </Link>
@@ -75,9 +72,6 @@ class Nav extends Component {
             <section className="navbar-section">
               <Link to="/" className="btn btn-link text-secondary">
                 <span className="badge badge-info">Home</span>
-              </Link>
-              <Link to="/sample" className="btn btn-link text-secondary">
-                <span className="badge badge-info">Sample</span>
               </Link>
               <Link to="/about" className="btn btn-link text-secondary">
                 <span className="badge badge-info">About</span>

@@ -14,8 +14,6 @@ import Signup from "./pages/Signup";
 import Nav from "./components/Nav";
 import Favourite from "./pages/Favourite";
 
-import Sample from "./components/DatabaseSample";
-
 class App extends Component {
   constructor() {
     super();
@@ -71,13 +69,6 @@ class App extends Component {
             path="/articles"
             render={props => (
               <Articles {...props} username={this.state.username} />
-            )}
-          />
-          <Route
-            exact
-            path="/sample"
-            render={props => (
-              <Sample {...props} username={this.state.username} />
             )}
           />
           <Route
