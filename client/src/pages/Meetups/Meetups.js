@@ -1,11 +1,11 @@
 import React from "react";
 import Groups from "../../components/groupevents";
 
-const Meetups = () => {
+const Meetups = (props) => {
   return (
     <div className="container">
       <div className="col-lg-3" />
-      <Groups />
+      <Groups {...props} username={props.username} />
     </div>
   );
 };
