@@ -39,25 +39,39 @@ class Nav extends Component {
           {loggedIn ? (
             <section className="navbar-section">
               <Link to="/" className="btn btn-link text-secondary">
-                <span className="badge badge-pill badge-light">Home</span>
+                <button type="button" class="btn btn-outline-secondary">
+                  Home
+                </button>
               </Link>
               <Link to="/about" className="btn btn-link text-secondary">
-                <span className="badge badge-info">About</span>
+                <button type="button" class="btn btn-outline-secondary">
+                  About
+                </button>
               </Link>
               <Link to="/resources" className="btn btn-link text-secondary">
-                <span className="badge badge-info">Resources</span>
+                <button type="button" class="btn btn-outline-secondary">
+                  Resources
+                </button>
               </Link>
               <Link to="/articles" className="btn btn-link text-secondary">
-                <span className="badge badge-info">Articles</span>
+                <button type="button" class="btn btn-outline-secondary">
+                  Articles
+                </button>
               </Link>
               <Link to="/jobposting" className="btn btn-link text-secondary">
-                <span className="badge badge-info">Job Postings</span>
+                <button type="button" class="btn btn-outline-secondary">
+                  Job Posting
+                </button>
               </Link>
               <Link to="/meetups" className="btn btn-link text-secondary">
-                <span className="badge badge-info">Meetups</span>
+                <button type="button" class="btn btn-outline-secondary">
+                  Meetups
+                </button>
               </Link>
               <Link to="/favourite" className="btn btn-link text-secondary">
-                <span className="badge badge-info">Favourite</span>
+                <button type="button" class="btn btn-outline-secondary">
+                  Favourite
+                </button>
               </Link>
 
               <Link
@@ -65,7 +79,9 @@ class Nav extends Component {
                 className="btn btn-link text-secondary"
                 onClick={this.logout}
               >
-                <span className="badge badge-info">Logout</span>
+                <button type="button" class="btn btn-outline-secondary">
+                  Logout
+                </button>
               </Link>
             </section>
           ) : (
