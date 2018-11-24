@@ -86,7 +86,7 @@ class SignupForm extends Component {
             <input
               type="submit"
               name=""
-              value="Sign In"
+              value="Sign Up"
               onClick={this.handleSubmit}
             />
           </form>

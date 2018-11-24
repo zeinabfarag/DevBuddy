@@ -1,6 +1,6 @@
-import React, { Component } from "react";
-import { Link } from "react-router-dom";
-import axios from "axios";
+import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
+import axios from 'axios';
 
 class Nav extends Component {
   constructor() {
@@ -10,10 +10,10 @@ class Nav extends Component {
 
   logout(event) {
     event.preventDefault();
-    console.log("logging out");
+    console.log('logging out');
 
     axios
-      .post("/user/logout")
+      .post('/user/logout')
       .then(response => {
         console.log(response.data);
         if (response.status === 200) {
@@ -24,22 +24,22 @@ class Nav extends Component {
         }
       })
       .catch(error => {
-        console.log("Logout error");
+        console.log('Logout error');
       });
   }
 
   render() {
     const loggedIn = this.props.loggedIn;
-    console.log("navbar render, props: ");
+    console.log('navbar render, props: ');
     console.log(this.props);
 
     return (
-      <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
+      <nav className="navbar  navbar-inverse navbar-expand-lg">
         <div className="col-md-12">
           {loggedIn ? (
             <section className="navbar-section">
               <Link to="/" className="btn btn-link text-secondary">
-                <span className="badge badge-info">Home</span>
+                <span className="badge badge-pill badge-light">Home</span>
               </Link>
               <Link to="/about" className="btn btn-link text-secondary">
                 <span className="badge badge-info">About</span>
@@ -71,28 +71,46 @@ class Nav extends Component {
           ) : (
             <section className="navbar-section">
               <Link to="/" className="btn btn-link text-secondary">
-                <span className="badge badge-info">Home</span>
+                {/* <span className="badge badge-pill badge-light">Home</span> */}
+                <button type="button" class="btn btn-outline-secondary">
+                  Home
+                </button>
               </Link>
               <Link to="/about" className="btn btn-link text-secondary">
-                <span className="badge badge-info">About</span>
+                {/* <span className="badge badge-pill badge-light">About</span> */}
+                <button type="button" class="btn btn-outline-secondary">
+                  About
+                </button>
               </Link>
               <Link to="/resources" className="btn btn-link text-secondary">
-                <span className="badge badge-info">Resources</span>
+                <button type="button" class="btn btn-outline-secondary">
+                  Resources
+                </button>
               </Link>
               <Link to="/articles" className="btn btn-link text-secondary">
-                <span className="badge badge-info">Articles</span>
+                <button type="button" class="btn btn-outline-secondary">
+                  Articles
+                </button>
               </Link>
               <Link to="/jobposting" className="btn btn-link text-secondary">
-                <span className="badge badge-info">Job Postings</span>
+                <button type="button" class="btn btn-outline-secondary">
+                  Job Posting
+                </button>
               </Link>
               <Link to="/meetups" className="btn btn-link text-secondary">
-                <span className="badge badge-info">Meetups</span>
+                <button type="button" class="btn btn-outline-secondary">
+                  Meetups
+                </button>
               </Link>
               <Link to="/login" className="btn btn-link text-secondary">
-                <span className="badge badge-info">Login</span>
+                <button type="button" class="btn btn-outline-secondary">
+                  Login
+                </button>
               </Link>
               <Link to="/signup" className="btn btn-link">
-                <span className="badge badge-info">Sign up</span>
+                <button type="button" class="btn btn-outline-secondary">
+                  Sign Up
+                </button>
               </Link>
             </section>
           )}
