@@ -79,6 +79,7 @@
   /* height: 200px; */
 }
 
+<<<<<<< HEAD
 .member-info {
   margin-left: 25%;
   margin-top: 4%;
@@ -88,6 +89,24 @@
   padding-bottom: 70px;
   border-radius: 10px;
 }
+=======
+.member-info{
+margin-left: 25%;
+margin-top: 4%; 
+border: solid 2px white;
+box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); 
+background: white;
+padding-bottom: 70px;
+border-radius: 10px;
+ } 
+
+ .abouttext{
+   font-size: 18px;
+   margin-top: 5%;
+
+   
+ }
+>>>>>>> 5a22d57ee4147acae416c6dbac01c1da4f330ced
 
 .abouttext {
   font-size: 20px;
