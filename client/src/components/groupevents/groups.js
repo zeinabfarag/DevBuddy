@@ -127,6 +127,7 @@ class Groups extends Component {
     return (
       //form for query text
       <div className="container">
+
         <h1 className="saved-section about-title">SEARCH MEETUPS</h1>
         <form className="eventsearch">
           <input

@@ -14,7 +14,7 @@ class About extends Component {
           <div className="saved-deck">
             {/* <h1 className="saved-section">PRESS PLAY</h1> */}
             <div class="videoWrapper">
-              {/* <!-- Copy & Pasted from YouTube --> */}
+
               <iframe
                 width="560"
                 height="349"
