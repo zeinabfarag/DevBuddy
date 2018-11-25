@@ -74,13 +74,15 @@ box-shadow: inset -5px 0px 124px -3px rgba(0,0,0,0.75);
 }
 
 .deletebtn{
-    float: left;
-    margin-left: 0;
+    float: right;
+    margin: 50px;
+    margin-bottom: 30px;
     background-color: #e7e7e7;
     color: black;
     font-size: 20px;
     font-weight: 200px;
-    margin-top: 20px;
+    /* margin-top: 20px; */
+    /* padding-bottom: 50px; */
 }
 
 .deletebtn:hover{

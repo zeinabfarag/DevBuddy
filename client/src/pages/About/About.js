@@ -14,11 +14,11 @@ class About extends Component {
           <div className="saved-deck">
             {/* <h1 className="saved-section">PRESS PLAY</h1> */}
             <div class="videoWrapper">
-              {/* <!-- Copy & Pasted from YouTube --> */}
+
               <iframe
                 width="560"
                 height="349"
-                src="http://www.youtube.com/embed/n_dZNLr2cME?rel=0&hd=1"
+                src="/asset/images/Dev_1.mp4"
                 frameborder="0"
                 allowfullscreen
               />
@@ -34,8 +34,8 @@ class About extends Component {
                   <div className="memberimage col-2">
                     <img
                       className="team-img"
-                      src="https://files.slack.com/files-pri/TA2JAF9B8-FE0THTC1Z/debuddy.png"
-                      width="250px"
+                      src="/asset/images/ab.png"
+                      width="300px" alt="image"
                     />
                   </div>
                   <div className="member-info col-8">
@@ -63,18 +63,18 @@ class About extends Component {
                   <div className="memberimage col-2">
                     <img
                       className="team-img"
-                      src="https://files.slack.com/files-pri/TA2JAF9B8-FE0THTC1Z/debuddy.png"
-                      width="250px"
+                      src="/asset/images/zteam.png"
+                      width="300px" alt="image"
                     />
                   </div>
                   <div className="member-info col-8">
-                    <h1 className="member-section">Bob</h1>
+                    <h1 className="member-section">Zeinab Farag</h1>
                     <p className="abouttext">
                       Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                       Fusce rutrum eros eget hendrerit bibendum.{' '}
                     </p>
                     <div className="contact-icons">
-                      <a href="https://cdn0.iconfinder.com/data/icons/octicons/1024/mark-github-512.png">
+                      <a href="https://github.com/zeinabfarag">
                         <img
                           className="github-img"
                           src="https://cdn0.iconfinder.com/data/icons/octicons/1024/mark-github-512.png"
@@ -88,18 +88,18 @@ class About extends Component {
                   <div className="memberimage col-2">
                     <img
                       className="team-img"
-                      src="https://files.slack.com/files-pri/TA2JAF9B8-FE0THTC1Z/debuddy.png"
-                      width="250px"
+                      src="/asset/images/al.png"
+                      width="300px" alt="image"
                     />
                   </div>
                   <div className="member-info col-8">
-                    <h1 className="member-section">Bob</h1>
+                    <h1 className="member-section">Alejandra Juarez</h1>
                     <p className="abouttext">
                       Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                       Fusce rutrum eros eget hendrerit bibendum.{' '}
                     </p>
                     <div className="contact-icons">
-                      <a href="https://cdn0.iconfinder.com/data/icons/octicons/1024/mark-github-512.png">
+                      <a href="https://github.com/alejuarez">
                         <img
                           className="github-img"
                           src="https://cdn0.iconfinder.com/data/icons/octicons/1024/mark-github-512.png"
@@ -113,18 +113,18 @@ class About extends Component {
                   <div className="memberimage col-2">
                     <img
                       className="team-img"
-                      src="https://files.slack.com/files-pri/TA2JAF9B8-FE0THTC1Z/debuddy.png"
-                      width="250px"
+                      src="/asset/images/r.png"
+                      width="300px" alt="image"
                     />
                   </div>
                   <div className="member-info col-8">
-                    <h1 className="member-section">Bob</h1>
+                    <h1 className="member-section">Ruby Gill</h1>
                     <p className="abouttext">
                       Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                       Fusce rutrum eros eget hendrerit bibendum.{' '}
                     </p>
                     <div className="contact-icons">
-                      <a href="https://cdn0.iconfinder.com/data/icons/octicons/1024/mark-github-512.png">
+                      <a href="https://github.com/Rubyrgill">
                         <img
                           className="github-img"
                           src="https://cdn0.iconfinder.com/data/icons/octicons/1024/mark-github-512.png"
@@ -139,17 +139,17 @@ class About extends Component {
                     <img
                       className="team-img"
                       src="https://files.slack.com/files-pri/TA2JAF9B8-FE0THTC1Z/debuddy.png"
-                      width="250px"
+                      width="300px" alt="image"
                     />
                   </div>
                   <div className="member-info col-8">
-                    <h1 className="member-section">Bob</h1>
+                    <h1 className="member-section">Harun Farah</h1>
                     <p className="abouttext">
                       Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                       Fusce rutrum eros eget hendrerit bibendum.{' '}
                     </p>
                     <div className="contact-icons">
-                      <a href="https://cdn0.iconfinder.com/data/icons/octicons/1024/mark-github-512.png">
+                      <a href="https://github.com/HunchoCodes">
                         <img
                           className="github-img"
                           src="https://cdn0.iconfinder.com/data/icons/octicons/1024/mark-github-512.png"
