@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
-import axios from 'axios';
+import React, { Component } from "react";
+import { Link } from "react-router-dom";
+import axios from "axios";
 
 class Nav extends Component {
   constructor() {
@@ -10,10 +10,10 @@ class Nav extends Component {
 
   logout(event) {
     event.preventDefault();
-    console.log('logging out');
+    console.log("logging out");
 
     axios
-      .post('/user/logout')
+      .post("/user/logout")
       .then(response => {
         console.log(response.data);
         if (response.status === 200) {
@@ -24,17 +24,17 @@ class Nav extends Component {
         }
       })
       .catch(error => {
-        console.log('Logout error');
+        console.log("Logout error");
       });
   }
 
   render() {
     const loggedIn = this.props.loggedIn;
-    console.log('navbar render, props: ');
+    console.log("navbar render, props: ");
     console.log(this.props);
 
     return (
-      <nav className="navbar  navbar-inverse navbar-expand-lg">
+      <nav className="navbar sticky-top navbar-light bg-light">
         <div className="col-md-12">
           {loggedIn ? (
             <section className="navbar-section">
@@ -43,11 +43,7 @@ class Nav extends Component {
                   Home
                 </button>
               </Link>
-              <Link to="/about" className="btn btn-link text-secondary">
-                <button type="button" className="btn btn-outline-secondary">
-                  About
-                </button>
-              </Link>
+
               <Link to="/resources" className="btn btn-link text-secondary">
                 <button type="button" className="btn btn-outline-secondary">
                   Resources
@@ -60,7 +56,7 @@ class Nav extends Component {
               </Link>
               <Link to="/jobposting" className="btn btn-link text-secondary">
                 <button type="button" className="btn btn-outline-secondary">
-                  Job Posting
+                  Job Postings
                 </button>
               </Link>
               <Link to="/meetups" className="btn btn-link text-secondary">
@@ -70,7 +66,13 @@ class Nav extends Component {
               </Link>
               <Link to="/favourite" className="btn btn-link text-secondary">
                 <button type="button" className="btn btn-outline-secondary">
-                  Favourite
+                  Favourites
+                </button>
+              </Link>
+
+              <Link to="/about" className="btn btn-link text-secondary">
+                <button type="button" className="btn btn-outline-secondary">
+                  About
                 </button>
               </Link>
 
@@ -92,12 +94,7 @@ class Nav extends Component {
                   Home
                 </button>
               </Link>
-              <Link to="/about" className="btn btn-link text-secondary">
-                {/* <span className="badge badge-pill badge-light">About</span> */}
-                <button type="button" className="btn btn-outline-secondary">
-                  About
-                </button>
-              </Link>
+
               <Link to="/resources" className="btn btn-link text-secondary">
                 <button type="button" className="btn btn-outline-secondary">
                   Resources
@@ -110,7 +107,7 @@ class Nav extends Component {
               </Link>
               <Link to="/jobposting" className="btn btn-link text-secondary">
                 <button type="button" className="btn btn-outline-secondary">
-                  Job Posting
+                  Job Postings
                 </button>
               </Link>
               <Link to="/meetups" className="btn btn-link text-secondary">
@@ -118,6 +115,14 @@ class Nav extends Component {
                   Meetups
                 </button>
               </Link>
+
+              <Link to="/about" className="btn btn-link text-secondary">
+                {/* <span className="badge badge-pill badge-light">About</span> */}
+                <button type="button" className="btn btn-outline-secondary">
+                  About
+                </button>
+              </Link>
+
               <Link to="/login" className="btn btn-link text-secondary">
                 <button type="button" className="btn btn-outline-secondary">
                   Login
@@ -130,9 +135,6 @@ class Nav extends Component {
               </Link>
             </section>
           )}
-        </div>
-        <div className="col-4 col-mr-auto">
-          <h1 className="App-title">Dev Buddies</h1>
         </div>
       </nav>
     );

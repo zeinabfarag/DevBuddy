@@ -58,9 +58,6 @@ class App extends Component {
     return (
       <div className="App">
         <Nav updateUser={this.updateUser} loggedIn={this.state.loggedIn} />
-        {/* greet user */}
-        {this.state.loggedIn && <h1>Welcome, {this.state.username}!</h1>}
-        {/*Routes to different pages */}
         <Switch>
           <Route exact path="/" component={FrontPage} />
           <Route exact path="/about" component={About} />
