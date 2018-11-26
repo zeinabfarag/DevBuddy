@@ -14,7 +14,6 @@ class About extends Component {
           <div className="saved-deck">
             {/* <h1 className="saved-section">PRESS PLAY</h1> */}
             <div class="videoWrapper">
-
               <iframe
                 width="560"
                 height="349"
@@ -35,7 +34,8 @@ class About extends Component {
                     <img
                       className="team-img"
                       src="/asset/images/ab.png"
-                      width="300px" alt="image"
+                      width="300px"
+                      alt="image"
                     />
                   </div>
                   <div className="member-info col-8">
@@ -64,7 +64,8 @@ class About extends Component {
                     <img
                       className="team-img"
                       src="/asset/images/zteam.png"
-                      width="300px" alt="image"
+                      width="300px"
+                      alt="image"
                     />
                   </div>
                   <div className="member-info col-8">
@@ -89,14 +90,18 @@ class About extends Component {
                     <img
                       className="team-img"
                       src="/asset/images/al.png"
-                      width="300px" alt="image"
+                      width="300px"
+                      alt="image"
                     />
                   </div>
                   <div className="member-info col-8">
                     <h1 className="member-section">Alejandra Juarez</h1>
                     <p className="abouttext">
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                      Fusce rutrum eros eget hendrerit bibendum.{' '}
+                      Graduate from Computer Science, 11 years of IT experience
+                      in mainframes with Cobol. Decided to update my skills in a
+                      Coding Bootcamp at UTM. Regained sense of accomplishment
+                      by doing the projects and learning about new languages and
+                      technologies.{' '}
                     </p>
                     <div className="contact-icons">
                       <a href="https://github.com/alejuarez">
@@ -114,7 +119,8 @@ class About extends Component {
                     <img
                       className="team-img"
                       src="/asset/images/r.png"
-                      width="300px" alt="image"
+                      width="300px"
+                      alt="image"
                     />
                   </div>
                   <div className="member-info col-8">
@@ -139,7 +145,8 @@ class About extends Component {
                     <img
                       className="team-img"
                       src="https://files.slack.com/files-pri/TA2JAF9B8-FE0THTC1Z/debuddy.png"
-                      width="300px" alt="image"
+                      width="300px"
+                      alt="image"
                     />
                   </div>
                   <div className="member-info col-8">
