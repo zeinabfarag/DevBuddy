@@ -13,14 +13,13 @@ class About extends Component {
         <div className="container saved-container">
           <div className="saved-deck">
             {/* <h1 className="saved-section">PRESS PLAY</h1> */}
-            <div class="videoWrapper">
-
+            <div className="videoWrapper">
               <iframe
                 width="560"
                 height="349"
                 src="/asset/images/Dev_1.mp4"
-                frameborder="0"
-                allowfullscreen
+                frameBorder="0"
+                allowFullScreen
               />
             </div>
           </div>
@@ -29,13 +28,14 @@ class About extends Component {
           <div className="saved-deck">
             <div className="container">
               <h1 className="saved-section about-title">MEET THE TEAM</h1>
-              <div class="teamdev">
-                <div id="ateam" class="teammembers">
+              <div className="teamdev">
+                <div id="ateam" className="teammembers">
                   <div className="memberimage col-2">
                     <img
                       className="team-img"
                       src="/asset/images/ab.png"
-                      width="300px" alt="image"
+                      width="300px"
+                      alt="image"
                     />
                   </div>
                   <div className="member-info col-8">
@@ -59,12 +59,13 @@ class About extends Component {
                     </div>
                   </div>
                 </div>
-                <div id="bteam" class="teammembers">
+                <div id="bteam" className="teammembers">
                   <div className="memberimage col-2">
                     <img
                       className="team-img"
                       src="/asset/images/zteam.png"
-                      width="300px" alt="image"
+                      width="300px"
+                      alt="image"
                     />
                   </div>
                   <div className="member-info col-8">
@@ -84,12 +85,13 @@ class About extends Component {
                     </div>
                   </div>
                 </div>
-                <div id="cteam" class="teammembers">
+                <div id="cteam" className="teammembers">
                   <div className="memberimage col-2">
                     <img
                       className="team-img"
                       src="/asset/images/al.png"
-                      width="300px" alt="image"
+                      width="300px"
+                      alt="image"
                     />
                   </div>
                   <div className="member-info col-8">
@@ -109,12 +111,13 @@ class About extends Component {
                     </div>
                   </div>
                 </div>
-                <div id="adteam" class="teammembers">
+                <div id="adteam" className="teammembers">
                   <div className="memberimage col-2">
                     <img
                       className="team-img"
                       src="/asset/images/r.png"
-                      width="300px" alt="image"
+                      width="300px"
+                      alt="image"
                     />
                   </div>
                   <div className="member-info col-8">
@@ -134,12 +137,13 @@ class About extends Component {
                     </div>
                   </div>
                 </div>
-                <div id="eteam" class="teammembers">
+                <div id="eteam" className="teammembers">
                   <div className="memberimage col-2">
                     <img
                       className="team-img"
                       src="https://files.slack.com/files-pri/TA2JAF9B8-FE0THTC1Z/debuddy.png"
-                      width="300px" alt="image"
+                      width="300px"
+                      alt="image"
                     />
                   </div>
                   <div className="member-info col-8">
