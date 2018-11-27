@@ -6,7 +6,7 @@ const passport = require("../../passport");
 router.get("/articles/:username", (req, res) => {
   User.find({ username: req.params.username })
     .then(function(response) {
-      res.send(response[0].data);
+      res.send(response);
     })
     .catch(function(err) {
       console.log(err.message);

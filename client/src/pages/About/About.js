@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import './aboutstyle.css';
+import React, { Component } from "react";
+import "./aboutstyle.css";
 
 class About extends Component {
   render() {
@@ -14,7 +14,6 @@ class About extends Component {
           <div className="saved-deck">
             {/* <h1 className="saved-section">PRESS PLAY</h1> */}
             <div class="videoWrapper">
-
               <iframe
                 width="560"
                 height="349"
@@ -35,18 +34,19 @@ class About extends Component {
                     <img
                       className="team-img"
                       src="/asset/images/ab.png"
-                      width="300px" alt="image"
+                      width="300px"
+                      alt="image"
                     />
                   </div>
                   <div className="member-info col-8">
                     <h1 className="member-section">Abdulrahman Said</h1>
                     <p className="abouttext">
-                      Graduate from Ryerson with a Bachelor of Commerce. Getting
-                      ready to jump start my career as a new Dev! Started with
-                      taking a Full Stack Development course at UTM focusing on
-                      the MERN (Mongo, React, Express, Node.js) stack. 6 months
-                      later, I've created multple projects using different
-                      technologies that I am really proud of.{' '}
+                      Graduated from Ryerson with a Bachelor of Commerce.
+                      Getting ready to jump start my career as a new Dev!
+                      Started with taking a Full Stack Development course at UTM
+                      focusing on the MERN (Mongo, React, Express, Node.js)
+                      stack. 6 months later, I've created multple projects using
+                      different technologies that I am really proud of.{" "}
                     </p>
                     <div className="contact-icons">
                       <a href="https://github.com/AbdulSaid">
@@ -64,14 +64,15 @@ class About extends Component {
                     <img
                       className="team-img"
                       src="/asset/images/zteam.png"
-                      width="300px" alt="image"
+                      width="300px"
+                      alt="image"
                     />
                   </div>
                   <div className="member-info col-8">
                     <h1 className="member-section">Zeinab Farag</h1>
                     <p className="abouttext">
                       Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                      Fusce rutrum eros eget hendrerit bibendum.{' '}
+                      Fusce rutrum eros eget hendrerit bibendum.{" "}
                     </p>
                     <div className="contact-icons">
                       <a href="https://github.com/zeinabfarag">
@@ -89,14 +90,15 @@ class About extends Component {
                     <img
                       className="team-img"
                       src="/asset/images/al.png"
-                      width="300px" alt="image"
+                      width="300px"
+                      alt="image"
                     />
                   </div>
                   <div className="member-info col-8">
                     <h1 className="member-section">Alejandra Juarez</h1>
                     <p className="abouttext">
                       Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                      Fusce rutrum eros eget hendrerit bibendum.{' '}
+                      Fusce rutrum eros eget hendrerit bibendum.{" "}
                     </p>
                     <div className="contact-icons">
                       <a href="https://github.com/alejuarez">
@@ -114,14 +116,15 @@ class About extends Component {
                     <img
                       className="team-img"
                       src="/asset/images/r.png"
-                      width="300px" alt="image"
+                      width="300px"
+                      alt="image"
                     />
                   </div>
                   <div className="member-info col-8">
                     <h1 className="member-section">Ruby Gill</h1>
                     <p className="abouttext">
                       Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                      Fusce rutrum eros eget hendrerit bibendum.{' '}
+                      Fusce rutrum eros eget hendrerit bibendum.{" "}
                     </p>
                     <div className="contact-icons">
                       <a href="https://github.com/Rubyrgill">
@@ -139,14 +142,15 @@ class About extends Component {
                     <img
                       className="team-img"
                       src="https://files.slack.com/files-pri/TA2JAF9B8-FE0THTC1Z/debuddy.png"
-                      width="300px" alt="image"
+                      width="300px"
+                      alt="image"
                     />
                   </div>
                   <div className="member-info col-8">
                     <h1 className="member-section">Harun Farah</h1>
                     <p className="abouttext">
                       Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                      Fusce rutrum eros eget hendrerit bibendum.{' '}
+                      Fusce rutrum eros eget hendrerit bibendum.{" "}
                     </p>
                     <div className="contact-icons">
                       <a href="https://github.com/HunchoCodes">

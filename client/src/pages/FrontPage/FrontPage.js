@@ -1,9 +1,9 @@
-import React, { Component } from 'react';
-import './FrontPage.css';
-import Articles from '../../components/Articles';
-import Groups from '../../components/groupevents';
-import JobPosting from '../JobPosting';
-import Resources from '../Resources';
+import React, { Component } from "react";
+import "./FrontPage.css";
+import Articles from "../../components/Articles";
+import Groups from "../../components/groupevents";
+import JobPosting from "../JobPosting";
+import Resources from "../Resources";
 
 class FrontPage extends Component {
   render() {

@@ -30,10 +30,10 @@ class Groups extends Component {
 
       axios
         .post(`/user/meetup/${this.props.username}`, saveGroup)
-        .then(function (response) {
+        .then(function(response) {
           console.log("success", response);
         })
-        .catch(function (error) {
+        .catch(function(error) {
           console.log("error", error);
         });
     }
@@ -46,9 +46,8 @@ class Groups extends Component {
     axios
       .get(
         "https://api.meetup.com/find/groups?text=" +
-        this.state.query +
-        "&sign=true&photo-host=public&sig_id=255600544&sig=0b1810a39b3fa52e67d05a8da45babe0f49b7eb0&key=" +
-        API_KEY
+          this.state.query +
+          "&sign=true&photo-host=public&sig_id=255600544&sig=0b1810a39b3fa52e67d05a8da45babe0f49b7eb0&key= 18626a281c32595c387c3a3d6810455c"
       )
 
       //https://api.meetup.com/find/upcoming_events?topic_category=34&sign=true&photo-host=public&sig_id=255600544&sig=0b1810a39b3fa52e67d05a8da45babe0f49b7eb0&key=
@@ -127,7 +126,6 @@ class Groups extends Component {
     return (
       //form for query text
       <div className="container">
-
         <h1 className="saved-section about-title">SEARCH MEETUPS</h1>
         <form className="eventsearch">
           <input
