@@ -126,8 +126,9 @@ class About extends Component {
                   <div className="member-info col-8">
                     <h1 className="member-section">Ruby Gill</h1>
                     <p className="abouttext">
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                      Fusce rutrum eros eget hendrerit bibendum.{' '}
+                      Background in digital marketing and research.
+                      I look forward to applying best practices learned in the UTM Full Stack Bootcamp in future projects.
+                        {' '}
                     </p>
                     <div className="contact-icons">
                       <a href="https://github.com/Rubyrgill">
