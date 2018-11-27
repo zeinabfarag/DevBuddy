@@ -1,9 +1,11 @@
-import React, { Component } from "react";
-import { List, ListItem } from "../List";
-import { Col, Row, Container } from "../Grid";
-import { Redirect } from "react-router";
+import React, { Component } from 'react';
+import { List, ListItem } from '../List';
+import { Col, Row, Container } from '../Grid';
+import { Redirect } from 'react-router';
 
-import axios from "axios";
+import axios from 'axios';
+
+const apiKey = '5a7b3ff72dcb4898b5c6ee2013105946';
 
 class Articles extends Component {
   state = {
@@ -22,24 +24,24 @@ class Articles extends Component {
     axios
       .all([
         axios.get(
-          "https://newsapi.org/v2/everything?q=web%20development&totalResults=15&apiKey=5a7b3ff72dcb4898b5c6ee2013105946"
+          'https://newsapi.org/v2/everything?q=web%20development&totalResults=15&apiKey=' +
+            apiKey
         ),
         axios.get(
-          "https://newsapi.org/v2/everything?q=javascript&totalResults=15&apiKey=5a7b3ff72dcb4898b5c6ee2013105946"
+          'https://newsapi.org/v2/everything?q=javascript&totalResults=15&apiKey=' +
+            apiKey
         ),
         axios.get(
-          "https://newsapi.org/v2/everything?q=tech&totalResults=15&apiKey=5a7b3ff72dcb4898b5c6ee2013105946"
+          'https://newsapi.org/v2/everything?q=tech&totalResults=15&apiKey=' +
+            apiKey
         ),
         axios.get(
-          "https://newsapi.org/v2/everything?q=web%20design&totalResults=15&apiKey=5a7b3ff72dcb4898b5c6ee2013105946"
+          'https://newsapi.org/v2/everything?q=web%20design&totalResults=15&apiKey=' +
+            apiKey
         )
       ])
       .then(
         axios.spread((resdev, resjs, restech, resdes) => {
-          console.log("reswdev =", resdev.data.articles);
-          console.log("resjs =", resjs.data.articles);
-          console.log("reswtech =", restech.data.articles);
-          console.log("reswdes =", resdes.data.articles);
           this.setState({
             articleswdev: resdev.data.articles,
             articlesjs: resjs.data.articles,
@@ -66,10 +68,10 @@ class Articles extends Component {
       axios
         .post(`/user/article/${this.props.username}`, saveArticle)
         .then(function(response) {
-          console.log("success", response);
+          console.log('success', response);
         })
         .catch(function(error) {
-          console.log("error", error);
+          console.log('error', error);
         });
     }
   };

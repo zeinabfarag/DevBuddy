@@ -13,13 +13,20 @@ class About extends Component {
         <div className="container saved-container">
           <div className="saved-deck">
             {/* <h1 className="saved-section">PRESS PLAY</h1> */}
+<<<<<<< HEAD
             <div class="videoWrapper">
+<<<<<<< HEAD
+=======
+=======
+            <div className="videoWrapper">
+>>>>>>> master
+>>>>>>> 96486c415c151cb670a79d393be8ac9165a8bd2b
               <iframe
                 width="560"
                 height="349"
                 src="/asset/images/Dev_1.mp4"
-                frameborder="0"
-                allowfullscreen
+                frameBorder="0"
+                allowFullScreen
               />
             </div>
           </div>
@@ -28,8 +35,8 @@ class About extends Component {
           <div className="saved-deck">
             <div className="container">
               <h1 className="saved-section about-title">MEET THE TEAM</h1>
-              <div class="teamdev">
-                <div id="ateam" class="teammembers">
+              <div className="teamdev">
+                <div id="ateam" className="teammembers">
                   <div className="memberimage col-2">
                     <img
                       className="team-img"
@@ -59,7 +66,7 @@ class About extends Component {
                     </div>
                   </div>
                 </div>
-                <div id="bteam" class="teammembers">
+                <div id="bteam" className="teammembers">
                   <div className="memberimage col-2">
                     <img
                       className="team-img"
@@ -85,7 +92,7 @@ class About extends Component {
                     </div>
                   </div>
                 </div>
-                <div id="cteam" class="teammembers">
+                <div id="cteam" className="teammembers">
                   <div className="memberimage col-2">
                     <img
                       className="team-img"
@@ -97,8 +104,16 @@ class About extends Component {
                   <div className="member-info col-8">
                     <h1 className="member-section">Alejandra Juarez</h1>
                     <p className="abouttext">
+<<<<<<< HEAD
                       Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                       Fusce rutrum eros eget hendrerit bibendum.{" "}
+=======
+                      Graduate from Computer Science, 11 years of IT experience
+                      in mainframes with Cobol. Decided to update my skills in a
+                      Coding Bootcamp at UTM. Regained sense of accomplishment
+                      by doing the projects and learning about new languages and
+                      technologies.{' '}
+>>>>>>> 96486c415c151cb670a79d393be8ac9165a8bd2b
                     </p>
                     <div className="contact-icons">
                       <a href="https://github.com/alejuarez">
@@ -111,7 +126,7 @@ class About extends Component {
                     </div>
                   </div>
                 </div>
-                <div id="adteam" class="teammembers">
+                <div id="adteam" className="teammembers">
                   <div className="memberimage col-2">
                     <img
                       className="team-img"
@@ -137,7 +152,7 @@ class About extends Component {
                     </div>
                   </div>
                 </div>
-                <div id="eteam" class="teammembers">
+                <div id="eteam" className="teammembers">
                   <div className="memberimage col-2">
                     <img
                       className="team-img"

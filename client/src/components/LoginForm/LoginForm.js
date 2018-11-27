@@ -70,7 +70,10 @@ class LoginForm extends Component {
               value={this.state.username}
               onChange={this.handleChange}
             />
-            <p>Password</p>
+            {/* <p>Password</p> */}
+            <label className="form-label" htmlFor="password">
+              Password:{' '}
+            </label>
             <input
               className="form-input"
               placeholder="password"
@@ -79,12 +82,19 @@ class LoginForm extends Component {
               value={this.state.password}
               onChange={this.handleChange}
             />
-            <input
+            {/* <input
               type="submit"
               name=""
               value="Sign In"
               onClick={this.handleSubmit}
-            />
+            /> */}
+            <button
+              className="btn btn-primary col-1 col-mr-auto"
+              onClick={this.handleSubmit}
+              type="submit"
+            >
+              Login
+            </button>
           </form>
         </div>
 

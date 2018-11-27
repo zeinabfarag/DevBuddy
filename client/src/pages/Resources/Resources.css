@@ -15,6 +15,4 @@
   height: 220px;
   float: left;
   box-shadow: 10px 5px 5px grey;
-  overflow: scroll;
-  overflow-y: hidden;
 }
