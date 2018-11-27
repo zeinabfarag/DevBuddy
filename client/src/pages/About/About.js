@@ -13,11 +13,7 @@ class About extends Component {
         <div className="container saved-container">
           <div className="saved-deck">
             {/* <h1 className="saved-section">PRESS PLAY</h1> */}
-<<<<<<< HEAD
             <div class="videoWrapper">
-=======
-            <div className="videoWrapper">
->>>>>>> master
               <iframe
                 width="560"
                 height="349"
@@ -101,11 +97,11 @@ class About extends Component {
                   <div className="member-info col-8">
                     <h1 className="member-section">Alejandra Juarez</h1>
                     <p className="abouttext">
-                      Graduate from Computer Science, 11 years of IT experience
-                      in mainframes with Cobol. Decided to update my skills in a
-                      Coding Bootcamp at UTM. Regained sense of accomplishment
-                      by doing the projects and learning about new languages and
-                      technologies.{' '}
+                      Graduate from Computer Science. 11 years of IT experience
+                      in mainframe with Cobol. Decided to update my skills with
+                      a Business Analyst diploma and Coding Bootcamp from UTM.
+                      Eager to demonstrate my acquired knowledge on new
+                      challenges.{' '}
                     </p>
                     <div className="contact-icons">
                       <a href="https://github.com/alejuarez">
