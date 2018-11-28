@@ -3,18 +3,18 @@ import Languages from "../../../components/Languages";
 import Video from "../../../components/Video";
 import Questions from "../../../components/Questions";
 
-const CSS = () => {
+const Mongoose = () => {
   return (
     <div className="container">
       <Languages />
 
       <div id="main">
-        <h1 id="maintitle"> CSS</h1>
+        <h1 id="maintitle"> MongoDB</h1>
         <p id="description">
-          <span id="firstword"> CSS</span> stands for "Cascading Style Sheet."
-          Cascading style sheets are used to format the layout of Web pages.
-          They can be used to define text styles, table sizes, and other aspects
-          of Web pages that previously could only be defined in a page's HTML.
+          <span id="firstword"> MongoDB</span> is a free and open-source
+          cross-platform document-oriented database program. Classified as a
+          NoSQL database program, MongoDB uses JSON-like documents with
+          schemata.
         </p>
       </div>
 
@@ -23,30 +23,33 @@ const CSS = () => {
           <div className="card  ">
             <h2 className="title"> Educational</h2>
             <p>
-              <a href="https://developer.mozilla.org/kab/docs/Web/CSS">
-                Mozilla Developer Network
+              <a href="https://www.mongodb.com/">Documentation</a>
+            </p>
+            <p>
+              <a href="https://www.w3schools.com/nodejs/nodejs_mongodb_create_db.asp">
+                W3 Schools
               </a>
             </p>
             <p>
-              <a href="https://www.w3schools.com/css/">W3 Schools</a>
-            </p>
-            <p>
-              <a href="https://www.tutorialspoint.com/css/">Tutorials Point</a>
+              <a href="https://www.tutorialspoint.com/mongodb/">
+                Tutorials Point
+              </a>
             </p>
           </div>
 
           <div className="card">
             <h2 className="title"> Online Courses</h2>
             <p>
-              <a href="https://www.codecademy.com/courses/learn-css-selectors-visual-rules/lessons/css-setup-selectors/exercises/intro-to-css?course_redirect=learn-css">
+              <a href="https://www.codecademy.com/articles/tdd-setup-mongodb">
                 Code Academy
               </a>
             </p>
+
             <p>
-              <a href="https://www.udemy.com/topic/css/">Udemy</a>
+              <a href="https://www.udemy.com/mongoose/">Udemy</a>
             </p>
             <p>
-              <a href="https://www.udacity.com/course/intro-to-html-and-css--ud001">
+              <a href="https://www.udacity.com/course/data-wrangling-with-mongodb--ud032">
                 Udacity
               </a>
             </p>
@@ -55,13 +58,13 @@ const CSS = () => {
         <div className="row">
           <div className="h-100 col-lg-11 card " id="youtube">
             <h2 className="title"> YouTube Videos</h2>
-            <Video query="css coding" />
+            <Video query="mongodb" />
           </div>
         </div>
         <div className="row">
           <div className="h-100 col-lg-11  card">
             <h2 className="title"> Stack Overflow Questions</h2>
-            <Questions query="css" />
+            <Questions query="mongo" />
           </div>
         </div>
       </div>
@@ -69,4 +72,4 @@ const CSS = () => {
   );
 };
 
-export default CSS;
+export default Mongoose;

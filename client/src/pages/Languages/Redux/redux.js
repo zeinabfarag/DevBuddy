@@ -3,18 +3,17 @@ import Languages from "../../../components/Languages";
 import Video from "../../../components/Video";
 import Questions from "../../../components/Questions";
 
-const CSS = () => {
+const Redux = () => {
   return (
     <div className="container">
       <Languages />
 
       <div id="main">
-        <h1 id="maintitle"> CSS</h1>
+        <h1 id="maintitle"> Redux</h1>
         <p id="description">
-          <span id="firstword"> CSS</span> stands for "Cascading Style Sheet."
-          Cascading style sheets are used to format the layout of Web pages.
-          They can be used to define text styles, table sizes, and other aspects
-          of Web pages that previously could only be defined in a page's HTML.
+          <span id="firstword"> Redux</span> is an open-source JavaScript
+          library for managing application state. It is most commonly used with
+          libraries such as React or Angular for building user interfaces.
         </p>
       </div>
 
@@ -23,31 +22,34 @@ const CSS = () => {
           <div className="card  ">
             <h2 className="title"> Educational</h2>
             <p>
-              <a href="https://developer.mozilla.org/kab/docs/Web/CSS">
-                Mozilla Developer Network
+              <a href="https://redux.js.org/">Documentation</a>
+            </p>
+            <p>
+              <a href="https://www.valentinog.com/blog/react-redux-tutorial-beginners/">
+                React Redux Tutorial
               </a>
             </p>
             <p>
-              <a href="https://www.w3schools.com/css/">W3 Schools</a>
-            </p>
-            <p>
-              <a href="https://www.tutorialspoint.com/css/">Tutorials Point</a>
+              <a href="https://www.tutorialspoint.com/reactjs/reactjs_using_flux.htm">
+                Tutorials Point
+              </a>
             </p>
           </div>
 
           <div className="card">
             <h2 className="title"> Online Courses</h2>
             <p>
-              <a href="https://www.codecademy.com/courses/learn-css-selectors-visual-rules/lessons/css-setup-selectors/exercises/intro-to-css?course_redirect=learn-css">
+              <a href="https://learn.codecademy.com/build-full-stack-apps-with-react-and-redux.html?utm_source=facebook&utm_content=advanced_react_with_redux">
                 Code Academy
               </a>
             </p>
+
             <p>
-              <a href="https://www.udemy.com/topic/css/">Udemy</a>
+              <a href="https://www.udemy.com/react-redux/">Udemy</a>
             </p>
             <p>
-              <a href="https://www.udacity.com/course/intro-to-html-and-css--ud001">
-                Udacity
+              <a href="https://www.coursera.org/lecture/front-end-react/redux-actions-hUr1y">
+                Coursera
               </a>
             </p>
           </div>
@@ -55,13 +57,13 @@ const CSS = () => {
         <div className="row">
           <div className="h-100 col-lg-11 card " id="youtube">
             <h2 className="title"> YouTube Videos</h2>
-            <Video query="css coding" />
+            <Video query="redux" />
           </div>
         </div>
         <div className="row">
           <div className="h-100 col-lg-11  card">
             <h2 className="title"> Stack Overflow Questions</h2>
-            <Questions query="css" />
+            <Questions query="redux" />
           </div>
         </div>
       </div>
@@ -69,4 +71,4 @@ const CSS = () => {
   );
 };
 
-export default CSS;
+export default Redux;

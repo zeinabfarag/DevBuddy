@@ -3,18 +3,18 @@ import Languages from "../../../components/Languages";
 import Video from "../../../components/Video";
 import Questions from "../../../components/Questions";
 
-const CSS = () => {
+const Express = () => {
   return (
     <div className="container">
       <Languages />
 
       <div id="main">
-        <h1 id="maintitle"> CSS</h1>
+        <h1 id="maintitle"> Express</h1>
         <p id="description">
-          <span id="firstword"> CSS</span> stands for "Cascading Style Sheet."
-          Cascading style sheets are used to format the layout of Web pages.
-          They can be used to define text styles, table sizes, and other aspects
-          of Web pages that previously could only be defined in a page's HTML.
+          <span id="firstword"> Express</span> is a minimal and flexible Node.js
+          web application framework that provides a robust set of features to
+          develop web and mobile applications. It facilitates the rapid
+          development of Node based Web applications.
         </p>
       </div>
 
@@ -23,31 +23,33 @@ const CSS = () => {
           <div className="card  ">
             <h2 className="title"> Educational</h2>
             <p>
-              <a href="https://developer.mozilla.org/kab/docs/Web/CSS">
+              <a href="https://expressjs.com/">Documentation </a>
+            </p>
+            <p>
+              <a href="https://developer.mozilla.org/en-US/docs/Learn/Server-side/Express_Nodejs">
                 Mozilla Developer Network
               </a>
             </p>
             <p>
-              <a href="https://www.w3schools.com/css/">W3 Schools</a>
-            </p>
-            <p>
-              <a href="https://www.tutorialspoint.com/css/">Tutorials Point</a>
+              <a href="https://www.tutorialspoint.com/expressjs/">
+                Tutorials Point
+              </a>
             </p>
           </div>
 
           <div className="card">
             <h2 className="title"> Online Courses</h2>
             <p>
-              <a href="https://www.codecademy.com/courses/learn-css-selectors-visual-rules/lessons/css-setup-selectors/exercises/intro-to-css?course_redirect=learn-css">
+              <a href="https://www.codecademy.com/learn/learn-express">
                 Code Academy
               </a>
             </p>
             <p>
-              <a href="https://www.udemy.com/topic/css/">Udemy</a>
+              <a href="https://www.udemy.com/learn-express/">Udemy </a>
             </p>
             <p>
-              <a href="https://www.udacity.com/course/intro-to-html-and-css--ud001">
-                Udacity
+              <a href="https://www.coursera.org/courses?query=node%20js">
+                Coursera
               </a>
             </p>
           </div>
@@ -55,13 +57,13 @@ const CSS = () => {
         <div className="row">
           <div className="h-100 col-lg-11 card " id="youtube">
             <h2 className="title"> YouTube Videos</h2>
-            <Video query="css coding" />
+            <Video query="expressjs" />
           </div>
         </div>
         <div className="row">
           <div className="h-100 col-lg-11  card">
             <h2 className="title"> Stack Overflow Questions</h2>
-            <Questions query="css" />
+            <Questions query="express" />
           </div>
         </div>
       </div>
@@ -69,4 +71,4 @@ const CSS = () => {
   );
 };
 
-export default CSS;
+export default Express;

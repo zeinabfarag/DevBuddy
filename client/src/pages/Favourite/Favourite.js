@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
-import './favstyle.css';
-import axios from 'axios';
+import React, { Component } from "react";
+import "./favstyle.css";
+import axios from "axios";
 
 class Favourite extends Component {
   state = {
@@ -8,20 +8,16 @@ class Favourite extends Component {
   };
 
   componentDidMount = () => {
-    console.log('SESSION STORAGE:' + sessionStorage.getItem('username'));
-    console.log('trig');
     this.getArticles();
   };
 
   getArticles = () => {
+    let sessionUser = sessionStorage.getItem("username");
     axios
-      .get(
-        '/user/articles/' + this.props.username ||
-          sessionStorage.getItem('username')
-      )
+      .get("/user/articles/" + sessionUser)
       .then(response => {
-        console.log('success');
-        console.log('prop', this.props.username);
+        console.log("success");
+        console.log("prop", this.props.username);
 
         let articles = response.data[0].articles;
         this.setState({ articles });
@@ -29,7 +25,7 @@ class Favourite extends Component {
         console.log(this.state.articles);
       })
       .catch(error => {
-        console.log('error', error);
+        console.log("error", error);
       });
   };
 
@@ -39,10 +35,11 @@ class Favourite extends Component {
     axios
       .post(`/user/articles/${this.props.username}/${id}`)
       .then(response => {
-        console.log('success', response);
+        this.getArticles();
+        console.log("success", response);
       })
       .catch(error => {
-        console.log('error', error);
+        console.log("error", error);
       });
   };
 
@@ -104,11 +101,11 @@ class Favourite extends Component {
                       {article.title}
                     </a>
                     {/* DELETE ARTICLES SAMPLE */}
-                    {/* <button
+                    <button
                       onClick={this.deleteArticle.bind(this.state, article._id)}
                     >
                       delete
-                    </button> */}
+                    </button>
                   </div>
                 );
                 return link;

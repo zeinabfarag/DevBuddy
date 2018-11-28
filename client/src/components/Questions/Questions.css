@@ -1,0 +1,16 @@
+#submit {
+  margin-left: 15px;
+}
+#firstword {
+  color: #1a4f6e;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+#query {
+  font-size: 20px;
+}
+
+#description {
+  padding: 40px;
+}
