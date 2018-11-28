@@ -1,85 +1,86 @@
-const express = require("express");
+const express = require('express');
 const router = express.Router();
-const User = require("../../database/models/user");
-const passport = require("../../passport");
+const User = require('../../database/models/user');
+const passport = require('../../passport');
 
-router.post("/job/:username", (req, res) => {
+router.post('/job/:username', (req, res) => {
   User.update({ username: req.params.username }, { $push: { jobs: req.body } })
     .then(function(response) {
       console.log(response);
-      res.send("successfully created sample");
+      res.send('successfully created sample');
     })
     .catch(function(err) {
       console.log(err.message);
-      res.send("failed");
+      res.send('failed');
     });
 });
 
-router.post("/meetup/:username", (req, res) => {
+router.post('/meetup/:username', (req, res) => {
   User.update(
     { username: req.params.username },
     { $push: { meetups: req.body } }
   )
     .then(function(response) {
       console.log(response);
-      res.send("successfully created sample");
+      res.send('successfully created sample');
     })
     .catch(function(err) {
       console.log(err.message);
-      res.send("failed");
+      res.send('failed');
     });
 });
 
-router.post("/article/:username", (req, res) => {
+router.post('/article/:username', (req, res) => {
   User.update(
     { username: req.params.username },
     { $push: { articles: req.body } }
   )
     .then(function(response) {
       console.log(response);
-      res.send("successfully created sample");
+      res.send('successfully created sample');
     })
     .catch(function(err) {
       console.log(err.message);
-      res.send("failed");
+      res.send('failed');
     });
 });
 
-router.post("/", (req, res) => {
-  console.log("user signup");
+router.post('/', (req, res) => {
+  console.log('user signup');
 
   const { username, password } = req.body;
   // ADD VALIDATION
-  User.findOne({ username: username }, (err, user) => {
-    if (err) {
-      console.log("User.js post error: ", err);
-    } else if (user) {
-      res.json({
-        error: `Sorry, already a user with the username: ${username}`
-      });
-    } else {
-      const newUser = new User({
-        username: username,
-        password: password
-      });
-      newUser.save((err, savedUser) => {
-        if (err) return res.json(err);
-        res.json(savedUser);
-      });
-    }
-  });
+  User.findOne({ username: username })
+    .then(user => {
+      console.log('user1', user);
+      if (user) {
+        res.json({ error: 'Sorry, user exists' });
+      } else {
+        const newUser = new User({
+          username: username,
+          password: password
+        });
+        newUser.save((err, savedUser) => {
+          if (err) return res.json(err);
+          res.json(savedUser);
+        });
+      }
+    })
+    .catch(err => {
+      res.json({ error: err });
+    });
 });
 
 router.post(
-  "/login",
+  '/login',
   function(req, res, next) {
-    console.log("routes/user.js, login, req.body: ");
+    console.log('routes/user.js, login, req.body: ');
     console.log(req.body);
     next();
   },
-  passport.authenticate("local"),
+  passport.authenticate('local'),
   (req, res) => {
-    console.log("logged in", req.user);
+    console.log('logged in', req.user);
     var userInfo = {
       username: req.user.username
     };
@@ -87,8 +88,8 @@ router.post(
   }
 );
 
-router.get("/", (req, res, next) => {
-  console.log("===== user!!======");
+router.get('/', (req, res, next) => {
+  console.log('===== user!!======');
   console.log(req.user);
   if (req.user) {
     res.json({ user: req.user });
@@ -97,12 +98,12 @@ router.get("/", (req, res, next) => {
   }
 });
 
-router.post("/logout", (req, res) => {
+router.post('/logout', (req, res) => {
   if (req.user) {
     req.logout();
-    res.send({ msg: "logging out" });
+    res.send({ msg: 'logging out' });
   } else {
-    res.send({ msg: "no user to log out" });
+    res.send({ msg: 'no user to log out' });
   }
 });
 
