@@ -1,9 +1,15 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
+<<<<<<< HEAD
 const bcrypt = require("bcryptjs");
 const articlesSchema = require("./articles");
 const jobsSchema = require("./jobs");
 const meetupsSchema = require("./meetups");
+=======
+const bcrypt = require('bcryptjs');
+const articlesSchema = require('./articles');
+const meetupsSchema = require('./meetups');
+>>>>>>> 94ea84be61f200c4ed83b8b545ad4d1a86e7d8ea
 
 mongoose.promise = Promise;
 
@@ -18,7 +24,6 @@ const userSchema = new Schema({
   password: {
     type: String,
     trim: true,
-    unique: false,
     required: true,
     validate: [
       function(input) {
@@ -28,7 +33,6 @@ const userSchema = new Schema({
     ]
   },
   articles: [articlesSchema],
-  jobs: [jobsSchema],
   meetups: [meetupsSchema]
 });
 

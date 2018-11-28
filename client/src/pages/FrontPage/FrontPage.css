@@ -37,11 +37,14 @@ html {
   min-height: 900px;
 }
 
+<<<<<<< HEAD
 .pimg4 {
   background-image: url("/asset/images/jobposting.jpg");
   min-height: 900px;
 }
 
+=======
+>>>>>>> 94ea84be61f200c4ed83b8b545ad4d1a86e7d8ea
 .pimg5 {
   background-image: url("/asset/images/coding.jpg");
   min-height: 900px;
