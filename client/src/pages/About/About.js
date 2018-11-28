@@ -1,5 +1,5 @@
-import React, { Component } from "react";
-import "./aboutstyle.css";
+import React, { Component } from 'react';
+import './aboutstyle.css';
 
 class About extends Component {
   render() {
@@ -15,6 +15,7 @@ class About extends Component {
             {/* <h1 className="saved-section">PRESS PLAY</h1> */}
             <div className="videoWrapper">
               <iframe
+                title="titlewrapper"
                 width="560"
                 height="349"
                 src="/asset/images/Dev_1.mp4"
@@ -34,7 +35,7 @@ class About extends Component {
                         className="team-img"
                         src="/asset/images/ab.png"
                         width="300px"
-                        alt="image"
+                        alt=""
                       />
                     </div>
                     <div className="member-info col-8">
@@ -46,7 +47,7 @@ class About extends Component {
                         UTM focusing on the MERN (Mongo, React, Express,
                         Node.js) stack. 6 months later, I've created multple
                         projects using different technologies that I am really
-                        proud of.{" "}
+                        proud of.{' '}
                       </p>
                       <div className="contact-icons">
                         <a href="https://github.com/AbdulSaid">
@@ -54,6 +55,7 @@ class About extends Component {
                             className="github-img"
                             src="https://cdn0.iconfinder.com/data/icons/octicons/1024/mark-github-512.png"
                             width="50px"
+                            alt=""
                           />
                         </a>
                       </div>
@@ -66,7 +68,7 @@ class About extends Component {
                       className="team-img"
                       src="/asset/images/al.png"
                       width="300px"
-                      alt="image"
+                      alt=""
                     />
                   </div>
                   <div className="member-info col-8">
@@ -76,7 +78,7 @@ class About extends Component {
                       in mainframe with Cobol. Decided to update my skills with
                       a Business Analyst diploma and Coding Bootcamp from UTM.
                       Eager to demonstrate my acquired knowledge on new
-                      challenges.{" "}
+                      challenges.{' '}
                     </p>
                     <div className="contact-icons">
                       <a href="https://github.com/alejuarez">
@@ -84,6 +86,7 @@ class About extends Component {
                           className="github-img"
                           src="https://cdn0.iconfinder.com/data/icons/octicons/1024/mark-github-512.png"
                           width="50px"
+                          alt=""
                         />
                       </a>
                     </div>
@@ -95,7 +98,7 @@ class About extends Component {
                       className="team-img"
                       src="/asset/images/r.png"
                       width="300px"
-                      alt="image"
+                      alt=""
                     />
                   </div>
                   <div className="member-info col-8">
@@ -103,7 +106,7 @@ class About extends Component {
                     <p className="abouttext">
                       Background in digital marketing and research. I look
                       forward to applying best practices learned in the UTM Full
-                      Stack Bootcamp in future projects.{" "}
+                      Stack Bootcamp in future projects.{' '}
                     </p>
                     <div className="contact-icons">
                       <a href="https://github.com/Rubyrgill">
@@ -111,6 +114,7 @@ class About extends Component {
                           className="github-img"
                           src="https://cdn0.iconfinder.com/data/icons/octicons/1024/mark-github-512.png"
                           width="50px"
+                          alt=""
                         />
                       </a>
                     </div>
