@@ -1,17 +1,17 @@
-import React, { Component } from 'react';
-import axios from 'axios';
-import { Route, Switch } from 'react-router-dom';
-import './App.css';
-import About from './pages/About';
-import Articles from './pages/Articles';
-import FrontPage from './pages/FrontPage';
-import Meetups from './pages/Meetups';
-import NoMatch from './pages/NoMatch';
-import Resources from './pages/Resources';
-import Login from './pages/Login';
-import Signup from './pages/Signup';
-import Nav from './components/Nav';
-import Favourite from './pages/Favourite';
+import React, { Component } from "react";
+import axios from "axios";
+import { Route, Switch } from "react-router-dom";
+import "./App.css";
+import About from "./pages/About";
+import Articles from "./pages/Articles";
+import FrontPage from "./pages/FrontPage";
+import Meetups from "./pages/Meetups";
+import NoMatch from "./pages/NoMatch";
+import Resources from "./pages/Resources";
+import Login from "./pages/Login";
+import Signup from "./pages/Signup";
+import Nav from "./components/Nav";
+import Favourite from "./pages/Favourite";
 
 class App extends Component {
   constructor() {
@@ -30,22 +30,22 @@ class App extends Component {
 
   updateUser(userObject) {
     this.setState(userObject);
-    sessionStorage.setItem('username', JSON.stringify(userObject));
+    sessionStorage.setItem("username", userObject.username);
   }
 
   getUser() {
-    axios.get('/user/').then(response => {
-      console.log('Get user response: ');
+    axios.get("/user/").then(response => {
+      console.log("Get user response: ");
       console.log(response.data);
       if (response.data.user) {
-        console.log('Get User: There is a user saved in the server session: ');
+        console.log("Get User: There is a user saved in the server session: ");
 
         this.setState({
           loggedIn: true,
           username: response.data.user.username
         });
       } else {
-        console.log('Get user: no user');
+        console.log("Get user: no user");
         this.setState({
           loggedIn: false,
           username: null
