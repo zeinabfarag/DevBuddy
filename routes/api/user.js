@@ -3,6 +3,7 @@ const router = express.Router();
 const User = require('../../database/models/user');
 const passport = require('../../passport');
 
+
 router.post('/job/:username', (req, res) => {
   User.update({ username: req.params.username }, { $push: { jobs: req.body } })
     .then(function(response) {

@@ -58,11 +58,6 @@ class Nav extends Component {
                   Articles
                 </button>
               </Link>
-              <Link to="/jobposting" className="btn btn-link text-secondary">
-                <button type="button" className="btn btn-outline-secondary">
-                  Job Posting
-                </button>
-              </Link>
               <Link to="/meetups" className="btn btn-link text-secondary">
                 <button type="button" className="btn btn-outline-secondary">
                   Meetups
@@ -106,11 +101,6 @@ class Nav extends Component {
               <Link to="/articles" className="btn btn-link text-secondary">
                 <button type="button" className="btn btn-outline-secondary">
                   Articles
-                </button>
-              </Link>
-              <Link to="/jobposting" className="btn btn-link text-secondary">
-                <button type="button" className="btn btn-outline-secondary">
-                  Job Posting
                 </button>
               </Link>
               <Link to="/meetups" className="btn btn-link text-secondary">
