@@ -30,6 +30,7 @@ class App extends Component {
 
   updateUser(userObject) {
     this.setState(userObject);
+    sessionStorage.setItem('username', JSON.stringify(userObject));
   }
 
   getUser() {
@@ -57,9 +58,6 @@ class App extends Component {
     return (
       <div className="App">
         <Nav updateUser={this.updateUser} loggedIn={this.state.loggedIn} />
-        {/* greet user */}
-        {this.state.loggedIn && <h1>Welcome, {this.state.username}!</h1>}
-        {/*Routes to different pages */}
         <Switch>
           <Route exact path="/" component={FrontPage} />
           <Route exact path="/about" component={About} />
@@ -94,7 +92,15 @@ class App extends Component {
             path="/signup"
             render={props => <Signup {...props} loginUser={this.updateUser} />}
           />
-          <Route exact path="/favourite" component={Favourite} />
+          <Route
+            exact
+            path="/favourite"
+            render={props => (
+              <Favourite {...props} username={this.state.username} />
+            )}
+          />
+
+          <Route exact path="/css" component={CSS} />
           <Route component={NoMatch} />
         </Switch>
       </div>

@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import './aboutstyle.css';
+import React, { Component } from "react";
+import "./aboutstyle.css";
 
 class About extends Component {
   render() {
@@ -23,65 +23,40 @@ class About extends Component {
               />
             </div>
           </div>
-        </div>
-        <div className="about-container saved-container">
-          <div className="saved-deck">
-            <div className="container">
-              <h1 className="saved-section about-title">MEET THE TEAM</h1>
-              <div className="teamdev">
-                <div id="ateam" className="teammembers">
-                  <div className="memberimage col-2">
-                    <img
-                      className="team-img"
-                      src="/asset/images/ab.png"
-                      width="300px"
-                      alt="image"
-                    />
-                  </div>
-                  <div className="member-info col-8">
-                    <h1 className="member-section">Abdulrahman Said</h1>
-                    <p className="abouttext">
-                      Graduate from Ryerson with a Bachelor of Commerce. Getting
-                      ready to jump start my career as a new Dev! Started with
-                      taking a Full Stack Development course at UTM focusing on
-                      the MERN (Mongo, React, Express, Node.js) stack. 6 months
-                      later, I've created multple projects using different
-                      technologies that I am really proud of.{' '}
-                    </p>
-                    <div className="contact-icons">
-                      <a href="https://github.com/AbdulSaid">
-                        <img
-                          className="github-img"
-                          src="https://cdn0.iconfinder.com/data/icons/octicons/1024/mark-github-512.png"
-                          width="50px"
-                        />
-                      </a>
+          <div className="about-container saved-container">
+            <div className="saved-deck">
+              <div className="container">
+                <h1 className="saved-section about-title">MEET THE TEAM</h1>
+                <div className="teamdev">
+                  <div id="ateam" className="teammembers">
+                    <div className="memberimage col-2">
+                      <img
+                        className="team-img"
+                        src="/asset/images/ab.png"
+                        width="300px"
+                        alt="image"
+                      />
                     </div>
-                  </div>
-                </div>
-                <div id="bteam" className="teammembers">
-                  <div className="memberimage col-2">
-                    <img
-                      className="team-img"
-                      src="/asset/images/zteam.png"
-                      width="300px"
-                      alt="image"
-                    />
-                  </div>
-                  <div className="member-info col-8">
-                    <h1 className="member-section">Zeinab Farag</h1>
-                    <p className="abouttext">
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                      Fusce rutrum eros eget hendrerit bibendum.{' '}
-                    </p>
-                    <div className="contact-icons">
-                      <a href="https://github.com/zeinabfarag">
-                        <img
-                          className="github-img"
-                          src="https://cdn0.iconfinder.com/data/icons/octicons/1024/mark-github-512.png"
-                          width="50px"
-                        />
-                      </a>
+                    <div className="member-info col-8">
+                      <h1 className="member-section">Abdulrahman Said</h1>
+                      <p className="abouttext">
+                        Graduated from Ryerson with a Bachelor of Commerce.
+                        Getting ready to jump start my career as a new Dev!
+                        Started with taking a Full Stack Development course at
+                        UTM focusing on the MERN (Mongo, React, Express,
+                        Node.js) stack. 6 months later, I've created multple
+                        projects using different technologies that I am really
+                        proud of.{" "}
+                      </p>
+                      <div className="contact-icons">
+                        <a href="https://github.com/AbdulSaid">
+                          <img
+                            className="github-img"
+                            src="https://cdn0.iconfinder.com/data/icons/octicons/1024/mark-github-512.png"
+                            width="50px"
+                          />
+                        </a>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -101,7 +76,7 @@ class About extends Component {
                       in mainframe with Cobol. Decided to update my skills with
                       a Business Analyst diploma and Coding Bootcamp from UTM.
                       Eager to demonstrate my acquired knowledge on new
-                      challenges.{' '}
+                      challenges.{" "}
                     </p>
                     <div className="contact-icons">
                       <a href="https://github.com/alejuarez">
@@ -128,7 +103,7 @@ class About extends Component {
                     <p className="abouttext">
                       Background in digital marketing and research. I look
                       forward to applying best practices learned in the UTM Full
-                      Stack Bootcamp in future projects.{' '}
+                      Stack Bootcamp in future projects.{" "}
                     </p>
                     <div className="contact-icons">
                       <a href="https://github.com/Rubyrgill">

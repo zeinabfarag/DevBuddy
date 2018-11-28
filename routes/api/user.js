@@ -3,6 +3,33 @@ const router = express.Router();
 const User = require('../../database/models/user');
 const passport = require('../../passport');
 
+router.get('/articles/:username', (req, res) => {
+  User.find({ username: req.params.username })
+    .then(function(response) {
+      res.send(response);
+    })
+    .catch(function(err) {
+      console.log(err.message);
+      res.send('failed');
+    });
+});
+
+// Delete Articles
+
+router.post('/articles/:username/:deleteuid', (req, res) => {
+  User.update(
+    { username: req.params.username },
+    { $pull: { articles: { _id: req.params.deleteuid } } }
+  )
+    .then(function(response) {
+      console.log(response);
+      res.send('successfully deleted sample');
+    })
+    .catch(function(err) {
+      console.log(err.message);
+      res.send('failed');
+    });
+});
 
 router.post('/job/:username', (req, res) => {
   User.update({ username: req.params.username }, { $push: { jobs: req.body } })

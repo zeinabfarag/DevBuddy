@@ -3,10 +3,10 @@ html {
   height: 100%;
   margin: 0;
   font-size: 16px;
-  font-family: 'Lato', sans-serif;
+  font-family: "Lato", sans-serif;
   font-weight: 400;
   line-height: 1.8em;
-  color: #666;
+  color: lightgrey;
 }
 
 .pimg1,
@@ -23,22 +23,30 @@ html {
 }
 
 .pimg1 {
-  background-image: url('/asset/images/coffe-cup.jpg');
+  background-image: url("/asset/images/coffe-cup.jpg");
   min-height: 900px;
 }
 
 .pimg2 {
-  background-image: url('/asset/images/resources.jpg');
+  background-image: url("/asset/images/resources.jpg");
   min-height: 900px;
 }
 
 .pimg3 {
-  background-image: url('/asset/images/articles.jpg');
+  background-image: url("/asset/images/articles.jpg");
   min-height: 900px;
 }
 
+<<<<<<< HEAD
+.pimg4 {
+  background-image: url("/asset/images/jobposting.jpg");
+  min-height: 900px;
+}
+
+=======
+>>>>>>> 94ea84be61f200c4ed83b8b545ad4d1a86e7d8ea
 .pimg5 {
-  background-image: url('/asset/images/coding.jpg');
+  background-image: url("/asset/images/coding.jpg");
   min-height: 900px;
 }
 
@@ -49,11 +57,11 @@ html {
 
 .section-light {
   background-color: #f4f4f4;
-  color: #666;
+  color: lightgrey;
 }
 
 .section-dark {
-  background-color: #282e34;
+  background-color: lightgrey;
   color: #ddd;
 }
 
