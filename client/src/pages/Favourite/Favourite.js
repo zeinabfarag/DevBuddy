@@ -100,11 +100,11 @@ class Favourite extends Component {
                       {article.title}
                     </a>
                     {/* DELETE ARTICLES SAMPLE */}
-                    {/* <button
+                    <button
                       onClick={this.deleteArticle.bind(this.state, article._id)}
                     >
                       delete
-                    </button> */}
+                    </button>
                   </div>
                 );
                 return link;
