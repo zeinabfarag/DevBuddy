@@ -13,7 +13,7 @@ class About extends Component {
         <div className="container saved-container">
           <div className="saved-deck">
             {/* <h1 className="saved-section">PRESS PLAY</h1> */}
-            <div class="videoWrapper">
+            <div className="videoWrapper">
               <iframe
                 width="560"
                 height="349"
@@ -126,9 +126,9 @@ class About extends Component {
                   <div className="member-info col-8">
                     <h1 className="member-section">Ruby Gill</h1>
                     <p className="abouttext">
-                      Background in digital marketing and research.
-                      I look forward to applying best practices learned in the UTM Full Stack Bootcamp in future projects.
-                        {' '}
+                      Background in digital marketing and research. I look
+                      forward to applying best practices learned in the UTM Full
+                      Stack Bootcamp in future projects.{' '}
                     </p>
                     <div className="contact-icons">
                       <a href="https://github.com/Rubyrgill">
@@ -141,34 +141,7 @@ class About extends Component {
                     </div>
                   </div>
                 </div>
-                <div id="eteam" className="teammembers">
-                  <div className="memberimage col-2">
-                    <img
-                      className="team-img"
-                      src="https://files.slack.com/files-pri/TA2JAF9B8-FE0THTC1Z/debuddy.png"
-                      width="300px"
-                      alt="image"
-                    />
-                  </div>
-                  <div className="member-info col-8">
-                    <h1 className="member-section">Harun Farah</h1>
-                    <p className="abouttext">
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                      Fusce rutrum eros eget hendrerit bibendum.{' '}
-                    </p>
-                    <div className="contact-icons">
-                      <a href="https://github.com/HunchoCodes">
-                        <img
-                          className="github-img"
-                          src="https://cdn0.iconfinder.com/data/icons/octicons/1024/mark-github-512.png"
-                          width="50px"
-                        />
-                      </a>
-                    </div>
-                  </div>
-                </div>
               </div>
-              <div />
             </div>
           </div>
         </div>

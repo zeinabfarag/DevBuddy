@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 import { List, ListItem } from '../List';
 import { Col, Row, Container } from '../Grid';
 import { Redirect } from 'react-router';
-
 import axios from 'axios';
 
+// const apiKey = process.env.REACT_ART_API_KEY;
 const apiKey = '5a7b3ff72dcb4898b5c6ee2013105946';
 
 class Articles extends Component {

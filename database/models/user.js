@@ -2,7 +2,6 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 const bcrypt = require('bcryptjs');
 const articlesSchema = require('./articles');
-const jobsSchema = require('./jobs');
 const meetupsSchema = require('./meetups');
 
 mongoose.promise = Promise;
@@ -28,7 +27,6 @@ const userSchema = new Schema({
     ]
   },
   articles: [articlesSchema],
-  jobs: [jobsSchema],
   meetups: [meetupsSchema]
 });
 
