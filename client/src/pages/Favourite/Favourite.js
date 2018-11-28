@@ -35,6 +35,7 @@ class Favourite extends Component {
     axios
       .post(`/user/articles/${this.props.username}/${id}`)
       .then(response => {
+        this.getArticles();
         console.log("success", response);
       })
       .catch(error => {
