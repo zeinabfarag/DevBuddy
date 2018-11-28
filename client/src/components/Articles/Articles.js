@@ -88,7 +88,7 @@ class Articles extends Component {
             {this.state.articleswdev.length ? (
               <List>
                 {this.state.articleswdev.map(article => (
-                  <ListItem>
+                  <ListItem key={article.url}>
                     <a href={article.url}>
                       <strong>{article.title} </strong>
                     </a>
@@ -114,7 +114,7 @@ class Articles extends Component {
             {this.state.articlesjs.length ? (
               <List>
                 {this.state.articlesjs.map(article => (
-                  <ListItem>
+                  <ListItem key={article.url}>
                     <a href={article.url}>
                       <strong>{article.title} </strong>
                     </a>
@@ -142,7 +142,7 @@ class Articles extends Component {
             {this.state.articleswdes.length ? (
               <List>
                 {this.state.articleswdes.map(article => (
-                  <ListItem>
+                  <ListItem key={article.url}>
                     <a href={article.url}>
                       <strong>{article.title} </strong>
                     </a>
@@ -168,7 +168,7 @@ class Articles extends Component {
             {this.state.articlestech.length ? (
               <List>
                 {this.state.articlestech.map(article => (
-                  <ListItem>
+                  <ListItem key={article.url}>
                     <a href={article.url}>
                       <strong>{article.title} </strong>
                     </a>
