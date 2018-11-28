@@ -3,18 +3,19 @@ import Languages from "../../../components/Languages";
 import Video from "../../../components/Video";
 import Questions from "../../../components/Questions";
 
-const CSS = () => {
+const Git = () => {
   return (
     <div className="container">
       <Languages />
 
       <div id="main">
-        <h1 id="maintitle"> CSS</h1>
+        <h1 id="maintitle"> Git</h1>
         <p id="description">
-          <span id="firstword"> CSS</span> stands for "Cascading Style Sheet."
-          Cascading style sheets are used to format the layout of Web pages.
-          They can be used to define text styles, table sizes, and other aspects
-          of Web pages that previously could only be defined in a page's HTML.
+          <span id="firstword"> Git</span> is a version-control system for
+          tracking changes in computer files and coordinating work on those
+          files among multiple people. It is primarily used for source-code
+          management in software development, but it can be used to keep track
+          of changes in any set of file
         </p>
       </div>
 
@@ -23,30 +24,31 @@ const CSS = () => {
           <div className="card  ">
             <h2 className="title"> Educational</h2>
             <p>
-              <a href="https://developer.mozilla.org/kab/docs/Web/CSS">
-                Mozilla Developer Network
+              <a href="https://git-scm.com/">Documentation</a>
+            </p>
+            <p>
+              <a href="https://www.w3schools.com/whatis/whatis_github.asp">
+                W3 Schools
               </a>
             </p>
             <p>
-              <a href="https://www.w3schools.com/css/">W3 Schools</a>
-            </p>
-            <p>
-              <a href="https://www.tutorialspoint.com/css/">Tutorials Point</a>
+              <a href="https://www.tutorialspoint.com/git/">Tutorials Point</a>
             </p>
           </div>
 
           <div className="card">
             <h2 className="title"> Online Courses</h2>
+
             <p>
-              <a href="https://www.codecademy.com/courses/learn-css-selectors-visual-rules/lessons/css-setup-selectors/exercises/intro-to-css?course_redirect=learn-css">
+              <a href="https://www.codecademy.com/learn/learn-git">
                 Code Academy
               </a>
             </p>
             <p>
-              <a href="https://www.udemy.com/topic/css/">Udemy</a>
+              <a href="https://www.udemy.com/topic/git/">Udemy</a>
             </p>
             <p>
-              <a href="https://www.udacity.com/course/intro-to-html-and-css--ud001">
+              <a href="https://www.udacity.com/course/how-to-use-git-and-github--ud775">
                 Udacity
               </a>
             </p>
@@ -55,13 +57,13 @@ const CSS = () => {
         <div className="row">
           <div className="h-100 col-lg-11 card " id="youtube">
             <h2 className="title"> YouTube Videos</h2>
-            <Video query="css coding" />
+            <Video query="github" />
           </div>
         </div>
         <div className="row">
           <div className="h-100 col-lg-11  card">
             <h2 className="title"> Stack Overflow Questions</h2>
-            <Questions query="css" />
+            <Questions query="git" />
           </div>
         </div>
       </div>
@@ -69,4 +71,4 @@ const CSS = () => {
   );
 };
 
-export default CSS;
+export default Git;

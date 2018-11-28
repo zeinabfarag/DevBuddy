@@ -1,10 +1,18 @@
 import React, { Component } from "react";
 import axios from "axios";
+import "./Questions.css";
 
 class Questions extends Component {
   state = {
     result: [],
     search: ""
+  };
+
+  componentDidMount = () => {
+    console.log(this.props.query);
+    if (this.props.query !== undefined) {
+      this.searchQuestions(this.props.query);
+    }
   };
 
   // When this component mounts, search for the movie "The Matrix"
@@ -33,11 +41,24 @@ class Questions extends Component {
   render() {
     return (
       <div>
-        <form onSubmit={this.handleSubmit}>
-          <p> Search Stack Overflow for any Questions You May Have!</p>
-          <input type="text" name="question" />
-          <input type="submit" />
-        </form>
+        {this.props.query === undefined && (
+          <div>
+            <form onSubmit={this.handleSubmit}>
+              <input id="query" type="text" name="question" />
+              <input
+                id="submit"
+                type="submit"
+                class="btn btn-outline-secondary"
+              />
+            </form>
+            <p id="description">
+              <span id="firstword"> Stack Overflow</span> is a platform where
+              students and professionals post queries and answer questions about
+              programming. It is a great tool to use when solving a specific
+              coding issue. Try it out!
+            </p>
+          </div>
+        )}
         {this.state.result.map((result, i) => {
           let title = (
             <p>

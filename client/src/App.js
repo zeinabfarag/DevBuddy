@@ -12,6 +12,21 @@ import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import Nav from "./components/Nav";
 import Favourite from "./pages/Favourite";
+import Git from "./pages/Languages/Git";
+import HTML from "./pages/Languages/HTML";
+import CSS from "./pages/Languages/CSS";
+import JavaScript from "./pages/Languages/Javascript";
+import jQuery from "./pages/Languages/jQuery";
+import Node from "./pages/Languages/Node";
+import Express from "./pages/Languages/Express";
+import MySQL from "./pages/Languages/MySQL";
+import Mongoose from "./pages/Languages/Mongoose";
+import ReactJS from "./pages/Languages/React";
+import Redux from "./pages/Languages/Redux";
+import Angular from "./pages/Languages/Angular";
+import Vue from "./pages/Languages/Vue";
+import AJAX from "./pages/Languages/AJAX";
+import Bootstrap from "./pages/Languages/Bootstrap";
 
 class App extends Component {
   constructor() {
@@ -101,6 +116,21 @@ class App extends Component {
           />
 
           <Route exact path="/css" component={CSS} />
+          <Route exact path="/html" component={HTML} />
+          <Route exact path="/angular" component={Angular} />
+          <Route exact path="/javascript" component={JavaScript} />
+          <Route exact path="/mongoose" component={Mongoose} />
+          <Route exact path="/vue" component={Vue} />
+          <Route exact path="/redux" component={Redux} />
+          <Route exact path="/mysql" component={MySQL} />
+          <Route exact path="/react" component={ReactJS} />
+          <Route exact path="/express" component={Express} />
+          <Route exact path="/jquery" component={jQuery} />
+          <Route exact path="/git" component={Git} />
+          <Route exact path="/node" component={Node} />
+          <Route exact path="/bootstrap" component={Bootstrap} />
+          <Route exact path="/ajax" component={AJAX} />
+
           <Route component={NoMatch} />
         </Switch>
       </div>
