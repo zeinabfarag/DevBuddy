@@ -17,7 +17,6 @@ const userSchema = new Schema({
   password: {
     type: String,
     trim: true,
-    unique: false,
     required: true,
     validate: [
       function(input) {
