@@ -32,7 +32,7 @@ class Video extends Component {
       <div>
         {this.state.result.map((link, i) => {
           let frame = (
-            <div>
+            <div key={i.video}>
               <iframe
                 className="video"
                 title="youtube"
