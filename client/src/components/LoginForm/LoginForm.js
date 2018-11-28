@@ -46,6 +46,7 @@ class LoginForm extends Component {
         }
       })
       .catch(error => {
+        alert('Sorry, check your username or password');
         console.log('login error: ');
         console.log(error);
       });
@@ -63,7 +64,7 @@ class LoginForm extends Component {
             <p>Email</p>
             <input
               className="form-input"
-              type="text"
+              type="email"
               id="username"
               name="username"
               placeholder="Enter Email"
@@ -82,19 +83,19 @@ class LoginForm extends Component {
               value={this.state.password}
               onChange={this.handleChange}
             />
-            {/* <input
+            <input
               type="submit"
               name=""
               value="Sign In"
               onClick={this.handleSubmit}
-            /> */}
-            <button
+            />
+            {/* <button
               className="btn btn-primary col-1 col-mr-auto"
               onClick={this.handleSubmit}
               type="submit"
             >
               Login
-            </button>
+            </button> */}
           </form>
         </div>
 
