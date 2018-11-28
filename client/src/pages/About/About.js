@@ -13,11 +13,7 @@ class About extends Component {
         <div className="container saved-container">
           <div className="saved-deck">
             {/* <h1 className="saved-section">PRESS PLAY</h1> */}
-<<<<<<< HEAD
-            <div class="videoWrapper">
-=======
             <div className="videoWrapper">
->>>>>>> master
               <iframe
                 width="560"
                 height="349"
