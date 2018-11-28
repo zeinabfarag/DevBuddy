@@ -13,6 +13,9 @@ import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import Nav from "./components/Nav";
 import Favourite from "./pages/Favourite";
+import JavaScript from "./pages/Languages/Javascript";
+import CSS from "./pages/Languages/CSS";
+import HTML from "./pages/Languages/HTML";
 
 class App extends Component {
   constructor() {
@@ -31,6 +34,7 @@ class App extends Component {
 
   updateUser(userObject) {
     this.setState(userObject);
+    sessionStorage.setItem("username", JSON.stringify(userObject));
   }
 
   getUser() {
@@ -106,6 +110,11 @@ class App extends Component {
               <Favourite {...props} username={this.state.username} />
             )}
           />
+
+          <Route exact path="/javascript" component={JavaScript} />
+          <Route exact path="/html" component={HTML} />
+
+          <Route exact path="/css" component={CSS} />
           <Route component={NoMatch} />
         </Switch>
       </div>

@@ -8,6 +8,7 @@ const API_KEY = process.env.REACT_APP_API_KEY;
 
 class Groups extends Component {
   state = {
+    redirect: false,
     query: "tech",
     groups: []
   };

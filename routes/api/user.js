@@ -14,6 +14,23 @@ router.get("/articles/:username", (req, res) => {
     });
 });
 
+// Delete Articles
+
+router.post("/articles/:username/:deleteuid", (req, res) => {
+  User.update(
+    { username: req.params.username },
+    { $pull: { articles: { _id: req.params.deleteuid } } }
+  )
+    .then(function(response) {
+      console.log(response);
+      res.send("successfully deleted sample");
+    })
+    .catch(function(err) {
+      console.log(err.message);
+      res.send("failed");
+    });
+});
+
 router.post("/job/:username", (req, res) => {
   User.update({ username: req.params.username }, { $push: { jobs: req.body } })
     .then(function(response) {
