@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import React, { Component } from "react";
 import axios from "axios";
 import { Route, Switch } from "react-router-dom";
@@ -6,7 +5,6 @@ import "./App.css";
 import About from "./pages/About";
 import Articles from "./pages/Articles";
 import FrontPage from "./pages/FrontPage";
-import JobPosting from "./pages/JobPosting";
 import Meetups from "./pages/Meetups";
 import NoMatch from "./pages/NoMatch";
 import Resources from "./pages/Resources";
@@ -14,25 +12,6 @@ import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import Nav from "./components/Nav";
 import Favourite from "./pages/Favourite";
-import JavaScript from "./pages/Languages/Javascript";
-import CSS from "./pages/Languages/CSS";
-import HTML from "./pages/Languages/HTML";
-=======
-import React, { Component } from 'react';
-import axios from 'axios';
-import { Route, Switch } from 'react-router-dom';
-import './App.css';
-import About from './pages/About';
-import Articles from './pages/Articles';
-import FrontPage from './pages/FrontPage';
-import Meetups from './pages/Meetups';
-import NoMatch from './pages/NoMatch';
-import Resources from './pages/Resources';
-import Login from './pages/Login';
-import Signup from './pages/Signup';
-import Nav from './components/Nav';
-import Favourite from './pages/Favourite';
->>>>>>> 94ea84be61f200c4ed83b8b545ad4d1a86e7d8ea
 
 class App extends Component {
   constructor() {
@@ -55,18 +34,18 @@ class App extends Component {
   }
 
   getUser() {
-    axios.get('/user/').then(response => {
-      console.log('Get user response: ');
+    axios.get("/user/").then(response => {
+      console.log("Get user response: ");
       console.log(response.data);
       if (response.data.user) {
-        console.log('Get User: There is a user saved in the server session: ');
+        console.log("Get User: There is a user saved in the server session: ");
 
         this.setState({
           loggedIn: true,
           username: response.data.user.username
         });
       } else {
-        console.log('Get user: no user');
+        console.log("Get user: no user");
         this.setState({
           loggedIn: false,
           username: null

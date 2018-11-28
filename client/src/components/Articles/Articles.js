@@ -1,22 +1,11 @@
-<<<<<<< HEAD
 import React, { Component } from "react";
 import { List, ListItem } from "../List";
 import { Col, Row, Container } from "../Grid";
 import { Redirect } from "react-router";
-
 import axios from "axios";
 
-const apiKey = "5a7b3ff72dcb4898b5c6ee2013105946";
-=======
-import React, { Component } from 'react';
-import { List, ListItem } from '../List';
-import { Col, Row, Container } from '../Grid';
-import { Redirect } from 'react-router';
-import axios from 'axios';
-
 // const apiKey = process.env.REACT_ART_API_KEY;
-const apiKey = '5a7b3ff72dcb4898b5c6ee2013105946';
->>>>>>> 94ea84be61f200c4ed83b8b545ad4d1a86e7d8ea
+const apiKey = "5a7b3ff72dcb4898b5c6ee2013105946";
 
 class Articles extends Component {
   state = {

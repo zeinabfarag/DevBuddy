@@ -1,17 +1,8 @@
-<<<<<<< HEAD
 import React, { Component } from "react";
 import "./FrontPage.css";
 import Articles from "../../components/Articles";
 import Groups from "../../components/groupevents";
-import JobPosting from "../JobPosting";
 import Resources from "../Resources";
-=======
-import React, { Component } from 'react';
-import './FrontPage.css';
-import Articles from '../../components/Articles';
-import Groups from '../../components/groupevents';
-import Resources from '../Resources';
->>>>>>> 94ea84be61f200c4ed83b8b545ad4d1a86e7d8ea
 
 class FrontPage extends Component {
   render() {
