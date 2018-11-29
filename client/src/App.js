@@ -5,7 +5,6 @@ import "./App.css";
 import About from "./pages/About";
 import Articles from "./pages/Articles";
 import FrontPage from "./pages/FrontPage";
-import Meetups from "./pages/Meetups";
 import NoMatch from "./pages/NoMatch";
 import Resources from "./pages/Resources";
 import Login from "./pages/Login";
@@ -27,6 +26,7 @@ import Angular from "./pages/Languages/Angular";
 import Vue from "./pages/Languages/Vue";
 import AJAX from "./pages/Languages/AJAX";
 import Bootstrap from "./pages/Languages/Bootstrap";
+import Jobs from "./pages/Jobs";
 
 class App extends Component {
   constructor() {
@@ -85,13 +85,6 @@ class App extends Component {
           />
           <Route
             exact
-            path="/meetups"
-            render={props => (
-              <Meetups {...props} username={this.state.username} />
-            )}
-          />
-          <Route
-            exact
             path="/resources"
             render={props => (
               <Resources {...props} username={this.state.username} />
@@ -113,6 +106,11 @@ class App extends Component {
             render={props => (
               <Favourite {...props} username={this.state.username} />
             )}
+          />
+          <Route
+            exact
+            path="/jobs"
+            render={props => <Jobs {...props} username={this.state.username} />}
           />
 
           <Route exact path="/css" component={CSS} />

@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import "./FrontPage.css";
 import Articles from "../../components/Articles";
-import Groups from "../../components/groupevents";
 import Resources from "../Resources";
 
 class FrontPage extends Component {
@@ -48,9 +47,7 @@ class FrontPage extends Component {
           </div>
         </div>
 
-        <section className="section section-dark">
-          <Groups />
-        </section>
+        <section className="section section-dark" />
 
         <div className="pimg1">
           <div className="ptext">

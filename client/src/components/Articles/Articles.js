@@ -1,11 +1,9 @@
-import React, { Component } from 'react';
-import { List, ListItem } from '../List';
-import { Col, Row, Container } from '../Grid';
-import { Redirect } from 'react-router';
-import axios from 'axios';
+import React, { Component } from "react";
+import { Redirect } from "react-router";
+import axios from "axios";
+import "./Articles.css";
 
-// const apiKey = process.env.REACT_ART_API_KEY;
-const apiKey = '5a7b3ff72dcb4898b5c6ee2013105946';
+const apiKey = "5a7b3ff72dcb4898b5c6ee2013105946";
 
 class Articles extends Component {
   state = {
@@ -24,19 +22,19 @@ class Articles extends Component {
     axios
       .all([
         axios.get(
-          'https://newsapi.org/v2/everything?q=web%20development&totalResults=15&apiKey=' +
+          "https://newsapi.org/v2/everything?q=web%20development&totalResults=15&apiKey=" +
             apiKey
         ),
         axios.get(
-          'https://newsapi.org/v2/everything?q=javascript&totalResults=15&apiKey=' +
+          "https://newsapi.org/v2/everything?q=javascript&totalResults=15&apiKey=" +
             apiKey
         ),
         axios.get(
-          'https://newsapi.org/v2/everything?q=tech&totalResults=15&apiKey=' +
+          "https://newsapi.org/v2/everything?q=tech&totalResults=15&apiKey=" +
             apiKey
         ),
         axios.get(
-          'https://newsapi.org/v2/everything?q=web%20design&totalResults=15&apiKey=' +
+          "https://newsapi.org/v2/everything?q=web%20design&totalResults=15&apiKey=" +
             apiKey
         )
       ])
@@ -68,10 +66,10 @@ class Articles extends Component {
       axios
         .post(`/user/article/${this.props.username}`, saveArticle)
         .then(function(response) {
-          console.log('success', response);
+          console.log("success", response);
         })
         .catch(function(error) {
-          console.log('error', error);
+          console.log("error", error);
         });
     }
   };
@@ -81,116 +79,144 @@ class Articles extends Component {
       return <Redirect to="/login" />;
     }
     return (
-      <Container fluid>
-        <Row>
-          <Col size="md-6">
-            <h4 className="linebr">Web Development</h4>
-            {this.state.articleswdev.length ? (
-              <List>
-                {this.state.articleswdev.map(article => (
-                  <ListItem key={article.url}>
-                    <a href={article.url}>
-                      <strong>{article.title} </strong>
-                    </a>
-                    <span> by {article.source.name}</span>
-                    <button
-                      onClick={this.clickedToSave.bind(
-                        this.state,
-                        article.title,
-                        article.url
-                      )}
-                    >
-                      save
-                    </button>
-                  </ListItem>
-                ))}
-              </List>
-            ) : (
-              <h3>No Results to Display</h3>
-            )}
-          </Col>
-          <Col size="md-6 sm-12">
-            <h4 className="linebr">Javascript</h4>
-            {this.state.articlesjs.length ? (
-              <List>
-                {this.state.articlesjs.map(article => (
-                  <ListItem key={article.url}>
-                    <a href={article.url}>
-                      <strong>{article.title} </strong>
-                    </a>
-                    <span> by {article.source.name}</span>
-                    <button
-                      onClick={this.clickedToSave.bind(
-                        this.state,
-                        article.title,
-                        article.url
-                      )}
-                    >
-                      save
-                    </button>
-                  </ListItem>
-                ))}
-              </List>
-            ) : (
-              <h3>No Results to Display</h3>
-            )}
-          </Col>
-        </Row>
-        <Row>
-          <Col size="md-6">
-            <h4 className="linebr">Web Design</h4>
-            {this.state.articleswdes.length ? (
-              <List>
-                {this.state.articleswdes.map(article => (
-                  <ListItem key={article.url}>
-                    <a href={article.url}>
-                      <strong>{article.title} </strong>
-                    </a>
-                    <span> by {article.source.name}</span>
-                    <button
-                      onClick={this.clickedToSave.bind(
-                        this.state,
-                        article.title,
-                        article.url
-                      )}
-                    >
-                      save
-                    </button>
-                  </ListItem>
-                ))}
-              </List>
-            ) : (
-              <h3>No Results to Display</h3>
-            )}
-          </Col>
-          <Col size="md-6 sm-12">
-            <h4 className="linebr">Tech</h4>
-            {this.state.articlestech.length ? (
-              <List>
-                {this.state.articlestech.map(article => (
-                  <ListItem key={article.url}>
-                    <a href={article.url}>
-                      <strong>{article.title} </strong>
-                    </a>
-                    <span> by {article.source.name}</span>
-                    <button
-                      onClick={this.clickedToSave.bind(
-                        this.state,
-                        article.title,
-                        article.url
-                      )}
-                    >
-                      save
-                    </button>
-                  </ListItem>
-                ))}
-              </List>
-            ) : (
-              <h3>No Results to Display</h3>
-            )}
-          </Col>
-        </Row>
-      </Container>
+      <div className="container">
+        <div id="main">
+          <h1 id="maintitle"> Articles</h1>
+          <p id="description">
+            <span id="firstword"> Reading</span> about the always advancing
+            technologies in the programming world is important for web
+            developers to educate themselves and stay aware of how to use these
+            technologies to their advantage. Here are some articles to get you
+            started!
+          </p>
+        </div>
+
+        <div className="maincontainer">
+          <div className="row">
+            <div className="card articles">
+              <h2 className="title"> Web Development</h2>
+
+              {this.state.articleswdev.length ? (
+                <div className="overflow">
+                  {this.state.articleswdev.map(article => (
+                    <div key={article.url}>
+                      <a href={article.url}>
+                        <strong>{article.title} </strong>
+                      </a>
+                      <span className="source"> by {article.source.name}</span>
+
+                      <button
+                        type="button"
+                        className="btn btn-light"
+                        onClick={this.clickedToSave.bind(
+                          this.state,
+                          article.title,
+                          article.url
+                        )}
+                      >
+                        save
+                      </button>
+                    </div>
+                  ))}
+                </div>
+              ) : (
+                <h3>No Results to Display</h3>
+              )}
+            </div>
+
+            <div className="card articles">
+              <h2 className="title"> JavaScript</h2>
+
+              {this.state.articlesjs.length ? (
+                <div className="overflow">
+                  {this.state.articlesjs.map(article => (
+                    <div key={article.url}>
+                      <a href={article.url}>
+                        <strong>{article.title} </strong>
+                      </a>
+                      <span className="source"> by {article.source.name}</span>
+                      <button
+                        type="button"
+                        className="btn btn-light"
+                        onClick={this.clickedToSave.bind(
+                          this.state,
+                          article.title,
+                          article.url
+                        )}
+                      >
+                        save
+                      </button>
+                    </div>
+                  ))}
+                </div>
+              ) : (
+                <h3>No Results to Display</h3>
+              )}
+            </div>
+          </div>
+          <div className="row">
+            <div className="card articles">
+              <h2 className="title"> Web Design</h2>
+
+              {this.state.articleswdes.length ? (
+                <div className="overflow">
+                  {this.state.articleswdes.map(article => (
+                    <div key={article.url}>
+                      <a href={article.url}>
+                        <strong>{article.title} </strong>
+                      </a>
+                      <span className="source"> by {article.source.name}</span>
+                      <button
+                        type="button"
+                        className="btn btn-light"
+                        onClick={this.clickedToSave.bind(
+                          this.state,
+                          article.title,
+                          article.url
+                        )}
+                      >
+                        save
+                      </button>
+                    </div>
+                  ))}
+                </div>
+              ) : (
+                <h3>No Results to Display</h3>
+              )}
+            </div>
+
+            <div className="card articles">
+              <h2 className="title"> Tech</h2>
+
+              {this.state.articlestech.length ? (
+                <div className="overflow">
+                  {this.state.articlestech.map(article => (
+                    <div key={article.url}>
+                      <a href={article.url}>
+                        <strong>{article.title} </strong>
+                      </a>
+                      <span className="source"> by {article.source.name}</span>
+                      <button
+                        type="button"
+                        className="btn btn-light"
+                        onClick={this.clickedToSave.bind(
+                          this.state,
+                          article.title,
+                          article.url
+                        )}
+                      >
+                        save
+                      </button>
+                    </div>
+                  ))}
+                </div>
+              ) : (
+                <h3>No Results to Display</h3>
+              )}
+            </div>
+          </div>
+        </div>
+      </div>
     );
   }
 }

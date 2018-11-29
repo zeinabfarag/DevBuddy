@@ -43,7 +43,6 @@ class Nav extends Component {
                   Home
                 </button>
               </Link>
-
               <Link to="/resources" className="btn btn-link text-secondary">
                 <button type="button" className="btn btn-outline-secondary">
                   Resources
@@ -54,11 +53,13 @@ class Nav extends Component {
                   Articles
                 </button>
               </Link>
-              <Link to="/meetups" className="btn btn-link text-secondary">
+
+              <Link to="/jobs" className="btn btn-link text-secondary">
                 <button type="button" className="btn btn-outline-secondary">
-                  Meetups
+                  Jobs
                 </button>
               </Link>
+
               <Link to="/favourite" className="btn btn-link text-secondary">
                 <button type="button" className="btn btn-outline-secondary">
                   Favourites
@@ -100,17 +101,12 @@ class Nav extends Component {
                   Articles
                 </button>
               </Link>
-              <Link to="/jobposting" className="btn btn-link text-secondary">
-                <button type="button" className="btn btn-outline-secondary">
-                  Job Postings
-                </button>
-              </Link>
-              <Link to="/meetups" className="btn btn-link text-secondary">
-                <button type="button" className="btn btn-outline-secondary">
-                  Meetups
-                </button>
-              </Link>
 
+              <Link to="/jobs" className="btn btn-link text-secondary">
+                <button type="button" className="btn btn-outline-secondary">
+                  Jobs
+                </button>
+              </Link>
               <Link to="/about" className="btn btn-link text-secondary">
                 {/* <span className="badge badge-pill badge-light">About</span> */}
                 <button type="button" className="btn btn-outline-secondary">
