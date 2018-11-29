@@ -1,0 +1,8 @@
+.overflow {
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+.btn-light {
+  color: #1a4f6e;
+}
