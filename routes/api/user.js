@@ -2,13 +2,14 @@ const express = require('express');
 const router = express.Router();
 const User = require('../../database/models/user');
 const passport = require('../../passport');
+const axios = require('axios');
 
 router.get('/articles/:username', (req, res) => {
   User.find({ username: req.params.username })
-    .then(function(response) {
+    .then(function (response) {
       res.send(response);
     })
-    .catch(function(err) {
+    .catch(function (err) {
       console.log(err.message);
       res.send('failed');
     });
@@ -21,11 +22,11 @@ router.post('/articles/:username/:deleteuid', (req, res) => {
     { username: req.params.username },
     { $pull: { articles: { _id: req.params.deleteuid } } }
   )
-    .then(function(response) {
+    .then(function (response) {
       console.log(response);
       res.send('successfully deleted sample');
     })
-    .catch(function(err) {
+    .catch(function (err) {
       console.log(err.message);
       res.send('failed');
     });
@@ -33,11 +34,11 @@ router.post('/articles/:username/:deleteuid', (req, res) => {
 
 router.post('/job/:username', (req, res) => {
   User.update({ username: req.params.username }, { $push: { jobs: req.body } })
-    .then(function(response) {
+    .then(function (response) {
       console.log(response);
       res.send('successfully created sample');
     })
-    .catch(function(err) {
+    .catch(function (err) {
       console.log(err.message);
       res.send('failed');
     });
@@ -48,11 +49,11 @@ router.post('/meetup/:username', (req, res) => {
     { username: req.params.username },
     { $push: { meetups: req.body } }
   )
-    .then(function(response) {
+    .then(function (response) {
       console.log(response);
       res.send('successfully created sample');
     })
-    .catch(function(err) {
+    .catch(function (err) {
       console.log(err.message);
       res.send('failed');
     });
@@ -63,11 +64,11 @@ router.post('/article/:username', (req, res) => {
     { username: req.params.username },
     { $push: { articles: req.body } }
   )
-    .then(function(response) {
+    .then(function (response) {
       console.log(response);
       res.send('successfully created sample');
     })
-    .catch(function(err) {
+    .catch(function (err) {
       console.log(err.message);
       res.send('failed');
     });
@@ -101,7 +102,7 @@ router.post('/', (req, res) => {
 
 router.post(
   '/login',
-  function(req, res, next) {
+  function (req, res, next) {
     console.log('routes/user.js, login, req.body: ');
     console.log(req.body);
     next();
@@ -133,6 +134,18 @@ router.post('/logout', (req, res) => {
   } else {
     res.send({ msg: 'no user to log out' });
   }
+});
+
+router.get('/meetup/:query', (req, res) => {
+  console.log('query', req.params.query);
+  axios.get(`https://api.meetup.com/find/groups?text=${req.params.query}&sign=true&photo-host=public&sig_id=255600544&sig=0b1810a39b3fa52e67d05a8da45babe0f49b7eb0&key=18626a281c32595c387c3a3d6810455c`)
+    .then((res) => {
+      console.log('res', res);
+      res.json({ data: res });
+    }).catch((err) => {
+      console.log('err', err);
+      res.send(err);
+    });
 });
 
 module.exports = router;
