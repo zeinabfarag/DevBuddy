@@ -48,7 +48,7 @@ class Questions extends Component {
               <input
                 id="submit"
                 type="submit"
-                class="btn btn-outline-secondary"
+                className="btn btn-outline-secondary"
               />
             </form>
             <p id="description">
