@@ -59,60 +59,84 @@ class About extends Component {
                       </div>
                     </div>
                   </div>
-                </div>
-                <div id="cteam" className="teammembers">
-                  <div className="memberimage col-2">
-                    <img
+                  <div id="adteam" className="teammembers">
+                    <div className="memberimage col-2">
+                      <img
+                      className="team-img"
+                      src="/asset/images/zteam.png"
+                      width="300px"
+                      alt="image"
+                      />
+                    </div>
+                    <div className="member-info col-8">
+                      <h1 className="member-section">Zeinab Farag</h1>
+                      <p className="abouttext">
+                        Lorem Ipsum.{" "}
+                      </p>
+                      <div className="contact-icons">
+                        <a href="https://github.com/zeinabfarag">
+                          <img className="github-img"
+                          src="https://cdn0.iconfinder.com/data/icons/octicons/1024/mark-github-512.png"
+                          width="50px"
+                          />
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                  <div id="cteam" className="teammembers">
+                    <div className="memberimage col-2">
+                      <img
                       className="team-img"
                       src="/asset/images/al.png"
                       width="300px"
                       alt="image"
-                    />
-                  </div>
-                  <div className="member-info col-8">
-                    <h1 className="member-section">Alejandra Juarez</h1>
-                    <p className="abouttext">
+                      />
+                    </div>
+                    <div className="member-info col-8">
+                      <h1 className="member-section">Alejandra Juarez</h1>
+                      <p className="abouttext">
                       Graduate from Computer Science. 11 years of IT experience
                       in mainframe with Cobol. Decided to update my skills with
                       a Business Analyst diploma and Coding Bootcamp from UTM.
                       Eager to demonstrate my acquired knowledge on new
                       challenges.{" "}
-                    </p>
-                    <div className="contact-icons">
-                      <a href="https://github.com/alejuarez">
-                        <img
+                      </p>
+                      <div className="contact-icons">
+                        <a href="https://github.com/alejuarez">
+                          <img
                           className="github-img"
                           src="https://cdn0.iconfinder.com/data/icons/octicons/1024/mark-github-512.png"
                           width="50px"
-                        />
-                      </a>
+                          />
+                        </a>
+                      </div>
                     </div>
                   </div>
-                </div>
-                <div id="adteam" className="teammembers">
-                  <div className="memberimage col-2">
-                    <img
+                  <div id="adteam" className="teammembers">
+                    <div className="memberimage col-2">
+                      <img
                       className="team-img"
                       src="/asset/images/r.png"
                       width="300px"
                       alt="image"
-                    />
-                  </div>
-                  <div className="member-info col-8">
-                    <h1 className="member-section">Ruby Gill</h1>
-                    <p className="abouttext">
+                      />
+                    </div>
+                    <div className="member-info col-8">
+                      <h1 className="member-section">Ruby Gill</h1>
+                      <p className="abouttext">
                       Background in digital marketing and research. I look
                       forward to applying best practices learned in the UTM Full
                       Stack Bootcamp in future projects.{" "}
-                    </p>
-                    <div className="contact-icons">
-                      <a href="https://github.com/Rubyrgill">
-                        <img
+                      </p>
+                      <div className="contact-icons">
+                        <a href="https://github.com/Rubyrgill">
+                          <img
                           className="github-img"
                           src="https://cdn0.iconfinder.com/data/icons/octicons/1024/mark-github-512.png"
                           width="50px"
-                        />
-                      </a>
+                          />
+                        </a>
+                      </div>
                     </div>
                   </div>
                 </div>
