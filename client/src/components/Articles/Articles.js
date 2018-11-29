@@ -86,8 +86,8 @@ class Articles extends Component {
             <span id="firstword"> Reading</span> about the always advancing
             technologies in the programming world is important for web
             developers to educate themselves and stay aware of how to use these
-            new technologies to their advantage. Here are some articles to get
-            you started!
+            technologies to their advantage. Here are some articles to get you
+            started!
           </p>
         </div>
 
