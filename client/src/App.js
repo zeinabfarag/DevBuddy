@@ -26,7 +26,7 @@ import Angular from "./pages/Languages/Angular";
 import Vue from "./pages/Languages/Vue";
 import AJAX from "./pages/Languages/AJAX";
 import Bootstrap from "./pages/Languages/Bootstrap";
-import Jobs from "./pages/Jobs";
+import Comments from "./pages/Comments";
 
 class App extends Component {
   constructor() {
@@ -109,8 +109,10 @@ class App extends Component {
           />
           <Route
             exact
-            path="/jobs"
-            render={props => <Jobs {...props} username={this.state.username} />}
+            path="/comments"
+            render={props => (
+              <Comments {...props} username={this.state.username} />
+            )}
           />
 
           <Route exact path="/css" component={CSS} />
