@@ -71,7 +71,7 @@ class SignupForm extends Component {
             <p>Email</p>
             <input
               className="form-input"
-              type="text"
+              type="email"
               id="username"
               name="username"
               placeholder="Enter Email"
