@@ -89,15 +89,15 @@ class Articles extends Component {
             technologies to their advantage. Here are some articles to get you
             started!
           </p>
-
-          {this.props.login && (
-            <Link to="/favourite">
-              <button type="button" className="saved-articles-btn">
-                Saved Articles
-              </button>
-            </Link>
-          )}
         </div>
+
+        {this.props.login && (
+          <Link to="/favourite">
+            <button type="button" className="saved-articles-btn">
+              Saved Articles
+            </button>
+          </Link>
+        )}
 
         <div className="maincontainer">
           <div className="row">
