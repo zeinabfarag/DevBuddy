@@ -5,28 +5,10 @@ import "./Resources.css";
 import Languages from "../../components/Languages";
 
 class Resources extends Component {
-  state = {
-    signedIn: false
-  };
-  componentDidMount = () => {
-    this.checkUser();
-  };
-
-  checkUser = () => {
-    let user = sessionStorage.getItem("username");
-
-    if (user === "null") {
-      this.setState({ signedIn: false });
-    } else if (user == null) {
-      this.setState({ signedIn: false });
-    } else {
-      this.setState({ signedIn: true });
-    }
-  };
   render() {
     return (
       <div className="container">
-        {this.state.signedIn && <Languages />}
+        {this.props.login && <Languages />}
         <div id="main">
           <h1 id="maintitle"> Resources</h1>
           <p id="description">
@@ -85,7 +67,7 @@ class Resources extends Component {
               <Questions />
             </div>
           </div>
-          {!this.state.signedIn && (
+          {!this.props.login && (
             <div>
               Not sure where to start? Login/Sign Up for a more detailed
               selection of resources
