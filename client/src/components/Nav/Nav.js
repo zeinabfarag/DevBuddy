@@ -56,12 +56,6 @@ class Nav extends Component {
                 </button>
               </Link>
 
-              <Link to="/comments" className="btn btn-link text-secondary">
-                <button type="button" className="btn btn-outline-secondary">
-                  Community
-                </button>
-              </Link>
-
               <Link to="/about" className="btn btn-link text-secondary">
                 <button type="button" className="btn btn-outline-secondary">
                   About
