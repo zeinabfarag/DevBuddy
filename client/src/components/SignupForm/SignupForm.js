@@ -37,7 +37,7 @@ class SignupForm extends Component {
           alert('Please fill out Username and Password');
         } else if (this.state.password.length < 6) {
           alert(`Choose a password with more than 6 letters`);
-        } else if (!response.data.errmsg) {
+        } else if (response.status === 200) {
           console.log('successful signup');
           alert("You've Successfully signed up.");
           // update App.js state
