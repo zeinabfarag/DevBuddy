@@ -54,15 +54,9 @@ class Nav extends Component {
                 </button>
               </Link>
 
-              <Link to="/jobs" className="btn btn-link text-secondary">
+              <Link to="/comments" className="btn btn-link text-secondary">
                 <button type="button" className="btn btn-outline-secondary">
-                  Jobs
-                </button>
-              </Link>
-
-              <Link to="/favourite" className="btn btn-link text-secondary">
-                <button type="button" className="btn btn-outline-secondary">
-                  Favourites
+                  Community
                 </button>
               </Link>
 
@@ -102,11 +96,6 @@ class Nav extends Component {
                 </button>
               </Link>
 
-              <Link to="/jobs" className="btn btn-link text-secondary">
-                <button type="button" className="btn btn-outline-secondary">
-                  Jobs
-                </button>
-              </Link>
               <Link to="/about" className="btn btn-link text-secondary">
                 {/* <span className="badge badge-pill badge-light">About</span> */}
                 <button type="button" className="btn btn-outline-secondary">
