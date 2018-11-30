@@ -1,27 +1,29 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
 import axios from "axios";
+import { Link, withRouter } from "react-router-dom";
 
 class Nav extends Component {
   constructor() {
     super();
+
     this.logout = this.logout.bind(this);
   }
 
   logout(event) {
     event.preventDefault();
     console.log("logging out");
-
     axios
       .post("/user/logout")
       .then(response => {
         console.log(response.data);
+
         if (response.status === 200) {
           this.props.updateUser({
             loggedIn: false,
             username: null
           });
         }
+        this.props.history.push("/");
       })
       .catch(error => {
         console.log("Logout error");
@@ -29,7 +31,7 @@ class Nav extends Component {
   }
 
   render() {
-    const loggedIn = this.props.loggedIn;
+    let loggedIn = this.props.loggedIn;
     console.log("navbar render, props: ");
     console.log(this.props);
 
@@ -120,5 +122,4 @@ class Nav extends Component {
     );
   }
 }
-
-export default Nav;
+export default withRouter(Nav);
