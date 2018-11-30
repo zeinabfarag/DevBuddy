@@ -21,8 +21,9 @@ class About extends Component {
               title="Video"
               width="560"
               height="349"
-              src="/asset/images/Dev_2.mp4"
+              src="https://www.youtube-nocookie.com/embed/j_LWYsWUvps?rel=0"
               frameBorder="0"
+              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
             />
           </div>
@@ -115,7 +116,7 @@ class About extends Component {
             </div>
           </div>
         </div>
-      </div >
+      </div>
     );
   }
 }
