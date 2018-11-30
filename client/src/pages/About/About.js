@@ -17,14 +17,15 @@ class About extends Component {
           {/* <div className="saved">
             {/* <h1 className="saved-section">PRESS PLAY</h1> */}
           <div className="videoWrapper">
-            <iframe
-              title="Video"
-              width="560"
-              height="349"
-              src="/asset/images/Dev_2.mp4"
-              frameBorder="0"
-              allowFullScreen
-            />
+            {/* <iframe
+            title="Video"
+            width="560"
+            height="349"
+            src="https://www.youtube.com/watch?v=j_LWYsWUvps&feature=youtu.be"
+            frameBorder="0"
+            allowFullScreen
+          /> */}
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/j_LWYsWUvps" frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
           </div>
           {/* </div> */}
         </div>

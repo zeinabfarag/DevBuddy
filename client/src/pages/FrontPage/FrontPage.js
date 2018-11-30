@@ -59,6 +59,7 @@ class FrontPage extends Component {
         <section className="section section-dark ">
           <h2 className="front-title"> YOU ARE VALUABLE </h2>
 
+
           <p className="about-font">
             In terms of job availability, the timing really could not be better
             for web developers. there are a plethora of jobs and not enough
@@ -83,15 +84,18 @@ class FrontPage extends Component {
           </h2>
           <div id="main">
             <h1 id="maintitle"> Learn More</h1>
+
           </div>
           <div className="frontpage-section">
             <Video query="web development 2018" />
           </div>
+
           <div className="about-font">
             For more resources including educational sites and available online
             courses{" "}
             <Link to="/resources" className="clickhere">
               click here
+
             </Link>
           </div>
         </section>
@@ -104,12 +108,14 @@ class FrontPage extends Component {
           <div id="main">
             <h1 id="maintitle">Read More</h1>
           </div>
+
           <Articles />
           <div className="about-font">
             For more articles{" "}
             <Link to="/articles" className="clickhere">
               click here
             </Link>
+
           </div>
         </section>
       </div>
