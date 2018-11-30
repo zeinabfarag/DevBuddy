@@ -11,7 +11,7 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
   width: 350px;
-  height: 420px;
+  height: 500px;
   padding: 80px 40px;
   box-sizing: border-box;
   background: rgba(0, 0, 0, 0.5);
@@ -46,8 +46,8 @@ h2 {
   margin-bottom: 20px;
 }
 
-.loginBox input[type='text'],
-.loginBox input[type='password'] {
+.loginBox input[type="text"],
+.loginBox input[type="password"] {
   border: none;
   border-bottom: 1px solid #fff;
   background: transparent;
@@ -61,7 +61,7 @@ h2 {
   color: rgba(255, 255, 255, 0.5);
 }
 
-.loginBox input[type='submit'] {
+.loginBox input[type="submit"] {
   border: none;
   outline: none;
   height: 40px;
@@ -72,7 +72,7 @@ h2 {
   border-radius: 20px;
 }
 
-.loginBox input[type='submit']:hover {
+.loginBox input[type="submit"]:hover {
   background: rgb(255, 255, 255);
   color: #262626;
 }
