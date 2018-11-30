@@ -56,17 +56,16 @@ class FrontPage extends Component {
 
 
           </div>
+
           <div className="frontpage-section">
             <Resources />
           </div>
           <div id="main">
             <h1 id="maintitle"> Web Development Articles
             <Articles /></h1>
-
             <Link
               to="/articles"
               className="btn btn-link text-secondary"
-
             >
               <button type="button" className="btn btn-outline-secondary">
                 Read More
