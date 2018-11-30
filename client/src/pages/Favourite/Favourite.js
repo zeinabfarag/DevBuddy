@@ -1,6 +1,6 @@
-import React, { Component } from "react";
-import "./favstyle.css";
-import axios from "axios";
+import React, { Component } from 'react';
+import './favstyle.css';
+import axios from 'axios';
 
 class Favourite extends Component {
   state = {
@@ -12,12 +12,12 @@ class Favourite extends Component {
   };
 
   getArticles = () => {
-    let sessionUser = sessionStorage.getItem("username");
+    let sessionUser = sessionStorage.getItem('username');
     axios
-      .get("/user/articles/" + sessionUser)
+      .get('/user/articles/' + sessionUser)
       .then(response => {
-        console.log("success");
-        console.log("prop", this.props.username);
+        console.log('success');
+        console.log('prop', this.props.username);
 
         let articles = response.data[0].articles;
         this.setState({ articles });
@@ -25,7 +25,7 @@ class Favourite extends Component {
         console.log(this.state.articles);
       })
       .catch(error => {
-        console.log("error", error);
+        console.log('error', error);
       });
   };
 
@@ -36,72 +36,30 @@ class Favourite extends Component {
       .post(`/user/articles/${this.props.username}/${id}`)
       .then(response => {
         this.getArticles();
-        console.log("success", response);
+        console.log('success', response);
       })
       .catch(error => {
-        console.log("error", error);
+        console.log('error', error);
       });
   };
 
   render() {
     return (
       <div className="container">
-        <h1 id="favtitle">FAVOURITES</h1>
-        <div className=" saved-container">
-          <div className="saved-deck">
-            <h1 className="saved-section">JOB POSTINGS</h1>
-            <div className="scrollmenu">
-              <a className="saveditem" href="#home">
-                Junior Tech Summit
-              </a>
-              <a className="saveditem" href="#home">
-                Home
-              </a>
-              <a className="saveditem" href="#home">
-                Home
-              </a>
-              <a className="saveditem" href="#home">
-                Home
-              </a>
-              <a className="saveditem" href="#home">
-                Home
-              </a>
-              <a className="saveditem" href="#home">
-                Home
-              </a>
-              <a className="saveditem" href="#home">
-                Home
-              </a>
-              <a className="saveditem" href="#home">
-                Home
-              </a>
-              <a className="saveditem" href="#home">
-                Home
-              </a>
-              <a className="saveditem" href="#home">
-                Home
-              </a>
-              <a className="saveditem" href="#home">
-                Home
-              </a>
-              <a className="saveditem" href="#home">
-                Home
-              </a>
-            </div>
-          </div>
-        </div>
-        <div className=" saved-container">
-          <div className="saved-deck">
-            <h1 className="saved-section">ARTICLES</h1>
-            <div className="scrollmenu">
+        <h1 id="favtitle">SAVED ARTICLES</h1>
+        <div className=" maincontainer">
+          <div className="row">
+            <div className="h-100 col-lg-11  card">
               {this.state.articles.map(article => {
                 let link = (
-                  <div>
-                    <a className="saveditem" href={article.link}>
-                      {article.title}
+                  <div key={article._id}>
+                    <a href={article.link}>
+                      <strong>{article.title} </strong>
                     </a>
                     {/* DELETE ARTICLES SAMPLE */}
                     <button
+                      type="button"
+                      className="btn btn-light"
                       onClick={this.deleteArticle.bind(this.state, article._id)}
                     >
                       delete
@@ -111,49 +69,6 @@ class Favourite extends Component {
                 return link;
               })}
               {this.link}
-            </div>
-          </div>
-        </div>
-        <div className=" saved-container">
-          <div className="saved-deck">
-            <h1 className="saved-section">MEETUPS</h1>
-            <div className="scrollmenu">
-              <a className="saveditem" href="#home">
-                How To be A Dev
-              </a>
-              <a className="saveditem" href="#home">
-                Home
-              </a>
-              <a className="saveditem" href="#home">
-                Home
-              </a>
-              <a className="saveditem" href="#home">
-                Home
-              </a>
-              <a className="saveditem" href="#home">
-                Home
-              </a>
-              <a className="saveditem" href="#home">
-                Home
-              </a>
-              <a className="saveditem" href="#home">
-                Home
-              </a>
-              <a className="saveditem" href="#home">
-                Home
-              </a>
-              <a className="saveditem" href="#home">
-                Home
-              </a>
-              <a className="saveditem" href="#home">
-                Home
-              </a>
-              <a className="saveditem" href="#home">
-                Home
-              </a>
-              <a className="saveditem" href="#home">
-                Home
-              </a>
             </div>
           </div>
         </div>
