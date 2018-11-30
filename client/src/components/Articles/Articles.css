@@ -6,3 +6,20 @@
 .btn-light {
   color: #1a4f6e;
 }
+
+.saved-articles-btn{
+  background: whitesmoke;
+  -webkit-box-shadow: inset -5px 0px 124px -30px rgba(0, 0, 0, 0.78);
+  -moz-box-shadow: inset -5px 0px 124px -3px rgba(0, 0, 0, 0.75); 
+  border-radius: 20px;
+  padding: 20px;
+}
+
+.saved-articles-btn:hover{
+  background: #1a4f6e;
+color: white;
+  -webkit-box-shadow: inset -5px 0px 124px -30px rgba(0, 0, 0, 0.78);
+  -moz-box-shadow: inset -5px 0px 124px -3px rgba(0, 0, 0, 0.75); 
+  border-radius: 20px;
+  padding: 20px;
+}

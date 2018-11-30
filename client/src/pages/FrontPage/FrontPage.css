@@ -29,22 +29,25 @@ html {
 
 .pimg2 {
   background-image: url('/asset/images/resources.jpg');
-  min-height: 900px;
+  min-height: 200px;
 }
 
 .pimg3 {
   background-image: url('/asset/images/articles.jpg');
-  min-height: 900px;
+  min-height:0px;
 }
 
 .pimg5 {
   background-image: url('/asset/images/coding.jpg');
-  min-height: 900px;
+  min-height: 0px;
 }
 
 .section {
   text-align: center;
   padding: 50px 80px;
+  -webkit-box-shadow: inset -5px 0px 124px -30px rgba(0, 0, 0, 0.78);
+  -moz-box-shadow: inset -5px 0px 124px -3px rgba(0, 0, 0, 0.75); 
+  /* box-shadow: inset -5px 0px 124px -3px rgba(0, 0, 0, 0.75); */
 }
 
 .section-light {
@@ -85,3 +88,33 @@ html {
     background-attachment: scroll;
   }
 } */
+
+
+.about-font{
+  color: #1a4f6e;
+}
+
+.about-logo{
+  width: 200px;
+
+}
+
+.front-title{
+  color:  #1a4f6e;
+  border: solid 2px whitesmoke;
+  padding: 2%;
+  font-weight: 500;
+}
+
+.frontpage-section{
+  border: 100px;
+  padding: 10%;
+  padding-top: 5px;
+  height: 500px;
+}
+
+#card{
+  width: 100%;
+  -webkit-box-shadow: inset -5px 0px 124px -30px rgba(0, 0, 0, 0.78);
+  -moz-box-shadow: inset -5px 0px 124px -3px rgba(0, 0, 0, 0.75); 
+}
