@@ -5,11 +5,28 @@ import "./Resources.css";
 import Languages from "../../components/Languages";
 
 class Resources extends Component {
+  state = {
+    signedIn: false
+  };
+  componentDidMount = () => {
+    this.checkUser();
+  };
+
+  checkUser = () => {
+    let user = sessionStorage.getItem("username");
+
+    if (user === "null") {
+      this.setState({ signedIn: false });
+    } else if (user == null) {
+      this.setState({ signedIn: false });
+    } else {
+      this.setState({ signedIn: true });
+    }
+  };
   render() {
     return (
       <div className="container">
-        {sessionStorage.getItem("username") !== "null" && <Languages />}
-
+        {this.state.signedIn && <Languages />}
         <div id="main">
           <h1 id="maintitle"> Resources</h1>
           <p id="description">
@@ -19,7 +36,6 @@ class Resources extends Component {
             favourite resources that we use on a regular basis.
           </p>
         </div>
-
         <div className="maincontainer">
           <div className="row">
             <div className="card  ">
@@ -69,7 +85,7 @@ class Resources extends Component {
               <Questions />
             </div>
           </div>
-          {sessionStorage.getItem("username") === "null" && (
+          {!this.state.signedIn && (
             <div>
               Not sure where to start? Login/Sign Up for a more detailed
               selection of resources

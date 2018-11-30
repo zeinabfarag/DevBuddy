@@ -1,7 +1,7 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
-const bcrypt = require('bcryptjs');
-const articlesSchema = require('./articles');
+const bcrypt = require("bcryptjs");
+const articlesSchema = require("./articles");
 
 mongoose.promise = Promise;
 
@@ -11,7 +11,7 @@ const userSchema = new Schema({
     type: String,
     unique: true,
     required: true,
-    match: [/.+@.+\..+/, 'Please enter a valid e-mail address']
+    match: [/.+@.+\..+/, "Please enter a valid e-mail address"]
   },
   password: {
     type: String,
@@ -21,7 +21,7 @@ const userSchema = new Schema({
       function(input) {
         return input.length >= 6;
       },
-      'Password should be longer.'
+      "Password should be longer."
     ]
   },
   articles: [articlesSchema]
@@ -38,18 +38,18 @@ userSchema.methods = {
 };
 
 // Define hooks for pre-saving
-userSchema.pre('save', function(next) {
+userSchema.pre("save", function(next) {
   if (!this.password) {
-    console.log('models/user.js =======NO PASSWORD PROVIDED=======');
+    console.log("models/user.js =======NO PASSWORD PROVIDED=======");
     next();
   } else {
-    console.log('models/user.js hashPassword in pre save');
+    console.log("models/user.js hashPassword in pre save");
 
     this.password = this.hashPassword(this.password);
     next();
   }
 });
 
-const User = mongoose.model('User', userSchema);
+const User = mongoose.model("User", userSchema);
 
 module.exports = User;
