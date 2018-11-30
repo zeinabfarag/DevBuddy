@@ -1,14 +1,14 @@
-import React, { Component } from 'react';
-import { Redirect } from 'react-router-dom';
-import axios from 'axios';
-import './LoginForm.css';
+import React, { Component } from "react";
+import { Redirect } from "react-router-dom";
+import axios from "axios";
+import "./LoginForm.css";
 
 class LoginForm extends Component {
   constructor() {
     super();
     this.state = {
-      username: '',
-      password: '',
+      username: "",
+      password: "",
       redirectTo: null
     };
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -23,15 +23,15 @@ class LoginForm extends Component {
 
   handleSubmit(event) {
     event.preventDefault();
-    console.log('handleSubmit');
+    console.log("handleSubmit");
 
     axios
-      .post('/user/login', {
+      .post("/user/login", {
         username: this.state.username,
         password: this.state.password
       })
       .then(response => {
-        console.log('login response: ');
+        console.log("login response: ");
         console.log(response);
         if (response.status === 200) {
           // update App.js state
@@ -41,12 +41,12 @@ class LoginForm extends Component {
           });
           // update the state to redirect to home
           this.setState({
-            redirectTo: '/'
+            redirectTo: "/"
           });
         }
       })
       .catch(error => {
-        console.log('login error: ');
+        console.log("login error: ");
         console.log(error);
       });
   }
@@ -72,7 +72,7 @@ class LoginForm extends Component {
             />
             {/* <p>Password</p> */}
             <label className="form-label" htmlFor="password">
-              Password:{' '}
+              Password:{" "}
             </label>
             <input
               className="form-input"
