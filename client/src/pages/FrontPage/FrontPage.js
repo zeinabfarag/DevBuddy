@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "./FrontPage.css";
 import Articles from "../../components/Articles";
-import Resources from "../Resources";
+import Resources from "../../components/Video";
 
 class FrontPage extends Component {
   render() {
@@ -13,39 +13,63 @@ class FrontPage extends Component {
           </div>
         </div>
 
-        <section className="section section-dark">
-          <h2>About</h2>
-          <p>
-            Group of students trying to make it easy to learn coding and
-            development
+        <section className="section section-dark ">
+          <h2 className="front-title">MEET DEV BUDDY</h2>
+          <img
+            className="about-logo"
+            src="/asset/images/debuddy.png"
+            width="300px"
+            alt=""
+          />
+
+          <h4 className="about-font"> A Developer Resource Site</h4>
+          <p className="about-font">
+            The Dev Buddy site assists students on their journey to becoming a Developer by providing a central location for resources.
           </p>
+          <p className="about-font">
+            The site was created by graduates of the Full Stack Developer Bootcamp to offer others easy access to helpful tools and tips.
+          </p>
+
         </section>
 
         <div className="pimg2">
           <div className="ptext">
-            <span className="border trans">Resources</span>
           </div>
         </div>
 
         <section className="section section-dark">
-          <Resources />
+
+          <h2 className="front-title">ACCESS EVERYTHING YOU NEED!</h2>
+          <div id="main">
+            <h1 id="maintitle"> Videos</h1>
+          </div>
+          <div className="frontpage-section">
+            <Resources />
+          </div>
+          <div id="main">
+            <h1 id="maintitle"> Articles</h1>
+          </div>
+          <div className="frontpage-section">
+            <Articles />
+          </div>
         </section>
 
-        <div className="pimg3">
+
+        {/* <div className="pimg3">
           <div className="ptext">
             <span className="border trans">Articles</span>
           </div>
-        </div>
+        </div> */}
 
         <section className="section section-dark">
-          <Articles />
+          {/* <Articles /> */}
         </section>
 
-        <div className="pimg5">
+        {/* <div className="pimg5">
           <div className="ptext">
             <span className="border trans">Meetups</span>
           </div>
-        </div>
+        </div> */}
 
         <section className="section section-dark" />
 
