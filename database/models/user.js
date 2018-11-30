@@ -11,19 +11,25 @@ const userSchema = new Schema({
   username: {
     type: String,
     unique: true,
-    required: true,
-    match: [/.+@.+\..+/, 'Please enter a valid e-mail address']
+    required: true
+    // validate: [
+    //   function(input) {
+    //     return input.length >= 6;
+    //   },
+    //   'Please enter a valid e-mail address.'
+    // ]
+    // match: [/.+@.+\..+/, 'Please enter a valid e-mail address']
   },
   password: {
     type: String,
     trim: true,
-    required: true,
-    validate: [
-      function(input) {
-        return input.length >= 6;
-      },
-      'Password should be longer.'
-    ]
+    required: true
+    // validate: [
+    //   function(input) {
+    //     return input.length >= 6;
+    //   },
+    //   'Password should be longer.'
+    // ]
   },
   articles: [articlesSchema],
   meetups: [meetupsSchema]
