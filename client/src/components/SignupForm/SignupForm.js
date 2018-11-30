@@ -37,7 +37,7 @@ class SignupForm extends Component {
           alert('Please fill out Username and Password');
         } else if (this.state.password.length < 6) {
           alert(`Choose a password with more than 6 letters`);
-        } else if (!response.data.errmsg) {
+        } else if (response.status === 200) {
           console.log('successful signup');
           alert("You've Successfully signed up.");
           // update App.js state
@@ -151,3 +151,26 @@ class SignupForm extends Component {
 }
 
 export default SignupForm;
+
+//request to server to add a new username/password
+axios
+  .post('/user/', {
+    username: this.state.username,
+    password: this.state.password
+  })
+  .then(response => {
+    console.log(response);
+    if (!response.data.errmsg) {
+      console.log('successful signup');
+      this.setState({
+        //redirect to login page
+        redirectTo: '/login'
+      });
+    } else {
+      console.log('username already taken');
+    }
+  })
+  .catch(error => {
+    console.log('signup error: ');
+    console.log(error);
+  });
