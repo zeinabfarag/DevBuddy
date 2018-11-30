@@ -80,14 +80,22 @@ class App extends Component {
             exact
             path="/articles"
             render={props => (
-              <Articles {...props} username={this.state.username} />
+              <Articles
+                {...props}
+                username={this.state.username}
+                login={this.state.loggedIn}
+              />
             )}
           />
           <Route
             exact
             path="/resources"
             render={props => (
-              <Resources {...props} username={this.state.username} />
+              <Resources
+                {...props}
+                username={this.state.username}
+                login={this.state.loggedIn}
+              />
             )}
           />
           <Route

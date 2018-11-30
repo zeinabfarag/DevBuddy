@@ -10,7 +10,6 @@ const apiKey = "5a7b3ff72dcb4898b5c6ee2013105946";
 class Articles extends Component {
   state = {
     redirect: false,
-    signedIn: false,
     articleswdev: [],
     articlesjs: [],
     articlestech: [],
@@ -19,7 +18,6 @@ class Articles extends Component {
 
   componentDidMount() {
     this.callAxios();
-    this.checkUser();
   }
 
   callAxios = () => {
@@ -56,22 +54,8 @@ class Articles extends Component {
       );
   };
 
-  // function to save aricle on favourites
-
-  checkUser = () => {
-    let user = sessionStorage.getItem("username");
-
-    if (user === "null") {
-      this.setState({ signedIn: false });
-    } else if (user == null) {
-      this.setState({ signedIn: false });
-    } else {
-      this.setState({ signedIn: true });
-    }
-  };
-
   clickedToSave = (title, link) => {
-    if (!this.state.signedIn) {
+    if (!this.props.login) {
       this.setState({ redirect: true });
     } else {
       let saveArticle = {
@@ -106,7 +90,7 @@ class Articles extends Component {
             started!
           </p>
 
-          {this.state.signedIn && (
+          {this.props.login && (
             <Link to="/favourite">
               <button type="button" className="saved-articles-btn">
                 Saved Articles
