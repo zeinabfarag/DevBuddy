@@ -1,7 +1,9 @@
-import React, { Component } from "react";
-import axios from "axios";
+import React, { Component } from 'react';
+import axios from 'axios';
 
-import "./Video.css";
+import './Video.css';
+
+const apiKey = 'AIzaSyBhnZV06WMyj1rsGqLrtgG5EuXDr4SIvu4';
 
 class Video extends Component {
   state = {
@@ -13,20 +15,21 @@ class Video extends Component {
     if (this.props.query !== undefined) {
       this.searchYoutube(this.props.query);
     } else {
-      this.searchYoutube("web development");
+      this.searchYoutube('web development');
     }
   }
 
   searchYoutube = query => {
     axios
       .get(
-        " https://www.googleapis.com/youtube/v3/search?q=" +
+        ' https://www.googleapis.com/youtube/v3/search?q=' +
           query +
-          "&maxResults=8&part=snippet&key=AIzaSyBhnZV06WMyj1rsGqLrtgG5EuXDr4SIvu4 "
+          '&maxResults=8&part=snippet&key=' +
+          apiKey
       )
       .then(res => {
         let result = res.data.items.map(
-          video => "https://www.youtube.com/embed/" + video.id.videoId
+          video => 'https://www.youtube.com/embed/' + video.id.videoId
         );
         this.setState({ result });
       })
