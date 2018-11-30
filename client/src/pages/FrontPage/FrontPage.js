@@ -1,7 +1,9 @@
 import React, { Component } from "react";
 import "./FrontPage.css";
-import Articles from "../../components/Articles";
+import Articles from "../../components/DevArticles";
+import Stackover from "../../components/Questions";
 import Resources from "../../components/Video";
+import { Link } from "react-router-dom";
 
 class FrontPage extends Component {
   render() {
@@ -42,16 +44,41 @@ class FrontPage extends Component {
           <h2 className="front-title">ACCESS EVERYTHING YOU NEED!</h2>
           <div id="main">
             <h1 id="maintitle"> Videos</h1>
+            <Link
+              to="/resources"
+              className="btn btn-link text-secondary"
+
+            >
+              <button type="button" className="btn btn-outline-secondary">
+                See More
+                </button>
+            </Link>
+
+
           </div>
           <div className="frontpage-section">
             <Resources />
           </div>
           <div id="main">
-            <h1 id="maintitle"> Articles</h1>
+            <h1 id="maintitle"> Web Development Articles
+            <Articles /></h1>
+
+            <Link
+              to="/articles"
+              className="btn btn-link text-secondary"
+
+            >
+              <button type="button" className="btn btn-outline-secondary">
+                Read More
+                </button>
+            </Link>
           </div>
-          <div className="frontpage-section">
-            <Articles />
+
+          <div id="main">
+            <h1 id="maintitle"> Questions
+            <Stackover /></h1>
           </div>
+
         </section>
 
 
@@ -61,9 +88,9 @@ class FrontPage extends Component {
           </div>
         </div> */}
 
-        <section className="section section-dark">
-          {/* <Articles /> */}
-        </section>
+        {/* <section className="section section-dark"> */}
+        {/* <Articles /> */}
+        {/* </section> */}
 
         {/* <div className="pimg5">
           <div className="ptext">
@@ -71,7 +98,7 @@ class FrontPage extends Component {
           </div>
         </div> */}
 
-        <section className="section section-dark" />
+
 
         <div className="pimg1">
           <div className="ptext">

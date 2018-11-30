@@ -14,6 +14,19 @@ class About extends Component {
             developers as well as created this site you see now. Learn more
             about how we got started!
           </p>
+          {/* <div className="saved">
+            {/* <h1 className="saved-section">PRESS PLAY</h1> */}
+          <div className="videoWrapper">
+            <iframe
+              title="Video"
+              width="560"
+              height="349"
+              src="/asset/images/Dev_2.mp4"
+              frameBorder="0"
+              allowFullScreen
+            />
+          </div>
+          {/* </div> */}
         </div>
         <div className="maincontainer">
           <div className="container">
@@ -102,7 +115,7 @@ class About extends Component {
             </div>
           </div>
         </div>
-      </div>
+      </div >
     );
   }
 }
