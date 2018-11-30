@@ -3,7 +3,7 @@
   margin: 1%;
 }
 
-iframe{
+/* iframe{
   -webkit-filter: grayscale(100%);
   -moz-filter: grayscale(100%);
   -ms-filter: grayscale(100%);
@@ -17,4 +17,4 @@ iframe:hover{
   -ms-filter: grayscale(0%);
   -o-filter: grayscale(0%);
   filter: grayscale(0%);
-}
+} */

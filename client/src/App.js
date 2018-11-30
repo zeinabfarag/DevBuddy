@@ -26,7 +26,6 @@ import Angular from "./pages/Languages/Angular";
 import Vue from "./pages/Languages/Vue";
 import AJAX from "./pages/Languages/AJAX";
 import Bootstrap from "./pages/Languages/Bootstrap";
-import Comments from "./pages/Comments";
 
 class App extends Component {
   constructor() {
@@ -80,14 +79,22 @@ class App extends Component {
             exact
             path="/articles"
             render={props => (
-              <Articles {...props} username={this.state.username} />
+              <Articles
+                {...props}
+                username={this.state.username}
+                login={this.state.loggedIn}
+              />
             )}
           />
           <Route
             exact
             path="/resources"
             render={props => (
-              <Resources {...props} username={this.state.username} />
+              <Resources
+                {...props}
+                username={this.state.username}
+                login={this.state.loggedIn}
+              />
             )}
           />
           <Route
@@ -105,13 +112,6 @@ class App extends Component {
             path="/favourite"
             render={props => (
               <Favourite {...props} username={this.state.username} />
-            )}
-          />
-          <Route
-            exact
-            path="/comments"
-            render={props => (
-              <Comments {...props} username={this.state.username} />
             )}
           />
 

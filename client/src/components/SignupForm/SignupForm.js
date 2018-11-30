@@ -9,7 +9,9 @@ class SignupForm extends Component {
     this.state = {
       username: "",
       password: "",
-      redirectTo: null
+      redirectTo: null,
+      error: true,
+      errormsg: ""
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
@@ -34,12 +36,30 @@ class SignupForm extends Component {
       .then(response => {
         console.log(response);
         if (!this.state.username || !this.state.password) {
-          alert("Please fill out Username and Password");
+          this.setState({ error: true });
+          this.setState({ errormsg: "Please fill out Username and Password " });
         } else if (this.state.password.length < 6) {
-          alert(`Choose a password with more than 6 letters`);
-        } else if (response.status === 200) {
+          // Check length of password
+          this.setState({ error: true });
+          this.setState({
+            errormsg: "Please choose a password with more than 5 characters"
+          });
+        } else if (response.data.errors) {
+          // Checks if its email
+
+          this.setState({ error: true });
+          this.setState({
+            errormsg: "Please enter a valid email address"
+          });
+        } else if (response.data.error) {
+          // User exists error
+          this.setState({ error: true });
+          this.setState({
+            errormsg: "The email you entered already exists, please try again!"
+          });
+        } else if (!response.data.errors) {
+          this.setState({ error: false });
           console.log("successful signup");
-          alert("You've Successfully signed up.");
           // update App.js state
           this.props.loginUser({
             loggedIn: true,
@@ -94,57 +114,8 @@ class SignupForm extends Component {
               onClick={this.handleSubmit}
             />
           </form>
+          {this.state.error && <div> {this.state.errormsg} </div>}
         </div>
-        // <div className="SignupForm">
-        //   <h4>Sign up</h4>
-        //   <form className="form-horizontal">
-        //     <div className="form-group">
-        //       <div className="col-1 col-ml-auto">
-        //         <label className="form-label" htmlFor="username">
-        //           Username
-        //         </label>
-        //       </div>
-        //       <div className="col-3 col-mr-auto">
-        //         <input
-        //           className="form-input"
-        //           type="text"
-        //           id="username"
-        //           name="username"
-        //           placeholder="Username"
-        //           value={this.state.username}
-        //           onChange={this.handleChange}
-        //         />
-        //       </div>
-        //     </div>
-        //     <div className="form-group">
-        //       <div className="col-1 col-ml-auto">
-        //         <label className="form-label" htmlFor="password">
-        //           Password:{' '}
-        //         </label>
-        //       </div>
-        //       <div className="col-3 col-mr-auto">
-        //         <input
-        //           className="form-input"
-        //           placeholder="password"
-        //           type="password"
-        //           name="password"
-        //           value={this.state.password}
-        //           onChange={this.handleChange}
-        //         />
-        //       </div>
-        //     </div>
-        //     <div className="form-group ">
-        //       <div className="col-7" />
-        //       <button
-        //         className="btn btn-primary col-1 col-mr-auto"
-        //         onClick={this.handleSubmit}
-        //         type="submit"
-        //       >
-        //         Sign up
-        //       </button>
-        //     </div>
-        //   </form>
-        // </div>
       );
     }
   }

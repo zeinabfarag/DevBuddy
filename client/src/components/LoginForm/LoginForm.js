@@ -7,6 +7,8 @@ class LoginForm extends Component {
   constructor() {
     super();
     this.state = {
+      error: true,
+      errormsg: "",
       username: "",
       password: "",
       redirectTo: null
@@ -34,6 +36,7 @@ class LoginForm extends Component {
         console.log("login response: ");
         console.log(response);
         if (response.status === 200) {
+          this.setState({ error: false });
           // update App.js state
           this.props.loginUser({
             loggedIn: true,
@@ -48,6 +51,8 @@ class LoginForm extends Component {
       .catch(error => {
         console.log("login error: ");
         console.log(error);
+        this.setState({ error: true });
+        this.setState({ errormsg: "Your username or password is incorrect!" });
       });
   }
 
@@ -70,10 +75,7 @@ class LoginForm extends Component {
               value={this.state.username}
               onChange={this.handleChange}
             />
-            {/* <p>Password</p> */}
-            <label className="form-label" htmlFor="password">
-              Password:{" "}
-            </label>
+            <p>Password</p>
             <input
               className="form-input"
               placeholder="password"
@@ -82,72 +84,16 @@ class LoginForm extends Component {
               value={this.state.password}
               onChange={this.handleChange}
             />
-            {/* <input
-              type="submit"
-              name=""
-              value="Sign In"
-              onClick={this.handleSubmit}
-            /> */}
             <button
-              className="btn btn-primary col-1 col-mr-auto"
+              className="btn btn-primary col-mr-auto"
               onClick={this.handleSubmit}
               type="submit"
             >
               Login
             </button>
           </form>
+          {this.state.error && <div> {this.state.errormsg} </div>}
         </div>
-
-        // <div className="Login">
-        //   <h4>Login</h4>
-        //   <form className="form-horizontal">
-        //     <div className="form-group">
-        //       <div className="col-1 col-ml-auto">
-        //         <label className="form-label" htmlFor="username">
-        //           Username
-        //         </label>
-        //       </div>
-        //       <div className="col-3 col-mr-auto">
-        //         <input
-        // className="form-input"
-        // type="text"
-        // id="username"
-        // name="username"
-        // placeholder="Username"
-        // value={this.state.username}
-        // onChange={this.handleChange}
-        //         />
-        //       </div>
-        //     </div>
-        //     <div className="form-group">
-        //       <div className="col-1 col-ml-auto">
-        //         <label className="form-label" htmlFor="password">
-        //           Password:{' '}
-        //         </label>
-        //       </div>
-        //       <div className="col-3 col-mr-auto">
-        // <input
-        //   className="form-input"
-        //   placeholder="password"
-        //   type="password"
-        //   name="password"
-        //   value={this.state.password}
-        //   onChange={this.handleChange}
-        // />
-        //       </div>
-        //     </div>
-        //     <div className="form-group ">
-        //       <div className="col-7" />
-        //       <button
-        //         className="btn btn-primary col-1 col-mr-auto"
-        //         onClick={this.handleSubmit}
-        //         type="submit"
-        //       >
-        //         Login
-        //       </button>
-        //     </div>
-        //   </form>
-        // </div>
       );
     }
   }
