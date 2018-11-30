@@ -75,10 +75,7 @@ class LoginForm extends Component {
               value={this.state.username}
               onChange={this.handleChange}
             />
-            {/* <p>Password</p> */}
-            <label className="form-label" htmlFor="password">
-              Password:{" "}
-            </label>
+            <p>Password</p>
             <input
               className="form-input"
               placeholder="password"
