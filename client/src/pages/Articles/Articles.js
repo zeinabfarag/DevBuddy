@@ -7,7 +7,7 @@ import Articles from "../../components/Articles";
 const ArticlePage = props => {
   return (
     <div>
-      <Articles {...props} username={props.username} />
+      <Articles {...props} username={props.username} login={props.login} />
       <p>Powered by API News</p>
     </div>
   );

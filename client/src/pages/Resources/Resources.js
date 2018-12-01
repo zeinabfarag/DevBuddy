@@ -8,8 +8,7 @@ class Resources extends Component {
   render() {
     return (
       <div className="container">
-        {sessionStorage.getItem("username") !== "null" && <Languages />}
-
+        {this.props.login && <Languages />}
         <div id="main">
           <h1 id="maintitle"> Resources</h1>
           <p id="description">
@@ -19,7 +18,6 @@ class Resources extends Component {
             favourite resources that we use on a regular basis.
           </p>
         </div>
-
         <div className="maincontainer">
           <div className="row">
             <div className="card  ">
@@ -69,7 +67,7 @@ class Resources extends Component {
               <Questions />
             </div>
           </div>
-          {sessionStorage.getItem("username") === "null" && (
+          {!this.props.login && (
             <div>
               Not sure where to start? Login/Sign Up for a more detailed
               selection of resources

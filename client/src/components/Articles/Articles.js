@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import { Redirect } from "react-router";
 import axios from "axios";
+import { Link } from "react-router-dom";
+
 import "./Articles.css";
 
 const apiKey = "5a7b3ff72dcb4898b5c6ee2013105946";
@@ -23,19 +25,19 @@ class Articles extends Component {
       .all([
         axios.get(
           "https://newsapi.org/v2/everything?q=web%20development&totalResults=15&apiKey=" +
-          apiKey
+            apiKey
         ),
         axios.get(
           "https://newsapi.org/v2/everything?q=javascript&totalResults=15&apiKey=" +
-          apiKey
+            apiKey
         ),
         axios.get(
           "https://newsapi.org/v2/everything?q=tech&totalResults=15&apiKey=" +
-          apiKey
+            apiKey
         ),
         axios.get(
           "https://newsapi.org/v2/everything?q=web%20design&totalResults=15&apiKey=" +
-          apiKey
+            apiKey
         )
       ])
       .then(
@@ -52,10 +54,8 @@ class Articles extends Component {
       );
   };
 
-  // function to save aricle on favourites
-
   clickedToSave = (title, link) => {
-    if (this.props.username == null) {
+    if (!this.props.login) {
       this.setState({ redirect: true });
     } else {
       let saveArticle = {
@@ -65,10 +65,10 @@ class Articles extends Component {
 
       axios
         .post(`/user/article/${this.props.username}`, saveArticle)
-        .then(function (response) {
+        .then(function(response) {
           console.log("success", response);
         })
-        .catch(function (error) {
+        .catch(function(error) {
           console.log("error", error);
         });
     }
@@ -89,8 +89,15 @@ class Articles extends Component {
             technologies to their advantage. Here are some articles to get you
             started!
           </p>
-          <a className="saved-articles-btn" href="/favourite">Saved Articles</a>
         </div>
+
+        {this.props.login && (
+          <Link to="/favourite">
+            <button type="button" className="saved-articles-btn">
+              Saved Articles
+            </button>
+          </Link>
+        )}
 
         <div className="maincontainer">
           <div className="row">
@@ -121,8 +128,8 @@ class Articles extends Component {
                   ))}
                 </div>
               ) : (
-                  <h3>No Results to Display</h3>
-                )}
+                <h3>No Results to Display</h3>
+              )}
             </div>
 
             <div className="card articles">
@@ -151,8 +158,8 @@ class Articles extends Component {
                   ))}
                 </div>
               ) : (
-                  <h3>No Results to Display</h3>
-                )}
+                <h3>No Results to Display</h3>
+              )}
             </div>
           </div>
           <div className="row">
@@ -182,8 +189,8 @@ class Articles extends Component {
                   ))}
                 </div>
               ) : (
-                  <h3>No Results to Display</h3>
-                )}
+                <h3>No Results to Display</h3>
+              )}
             </div>
 
             <div className="card articles">
@@ -212,8 +219,8 @@ class Articles extends Component {
                   ))}
                 </div>
               ) : (
-                  <h3>No Results to Display</h3>
-                )}
+                <h3>No Results to Display</h3>
+              )}
             </div>
           </div>
         </div>
