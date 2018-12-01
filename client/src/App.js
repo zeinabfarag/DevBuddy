@@ -26,6 +26,7 @@ import Angular from "./pages/Languages/Angular";
 import Vue from "./pages/Languages/Vue";
 import AJAX from "./pages/Languages/AJAX";
 import Bootstrap from "./pages/Languages/Bootstrap";
+require("dotenv").config();
 
 class App extends Component {
   constructor() {

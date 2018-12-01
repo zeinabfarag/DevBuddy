@@ -22,7 +22,8 @@ class Video extends Component {
       .get(
         " https://www.googleapis.com/youtube/v3/search?q=" +
           query +
-          "&maxResults=8&part=snippet&key=AIzaSyBhnZV06WMyj1rsGqLrtgG5EuXDr4SIvu4 "
+          "&maxResults=8&part=snippet&key=" +
+          process.env.REACT_APP_VIDEOS
       )
       .then(res => {
         let result = res.data.items.map(
