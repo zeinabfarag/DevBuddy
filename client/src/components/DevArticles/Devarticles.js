@@ -2,8 +2,6 @@ import React, { Component } from "react";
 import { Redirect } from "react-router";
 import axios from "axios";
 
-const apiKey = "5a7b3ff72dcb4898b5c6ee2013105946";
-
 class Devarticles extends Component {
   state = {
     redirect: false,
@@ -16,21 +14,15 @@ class Devarticles extends Component {
 
   callAxios = () => {
     axios
-      .all([
-        axios.get(
-          "https://newsapi.org/v2/everything?q=web%20development&totalResults=15&apiKey=" +
-            apiKey
-        )
-      ])
-      .then(
-        axios.spread((resdev, resjs, restech, resdes) => {
-          this.setState({
-            articleswdev: resdev.data.articles
-          });
-        })
-        // do something with both responses
-        //   .catch(err => console.log(err));
-      );
+      .get(
+        "https://newsapi.org/v2/everything?q=web%20development&totalResults=15&apiKey=" +
+          process.env.REACT_APP_ARTICLES
+      )
+      .then(res => {
+        this.setState({
+          articleswdev: res.data.articles
+        });
+      });
   };
 
   // function to save aricle on favourites

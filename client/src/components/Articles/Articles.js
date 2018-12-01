@@ -5,8 +5,6 @@ import { Link } from "react-router-dom";
 
 import "./Articles.css";
 
-const apiKey = "5a7b3ff72dcb4898b5c6ee2013105946";
-
 class Articles extends Component {
   state = {
     redirect: false,
@@ -25,19 +23,19 @@ class Articles extends Component {
       .all([
         axios.get(
           "https://newsapi.org/v2/everything?q=web%20development&totalResults=15&apiKey=" +
-            apiKey
+            process.env.REACT_APP_ARTICLES
         ),
         axios.get(
           "https://newsapi.org/v2/everything?q=javascript&totalResults=15&apiKey=" +
-            apiKey
+            process.env.REACT_APP_ARTICLES
         ),
         axios.get(
           "https://newsapi.org/v2/everything?q=tech&totalResults=15&apiKey=" +
-            apiKey
+            process.env.REACT_APP_ARTICLES
         ),
         axios.get(
           "https://newsapi.org/v2/everything?q=web%20design&totalResults=15&apiKey=" +
-            apiKey
+            process.env.REACT_APP_ARTICLES
         )
       ])
       .then(
