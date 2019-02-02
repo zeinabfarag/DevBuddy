@@ -1,51 +1,38 @@
 # Dev Buddy
 
-## What Is Dev Buddy?
+## Overview
 
-Dev Buddy is here for you on your journey to becoming a web developer. Whether you are a complete beginner, have dabbled in coding, or already have a background in it, Dev Buddy is here to help you with a plethora of resources including videos, helpful links, and articles.
+A MERN stack web application made to help junior developers.
 
-Becoming a web developer has now become a whole lot easier.
+## Description
 
-## Why Web Development
+This app uses React and bootstrap for the front-end. Node.js and Express.js are used in the backend to save user info to MongoDB. 
 
-Web developers are at the forefront of the Internet age. The websites we browse, the gifts we order and the news we peruse online are all made possible by the web developers who design,build and implement Internet websites.
+It is aimed to help hopeful web developers learn the skills they need and therefore utilizes several APIs. For an unauthorized user, the resources tab displays general learning videos from the youtube API. The user is also able to enter a topic into the question form and the most relevant answers will be generated from the Stack Overflow API. 
 
-They are heavily involved in website creation, from helping design aesthetic properties such as layout and color, to technical considerations such as how to design a website to handle a given amount of Internet traffic.
+In the articles page, articles are separated based on topic and are generated using the news API. 
+
+Once a user has signed up, they are given access to a more specific set of resources in the resources tab calling for different API calls to be made. They are also now able to save the articles they choose and those will appear when the saved articles button is clicked.
+
+User authentication was done using passport.js.
+
 
 ## Technologies Used
 
-- Mongo (Database)
+- MongoDB
 - Express.js
 - React.js
 - Node.js
-- Passport.js (validation)
-- Axios
+- Passport.js 
 
-## Starting the app locally
 
-Start by installing front and backend dependencies. While in this directory, run the following command:
-
-```
-yarn install
-```
-
-This should install node modules within the server and the client folder.
-
-After both installations complete, run the following command in your terminal:
-
-```
-yarn start
-```
-
-Your app should now be running on <http://localhost:3000>. The Express server should intercept any AJAX requests from the client.
-
-## Deployed Site
+## Website
 
 https://webdevbuddy.herokuapp.com/
 
 ## Authors
 
 [Abdulrahman Said](https://github.com/AbdulSaid)
+[Zeinab Farag](https://github.com/zeinabfarag)
 [Alejandra Juarez](https://github.com/alejuarez)
 [Ruby Gill](https://github.com/Rubyrgill)
-[Zeinab Farag](https://github.com/zeinabfarag)
