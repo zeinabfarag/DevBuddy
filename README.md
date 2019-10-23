@@ -16,6 +16,19 @@ Once a user has signed up, they are given access to a more specific set of resou
 
 User authentication was done using passport.js.
 
+## Software Installation
+Install dependencies:
+npm install
+
+Set env variables by adding .env file in client root with the do:
+REACT_APP_ARTICLES = "5a7b3ff72dcb4898b5c6ee2013105946"
+REACT_APP_VIDEOS = "AIzaSyBhnZV06WMyj1rsGqLrtgG5EuXDr4SIvu4"
+
+Start MongoDB:
+mongod
+
+Start application:
+npm start
 
 ## Technologies Used
 
